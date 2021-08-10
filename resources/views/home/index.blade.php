@@ -37,7 +37,7 @@
         min-width: 80px !important;
         max-width: 150px !important;
         max-height: 150px !important;
-        min-height: 135px !important;
+        min-height: 90px !important;
         height: auto !important;
         border: 5px solid #D02762!important;
     }
@@ -48,7 +48,7 @@
         min-width: 80px !important;
         max-width: 150px !important;
         max-height: 150px !important;
-        min-height: 135px !important;
+        min-height: 90px !important;
         height: auto !important;
         border: 5px solid #1B325E!important;
     }
@@ -59,7 +59,7 @@
         min-width: 80px !important;
         max-width: 150px !important;
         max-height: 150px !important;
-        min-height: 135px !important;
+        min-height: 90px !important;
         height: auto !important;
         border: 5px solid #F6AD3C!important;
     }
@@ -118,7 +118,7 @@
 
                     </div>
                 </div>
-                <div class="col-1 pt-5 text-center">
+                <div class="col-1 pt-2 text-center">
                     <h1 style="font-weight: bold">:</h1>
                 </div>
                 <div class="col-3">
@@ -126,7 +126,7 @@
 
                     </div>
                 </div>
-                <div class="col-1 pt-5 text-center">
+                <div class="col-1 pt-2 text-center">
                     <h1 style="font-weight: bold">:</h1>
                 </div>
                 <div class="col-3">

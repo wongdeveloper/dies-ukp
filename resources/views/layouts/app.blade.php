@@ -105,8 +105,8 @@
         background-color: #F9F2EA !important;
         display: block;
         position: absolute;
-        right: 0;
-        top: 0;
+        right: 15;
+        top: 15;
     }
 
     .topnav a:hover {
