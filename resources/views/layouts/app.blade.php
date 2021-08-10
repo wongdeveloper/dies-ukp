@@ -66,7 +66,11 @@
     .v2 {
         border-left: 2px solid white;
         height: 100px;
-    } 
+    }
+    .v2-mobile{
+        border-left: 2px solid white;
+        height: 70px;
+    }
     li{
         display: inline;
     }
@@ -84,6 +88,15 @@
         color: #031322 !important;
     }
 
+    .option{
+        text-decoration: none !important;
+        color: #031322 !important;
+        font-weight: bold;
+    }
+
+    .option a:hover{
+        color: #D02762 !important;
+    }
     /* NAVBAR */
     .topnav {
         overflow: hidden;
@@ -133,9 +146,17 @@
     .bar1, .bar2, .bar3 {
         width: 35px;
         height: 5px;
-        background-color: #333;
         margin: 6px 0;
         transition: 0.4s;
+    }
+    .bar1{
+        background-color: #031322;
+    }
+    .bar2{
+        background-color: #F6AD3C;
+    }
+    .bar3{
+        background-color: #D02762;
     }
 
     .change .bar1 {
@@ -152,7 +173,7 @@
     @media only screen and (max-width: 1200px) {
 
     }
-
+    
     @media only screen and (max-width: 768px) {
 
     }
@@ -247,10 +268,27 @@
                     </div>
                 </div>
                 <div id="myLinks" class="option">
-                    <a href="/">Beranda</a>
-                    <a href="/Ucapan">Ucapan</a>
-                    <a href="/Kegiatan">Kegiatan</a>
-                    <a href="/Tentang">Tentang TRTD</a>
+                    <div class="row pt-2 ps-2">
+                        <div class="col">   
+                            <a href="/">Beranda</a>
+                        </div>
+                    </div>
+                    <div class="row pt-2 ps-2">
+                        <div class="col">
+                            <a href="/Ucapan">Ucapan</a>
+                        </div>
+                    </div>
+                    <div class="row pt-2 ps-2">
+                        <div class="col">
+                            <a href="/Kegiatan">Kegiatan</a>
+                        </div>
+                    </div>
+                    <div class="row pt-2 ps-2">
+                        <div class="col">
+                            <a href="/Tentang">Tentang TRTD</a>
+                        </div>
+                    </div>
+                    <div class="row pb-2"></div>
                 </div>
                 
             </div>
@@ -258,9 +296,7 @@
         </div>
     </nav>
 
-    <div class="container-fluid">
-        @yield('content')
-    </div>
+    @yield('content')
 
     <footer class="haft-footer-nomobile pt-5 position-relative w-100 d-none d-md-block" style="bottom: 0" id="footer">
         <div class="container-fluid">
@@ -315,14 +351,14 @@
                 <div class="col-10">
                     <div class="row">
                         <div class="col-5">
-                            <img src="{{asset('assets/images/logo_ukp.png')}}" alt="" width="100"
+                            <img src="{{asset('assets/images/logo_ukp.png')}}" alt="" width="80"
                                         class="d-inline-block pe-2">
                         </div>
                         <div class="col-2">
-                            <div class="v2"></div>
+                            <div class="v2-mobile"></div>
                         </div>
                         <div class="col-5">
-                            <img src="{{asset('assets/images/logo_60tahun_nopadding.png')}}" alt="" width="110"
+                            <img src="{{asset('assets/images/logo_60tahun_nopadding.png')}}" alt="" width="90"
                                         class="d-inline-block pe-2">
                         </div>
                     </div>
