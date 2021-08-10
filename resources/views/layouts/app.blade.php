@@ -191,7 +191,7 @@
 <body style="background-color: #FFFCF5;">
 
     {{-- BUAT NON HP --}}
-    <nav class="haft-navbar-nomobile d-none d-lg-block">
+    <nav class="haft-navbar-nomobile d-none d-lg-block sticky-top">
         <div class="container-fluid ">
             <div class="row pt-3 pb-3 ">
 
@@ -208,7 +208,7 @@
                             <div class="vl"></div>
                         </div>
                         <div class="col-4">
-                            <img src="{{asset('assets/images/logo_60tahun_nopadding.png')}}" alt="" width="65"
+                            <img src="{{asset('assets/images/logo_60tahun_nopadding.png')}}" alt="" width="55"
                                         class="d-inline-block pe-2">
                         </div>
                         <div class="col-4">
@@ -252,7 +252,7 @@
                                 <div class="vl"></div>
                             </div>
                             <div class="col-5">
-                                <img src="{{asset('assets/images/logo_60tahun_nopadding.png')}}" alt="" width="65"
+                                <img src="{{asset('assets/images/logo_dies_circle.png')}}" alt="" width="55"
                                             class="d-inline-block pe-2">
                             </div>
                         </div>
@@ -314,7 +314,7 @@
                             <div class="v2"></div>
                         </div>
                         <div class="col-5">
-                            <img src="{{asset('assets/images/logo_60tahun_nopadding.png')}}" alt="" width="110"
+                            <img src="{{asset('assets/images/logo_dies_circle.png')}}" alt="" width="110"
                                         class="d-inline-block pe-2">
                         </div>
                         <div class="col-1">
@@ -358,7 +358,7 @@
                             <div class="v2-mobile"></div>
                         </div>
                         <div class="col-5">
-                            <img src="{{asset('assets/images/logo_60tahun_nopadding.png')}}" alt="" width="90"
+                            <img src="{{asset('assets/images/logo_dies_circle.png')}}" alt="" width="90"
                                         class="d-inline-block pe-2">
                         </div>
                     </div>
