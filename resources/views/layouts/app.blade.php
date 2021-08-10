@@ -188,7 +188,7 @@
     }
 </style>
 
-<body style="background-color: #FFFCF5;">
+<body style="background-color: #F9F2EA;">
 
     {{-- BUAT NON HP --}}
     <nav class="haft-navbar-nomobile d-none d-lg-block sticky-top">

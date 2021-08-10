@@ -195,6 +195,47 @@
     }
     /* ============================================ */
 
+    /* CARD KEGIATAN TRTD */
+
+    .haft-article-card{
+        min-width: 100% !important;
+        width: auto !important;
+        min-height: 250px !important;
+        background-color: #FFFCF5;
+        border-radius: 15px !important;
+    }
+    .article-img{
+        border-radius: 30px !important;
+        min-width: 30px !important;
+        max-width: 200px !important;
+        min-height: 200px !important;
+        background-color: #1B325E !important;
+    }
+    .link-article a{
+        text-decoration: none !important;
+        font-weight: bold !important;
+        color: #D02762 !important;
+    }
+    
+
+
+    /* ========================= */
+
+    /* TENTANG TRTD */
+    .tentang-img{
+        border-radius: 0 !important;
+        min-width: 200px !important;
+        max-width: 400px !important;
+        min-height: 300px !important;
+        background-color:#D02762 !important;
+    }
+    .text-tentang{
+        font-size: 14pt !important;
+    }
+
+
+    /* ================= */
+
 
     @media only screen and (max-width: 1200px) {
       
@@ -380,9 +421,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-2">
-
-        </div>
+        <div class="col-2"></div>
         <div class="col-8">
             <center>
                 <h3>“To The Rock Turns Diamond”</h3>
@@ -1091,6 +1130,95 @@
     
 </div>
 
+<div class="container">
+    <div class="row pt-5 pb-2">
+        <div class="col-1">
+            {{-- SPACE --}}
+        </div>
+        <div class="col-10 pt-3 pb-4 haft-article-card shadow p-3 mb-5 bg-white">
+            <div class="row ps-4 pe-2 ">
+                <div class="col-3 article-img">
+                    {{-- BUAT GAMBAR --}}
+                </div>
+                <div class="col-9 ps-4">
+                    <div class="row pt-2 title-article">
+                        <h2>Judul Kegiatan</h2>
+                    </div>
+                    <div class="row pt-1 text-article">
+                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, mollitia eius qui, error veritatis quibusdam officiis repellendus doloribus, delectus provident ea cum impedit! Quis nihil sit id, reiciendis magni corporis! "</p>
+                    </div>
+                    <div class="row link-article">
+                        <p> <a href="#"> Read More</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1">
+            {{-- SPACE --}}
+        </div>
+    </div>
+    <div class="row pt-5 pb-2">
+        <div class="col-1">
+            {{-- SPACE --}}
+        </div>
+        <div class="col-10 pt-3 pb-4 haft-article-card shadow p-3 mb-5 bg-white">
+            <div class="row ps-4 pe-2 ">
+                <div class="col-3 article-img">
+                    {{-- BUAT GAMBAR --}}
+                </div>
+                <div class="col-9 ps-4">
+                    <div class="row pt-2 title-article">
+                        <h2>Judul Kegiatan</h2>
+                    </div>
+                    <div class="row pt-1 text-article">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda ratione beatae, iure placeat asperiores quia aliquam! Error, commodi dolores, soluta, expedita numquam enim omnis laborum ex maiores iure saepe? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque veniam quam numquam voluptate distinctio sapiente quaerat aperiam, impedit corporis molestiae dolore a, illum maxime earum dignissimos odio? Incidunt, corporis velit.</p>
+                    </div>
+                    <div class="row link-article">
+                        <p> <a href="#"> Read More</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1">
+            {{-- SPACE --}}
+        </div>
+    </div>
+    <div class="row pt-5 pb-2">
+        <div class="col-1">
+            {{-- SPACE --}}
+        </div>
+        <div class="col-10 pt-3 pb-4 haft-article-card shadow p-3 mb-5 bg-white">
+            <div class="row ps-4 pe-2 ">
+                <div class="col-3 article-img">
+                    {{-- BUAT GAMBAR --}}
+                </div>
+                <div class="col-9 ps-4">
+                    <div class="row pt-2 title-article">
+                        <h2>Judul Kegiatan</h2>
+                    </div>
+                    <div class="row pt-1 text-article">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda ratione beatae, iure placeat asperiores quia aliquam! Error, commodi dolores, soluta, expedita numquam enim omnis laborum ex maiores iure saepe? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque veniam quam numquam voluptate distinctio sapiente quaerat aperiam, impedit corporis molestiae dolore a, illum maxime earum dignissimos odio? Incidunt, corporis velit.</p>
+                    </div>
+                    <div class="row link-article">
+                        <p> <a href="#"> Read More</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1">
+            {{-- SPACE --}}
+        </div>
+    </div>
+    <div class="row pt-2 pb-4">
+        <div class="col">
+            <center>
+                <h3><a href="#" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">  Lihat Kegiatan Lainnya</a></h3>
+            </center>
+        </div>
+    </div>
+</div>
+
+
 <div class="row pt-5 ps-2 ms-0 haft-title-pink">
     <div class="row pt-2">
         <div class="col-2"></div>
@@ -1100,6 +1228,37 @@
         <div class="col-2"></div>
     </div>
     
+</div>
+
+<div class="container pb-4">
+    <div class="row pt-5 pb-2 ps-3">
+        <div class="col-1">
+            {{-- BUAT SPACE --}}
+        </div>
+        <div class="col-10">
+            <div class="row ps-4 pe-2 ">
+                <div class="col-4 tentang-img">
+                    {{-- BUAT GAMBAR --}}
+                </div>
+                <div class="col-8 ps-4">
+                    <div class="row pt-1 text-tentang">
+                        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita non similique repellendus, rerum corrupti soluta, voluptate maxime eos aliquam nostrum, harum sed odit? Vitae hic, quos magnam nihil iste quo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda ratione beatae, iure placeat asperiores quia aliquam! Error, commodi dolores, soluta, expedita numquam enim omnis laborum ex maiores iure saepe? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque veniam quam numquam voluptate distinctio sapiente quaerat aperiam, impedit corporis molestiae dolore a, illum maxime earum dignissimos odio? Incidunt, corporis velit.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-1">
+            {{-- BUAT SPACE --}}
+        </div>
+    </div>
+    <div class="row pt-5 pb-5">
+        <div class="col">
+            <center>
+                <h3><a href="#" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">Lihat Selengkapnya</a></h3>
+            </center>
+        </div>
+    </div>
 </div>
 
 
