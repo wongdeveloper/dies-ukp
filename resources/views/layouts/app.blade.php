@@ -225,7 +225,7 @@
                 </div>
                 <div class="col-6 pt-3">
                     <ul>
-                        <li> <a href="/Home">Beranda</a> </li>
+                        <li> <a href="/home">Beranda</a> </li>
                         <li> <a href="/Ucapan">Ucapan</a> </li>
                         <li> <a href="/Kegiatan">Kegiatan</a> </li>
                         <li> <a href="/Tentang">Tentang TRTD</a> </li>
@@ -272,7 +272,7 @@
                 <div id="myLinks" class="option">
                     <div class="row pt-2 ps-2">
                         <div class="col">   
-                            <a href="/Home">Beranda</a>
+                            <a href="/home">Beranda</a>
                         </div>
                     </div>
                     <div class="row pt-2 ps-2">
