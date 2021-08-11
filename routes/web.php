@@ -20,3 +20,17 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home.index');
 });
+
+Route::get('/Ucapan', function () {
+    return view('ucapan.index');
+});
+
+Route::get('/Ucapan/Video', function () {
+    return view('ucapan.video');
+});
+Route::get('/Ucapan/Foto', function () {
+    return view('ucapan.foto');
+});
+Route::get('/Ucapan/Teks', function () {
+    return view('ucapan.teks');
+});

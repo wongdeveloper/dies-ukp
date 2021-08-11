@@ -46,6 +46,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    {{-- INTERNAL JS --}}
+    <script src="{{ asset('js/ucapan.js')}}"></script>
 
 
     @yield('custom-import')
@@ -223,7 +225,7 @@
                 </div>
                 <div class="col-6 pt-3">
                     <ul>
-                        <li> <a href="/">Beranda</a> </li>
+                        <li> <a href="/Home">Beranda</a> </li>
                         <li> <a href="/Ucapan">Ucapan</a> </li>
                         <li> <a href="/Kegiatan">Kegiatan</a> </li>
                         <li> <a href="/Tentang">Tentang TRTD</a> </li>
@@ -235,7 +237,7 @@
     </nav>
 
     {{-- BUAT HP --}}
-    <nav class="haft-navbar-mobile d-block d-lg-none">
+    <nav class="haft-navbar-mobile d-block d-lg-none sticky-top">
         <div class="container-fluid ">
             <div class="topnav">
                 <div class="row pt-3 pb-3">
@@ -270,7 +272,7 @@
                 <div id="myLinks" class="option">
                     <div class="row pt-2 ps-2">
                         <div class="col">   
-                            <a href="/">Beranda</a>
+                            <a href="/Home">Beranda</a>
                         </div>
                     </div>
                     <div class="row pt-2 ps-2">

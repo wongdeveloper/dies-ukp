@@ -421,14 +421,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
-            <center>
-                <h3>“To The Rock Turns Diamond”</h3>
-            </center>
+        <div class="col-1"></div>
+        <div class="col-10 text-center">
+            <h3>“To The Rock Turns Diamond”</h3>
             
         </div>
-        <div class="col-2"></div>
+        <div class="col-1"></div>
     </div>
 </div>
 
@@ -454,7 +452,7 @@
 </div>
 
 <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
-    <div class="card card-block mx-2 haft-card-galeri-pink">
+    <div class="card card-block mx-2 haft-card-galeri-pink " >
         <div class="row pt-4">
             <div class="col-1">
 
@@ -1262,7 +1260,6 @@
 </div>
 
 
-</div>
 
 
     
