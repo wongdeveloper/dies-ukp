@@ -1210,7 +1210,7 @@
     <div class="row pt-2 pb-4">
         <div class="col">
             <center>
-                <h3><a href="#" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">  Lihat Kegiatan Lainnya</a></h3>
+                <h3><a href="/Kegiatan" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">  Lihat Kegiatan Lainnya</a></h3>
             </center>
         </div>
     </div>

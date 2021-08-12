@@ -193,7 +193,7 @@
 <body style="background-color: #F9F2EA;">
 
     {{-- BUAT NON HP --}}
-    <nav class="haft-navbar-nomobile d-none d-lg-block sticky-top">
+    <nav class="haft-navbar-nomobile d-none d-lg-block sticky-top shadow-sm">
         <div class="container-fluid ">
             <div class="row pt-3 pb-3 ">
 
@@ -225,7 +225,7 @@
                 </div>
                 <div class="col-6 pt-3">
                     <ul>
-                        <li> <a href="/home">Beranda</a> </li>
+                        <li> <a href="/Beranda">Beranda</a> </li>
                         <li> <a href="/Ucapan">Ucapan</a> </li>
                         <li> <a href="/Kegiatan">Kegiatan</a> </li>
                         <li> <a href="/Tentang">Tentang TRTD</a> </li>
@@ -237,7 +237,7 @@
     </nav>
 
     {{-- BUAT HP --}}
-    <nav class="haft-navbar-mobile d-block d-lg-none sticky-top">
+    <nav class="haft-navbar-mobile d-block d-lg-none sticky-top shadow-sm">
         <div class="container-fluid ">
             <div class="topnav">
                 <div class="row pt-3 pb-3">

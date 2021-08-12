@@ -17,8 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
+Route::get('/Beranda', function () {
     return view('home.index');
+});
+
+Route::get('/Tentang', function () {
+    return view('tentang.index');
+});
+
+Route::get('/Kegiatan', function () {
+    return view('kegiatan.index');
+});
+
+Route::get('/Ucapan', function () {
+    return view('ucapan.index');
 });
 
 Route::get('/Ucapan', function () {
