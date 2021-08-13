@@ -430,16 +430,28 @@
     </div>
 </div>
 
-<div class="row pt-5 ps-2 ms-0 haft-title-ucapan-box">
-    <div class="row pt-2">
-        <div class="col-2"></div>
-        <div class="col-8">
-            <h2>Ucapan untuk Dies Natalies ke-60 UK-Petra </h2>
+{{-- BUAT NON HP --}}
+    <div class="row pt-5 ps-2 ms-0 haft-title-ucapan-box d-none d-md-flex">
+        <div class="row pt-2">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <h2>Ucapan untuk Dies Natalies ke-60 UK-Petra </h2>
+            </div>
+            <div class="col-2"></div>
         </div>
-        <div class="col-2"></div>
+        
     </div>
-    
-</div>
+{{-- =============== --}}
+{{-- BUAT HP  --}}
+    <div class="row pt-4 ps-2 ms-0 haft-title-ucapan-box d-flex d-md-none">
+        <div class="row pt-2">
+            <div class="col-12">
+                <h2>Ucapan untuk Dies Natalies ke-60 UK-Petra </h2>
+            </div>
+        </div>
+        
+    </div>
+{{-- +++++++++ --}}
 
 <div class="row ms-0 video-container-yellow">
     <center>
@@ -1117,16 +1129,29 @@
     </center>
 </div>
 
-<div class="row pt-5 ps-2 ms-0 haft-title-yellow">
-    <div class="row pt-2">
-        <div class="col-2"></div>
-        <div class="col-8">
-            <h2>Kegiatan TRTD</h2>
+{{-- BUAT NON HP --}}
+    <div class="row pt-5 ps-2 ms-0 haft-title-yellow d-none d-md-flex">
+        <div class="row pt-2">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <h2>Kegiatan TRTD</h2>
+            </div>
+            <div class="col-2"></div>
         </div>
-        <div class="col-2"></div>
+        
     </div>
-    
-</div>
+{{-- ================== --}}
+
+{{-- BUAT HP --}}
+    <div class="row pt-4 ps-2 ms-0 haft-title-yellow d-flex d-md-none">
+        <div class="row pt-2">
+            <div class="col-12">
+                <h2 style="font-size:26pt;">Kegiatan TRTD</h2 >
+            </div>
+        </div>
+        
+    </div>
+{{-- ================== --}}
 
 <div class="container">
     <div class="row pt-5 pb-2">
@@ -1216,17 +1241,26 @@
     </div>
 </div>
 
-
-<div class="row pt-5 ps-2 ms-0 haft-title-pink">
-    <div class="row pt-2">
-        <div class="col-2"></div>
-        <div class="col-8">
-            <h2>Tentang TRTD</h2>
+{{-- BUAT NON HP --}}
+    <div class="row pt-5 ps-2 ms-0 haft-title-pink d-none d-md-flex">
+        <div class="row pt-2">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <h2>Tentang TRTD</h2>
+            </div>
+            <div class="col-2"></div>
         </div>
-        <div class="col-2"></div>
     </div>
-    
+{{-- ================== --}}
+{{-- BUAT HP --}}
+<div class="row pt-4 ps-2 ms-0 haft-title-pink d-flex d-md-none">
+    <div class="row pt-2">
+        <div class="col-12">
+            <h2 style="font-size:26pt;">Tentang TRTD</h2>
+        </div>
+    </div>
 </div>
+{{-- ================== --}}
 
 <div class="container pb-4">
     <div class="row pt-5 pb-2 ps-3">

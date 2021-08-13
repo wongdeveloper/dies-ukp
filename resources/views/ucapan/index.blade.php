@@ -50,6 +50,34 @@
         font-weight: bold !important;
     }
 
+    .haft-btn-pink-mobile {
+        background-color: #D02762 !important;
+        color:#FFFCF5 !important;
+        width: auto !important;
+        height:50px !important;
+        border-radius: 30px !important;
+        
+        
+    }
+    .haft-btn-pink-mobile p{
+        font-size: 15pt !important;
+        font-weight: bold !important;
+    }
+
+    .haft-btn-yellow-mobile {
+        background-color: #F6AD3C !important;
+        color:#FFFCF5 !important;
+        width: auto !important;
+        height:50px !important;
+        border-radius: 30px !important;
+        
+        
+    }
+    .haft-btn-yellow-mobile p{
+        font-size: 15pt !important;
+        font-weight: bold !important;
+    }
+
     .haft-btn-yellow {
         background-color: #F6AD3C !important;
         color:#FFFCF5 !important;
@@ -185,19 +213,36 @@
 <div class="ucapan-content">
 
     <div class="container-fluid ucapan-video">
-        <div class="row pt-5 title">
+        {{-- BUAT NON HP --}}
+        <div class="row pt-5 title d-none d-md-flex">
             <div class="col-2"></div>        
             <div class="col-10">
                 <h1>Ucapan dalam Video</h1>
             </div>
         </div>
-        <div class="row line-blue">
+        <div class="row line-blue d-none d-md-flex">
             <div class="col-2"></div>
             <div class="col-3">
                 <hr style="border: 2px solid; opacity: 5; color:#1B325E;">
             </div>
         </div>
-        <div class="row pt-3">
+
+        {{-- BUAT HP --}}
+        <div class="row pt-5 title d-flex d-md-none">
+            <div class="col">
+                <h1>Ucapan dalam Video</h1>
+            </div>
+        </div>
+        <div class="row line-blue d-flex d-md-none">
+            <div class="col-6">
+                <hr style="border: 2px solid; opacity: 5; color:#1B325E;">
+            </div>
+        </div>
+
+        
+
+        {{-- BUAT NON HP --}}
+        <div class="row pt-3 d-none d-md-flex">
             <div class="col-2"></div>
 
             <div class="col-3">
@@ -327,7 +372,7 @@
 
             <div class="col-1"></div>
         </div>
-        <div class="row pt-3">
+        <div class="row pt-3 d-none d-md-flex">
             <div class="col-2"></div>
 
             <div class="col-3">
@@ -457,6 +502,285 @@
 
             <div class="col-1"></div>
         </div>
+
+        {{-- BUAT HP --}}
+        <div class="pt-5 pb-2 d-flex d-md-none flex-row flex-nowrap overflow-auto ">
+            <div class="card card-block mx-2 haft-card-galeri-pink " >
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Video</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="card card-block mx-2 haft-card-galeri-yellow">
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Video</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+            </div>
+            <div class="card card-block mx-2 haft-card-galeri-yellow">
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Video</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+            </div>   
+            <div class="card card-block mx-2 haft-card-galeri-blue">
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Video</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+            </div>
+            <div class="card card-block mx-2 haft-card-galeri-pink">
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Video</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+            </div>
+            <div class="card card-block mx-2 haft-card-galeri-yellow">
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Video</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+            </div>   
+            <div class="card card-block mx-2 haft-card-galeri-pink">
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Video</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+            </div> 
+        </div>
+
         <div class="row pt-5 pb-2">
             <div class="col-1"></div>
             <div class="col">
@@ -470,7 +794,8 @@
     
 
     <div class="container-fluid ucapan-foto">
-        <div class="row pt-5 title">    
+        {{-- BUAT NON HP --}}
+        <div class="row pt-5 title d-none d-md-flex">    
             <div class="col-2"></div>   
             <div class="col-4">
                 <h1>Ucapan dalam Foto</h1>
@@ -480,13 +805,33 @@
                 <p class="text-center pt-2">Unggah Fotomu</p>
             </div>
         </div>
-        <div class="row line-pink">
+        <div class="row line-pink d-none d-md-flex">
             <div class="col-2"></div>
             <div class="col-3">
                 <hr style="border: 2px solid; opacity: 5; color:#D02762;">
             </div>
         </div>
-        <div class="row pt-3">
+
+        {{-- BUAT HP --}}
+        <div class="row pt-5 title d-flex d-md-none">    
+            <div class="col-10">
+                <h1>Ucapan dalam Foto</h1>
+            </div>
+            
+        </div>
+        <div class="row line-pink d-flex d-md-none">
+            <div class="col-6">
+                <hr style="border: 2px solid; opacity: 5; color:#D02762;">
+            </div>
+        </div>
+        <div class="row ps-2 d-flex d-md-none">
+            <div class="col-10 haft-btn-pink-mobile" data-bs-toggle="modal" data-bs-target="#modal-ucapan">
+                <p class="text-center pt-2">Unggah Fotomu</p>
+            </div>
+        </div>
+
+        {{-- BUAT NON HP --}}
+        <div class="row pt-3 d-none d-md-flex">
             <div class="col-2"></div>
 
             <div class="col-3">
@@ -616,7 +961,7 @@
 
             <div class="col-1"></div>
         </div>
-        <div class="row pt-3">
+        <div class="row pt-3 d-none d-md-flex">
             <div class="col-2"></div>
 
             <div class="col-3">
@@ -745,6 +1090,284 @@
             </div>
 
             <div class="col-1"></div>
+        </div>
+
+        {{-- BUAT HP --}}
+        <div class="pt-5 pb-2 d-flex d-md-none flex-row flex-nowrap overflow-auto ">
+            <div class="card card-block mx-2 haft-card-galeri-pink " >
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Foto</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="card card-block mx-2 haft-card-galeri-yellow">
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Foto</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+            </div>
+            <div class="card card-block mx-2 haft-card-galeri-yellow">
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Foto</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+            </div>   
+            <div class="card card-block mx-2 haft-card-galeri-blue">
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Foto</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+            </div>
+            <div class="card card-block mx-2 haft-card-galeri-pink">
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Foto</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+            </div>
+            <div class="card card-block mx-2 haft-card-galeri-yellow">
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Foto</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+            </div>   
+            <div class="card card-block mx-2 haft-card-galeri-pink">
+                <div class="row pt-4">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-img">
+        
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Judul Foto</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+            </div> 
         </div>
         <div class="row pt-5 pb-2">
             <div class="col-1"></div>
@@ -760,7 +1383,8 @@
     </div>
     
     <div class="container-fluid ucapan-teks">
-        <div class="row pt-5 title">
+        {{-- BUAT NON HP --}}
+        <div class="row pt-5 title d-none d-md-flex">
             <div class="col-2"></div>        
             <div class="col-4">
                 <h1>Ucapan dalam Teks</h1>
@@ -770,14 +1394,32 @@
                 <p class="text-center pt-2" data-bs-toggle="modal" data-bs-target="#modal-ucapan">Unggah Ucapanmu</p>
             </div>
         </div>
-        <div class="row line-yellow">
+        <div class="row line-yellow d-none d-md-flex">
             <div class="col-2"></div>
             <div class="col-3">
                 <hr style="border: 2px solid; opacity: 5; color:#F6AD3C;">
             </div>
         </div>
+        {{-- BUAT HP --}}
+        <div class="row pt-5 title d-flex d-md-none">    
+            <div class="col-10">
+                <h1>Ucapan dalam Teks</h1>
+            </div>
+            
+        </div>
+        <div class="row line-yellow d-flex d-md-none">
+            <div class="col-6">
+                <hr style="border: 2px solid; opacity: 5; color:#F6AD3C;">
+            </div>
+        </div>
+        <div class="row ps-2 d-flex d-md-none">
+            <div class="col-10 haft-btn-yellow-mobile" data-bs-toggle="modal" data-bs-target="#modal-ucapan">
+                <p class="text-center pt-2">Unggah Fotomu</p>
+            </div>
+        </div>
 
-        <div class="row pt-3">
+        {{-- BUAT NON HP --}}
+        <div class="row pt-3 d-none d-md-flex">
             <div class="col-2"></div>
             <div class="col-3">
                 <div class="card  mx-2 haft-card-vip-pink">
@@ -928,7 +1570,7 @@
             </div>
             <div class="col-1"></div>
         </div>
-        <div class="row pt-3">
+        <div class="row pt-3 d-none d-md-flex">
             <div class="col-2"></div>
             <div class="col-3">
                 <div class="card card-block mx-2 haft-card-vip-blue">
@@ -1079,9 +1721,249 @@
             </div>
             <div class="col-1"></div>
         </div>
+
+        {{-- BUAT HP --}}
+        <div class="pt-5 pb-2 d-flex d-md-none flex-row flex-nowrap overflow-auto ">
+            <div class="card card-block mx-2 haft-card-vip-blue">
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-vip-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Budi Budiman</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="jabatan">Mahasiswa Universitas Kristen Petra</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-1">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-vip-card-wish">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="wish">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias officia nobis est officiis dolore reiciendis modi commodi accusantium in velit facere, inventore sit suscipit veritatis porro consequuntur impedit. Est, ea? "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="card card-block mx-2 haft-card-vip-pink">
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-vip-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Budi Budiman</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="jabatan">Mahasiswa Universitas Kristen Petra</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-1">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-vip-card-wish">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="wish">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias officia nobis est officiis dolore reiciendis modi commodi accusantium in velit facere, inventore sit suscipit veritatis porro consequuntur impedit. Est, ea? "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="card card-block mx-2 haft-card-vip-yellow">
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-vip-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Budi Budiman</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="jabatan">Mahasiswa Universitas Kristen Petra</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-1">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-vip-card-wish">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="wish">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias officia nobis est officiis dolore reiciendis modi commodi accusantium in velit facere, inventore sit suscipit veritatis porro consequuntur impedit. Est, ea? "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="card card-block mx-2 haft-card-vip-pink">
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-vip-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Budi Budiman</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="jabatan">Mahasiswa Universitas Kristen Petra</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-1">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-vip-card-wish">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="wish">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias officia nobis est officiis dolore reiciendis modi commodi accusantium in velit facere, inventore sit suscipit veritatis porro consequuntur impedit. Est, ea? "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="card card-block mx-2 haft-card-vip-blue">
+                <div class="row pt-2">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-vip-card-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Budi Budiman</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="jabatan">Mahasiswa Universitas Kristen Petra</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                <div class="row pt-1">
+                    <div class="col-1">
+        
+                    </div>
+                    <div class="col-10">
+                        <div class="haft-vip-card-wish">
+                            <center>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="wish">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias officia nobis est officiis dolore reiciendis modi commodi accusantium in velit facere, inventore sit suscipit veritatis porro consequuntur impedit. Est, ea? "</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-1">
+        
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+
         
         
-        <div class="row pt-5 pb-2">
+        <div class="row pt-5 pb-5">
             <div class="col-1"></div>
             <div class="col">
                 <center>

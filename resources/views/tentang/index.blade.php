@@ -199,20 +199,38 @@
 <div class="ucapan-content">
    
     <div class="container-fluid ucapan-teks">
-        <div class="row pt-5 title">
-            <div class="col-2"></div>        
-            <div class="col-4">
-                <h1>Tentang TRTD</h1>
+        {{-- BUAT NON HP --}}
+            <div class="row pt-5 title d-none d-md-flex">
+                <div class="col-2"></div>        
+                <div class="col-4">
+                    <h1>Tentang TRTD</h1>
+                </div>
+                <div class="col-6"></div>
+                
             </div>
-            <div class="col-6"></div>
-            
-        </div>
-        <div class="row line-yellow">
-            <div class="col-2"></div>
-            <div class="col-3">
-                <hr style="border: 2px solid; opacity: 5; color: #D02762;">
+            <div class="row line-pink d-none d-md-flex">
+                <div class="col-2"></div>
+                <div class="col-3">
+                    <hr style="border: 2px solid; opacity: 5; color: #D02762;">
+                </div>
             </div>
-        </div>
+        {{-- ---------------- --}}
+
+        {{-- BUAT HP --}}
+            <div class="row pt-5 title d-flex d-md-none">
+                <div class="col">
+                    <h1>Tentang TRTD</h1>
+                </div>
+                
+            </div>
+            <div class="row line-pink d-flex d-md-none">
+                <div class="col-6">
+                    <hr style="border: 2px solid; opacity: 5; color: #D02762;">
+                </div>
+            </div>
+        {{-- ---------------- --}}
+
+
         
     </div>
     

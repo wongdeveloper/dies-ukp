@@ -272,7 +272,7 @@
                 <div id="myLinks" class="option">
                     <div class="row pt-2 ps-2">
                         <div class="col">   
-                            <a href="/home">Beranda</a>
+                            <a href="/Beranda">Beranda</a>
                         </div>
                     </div>
                     <div class="row pt-2 ps-2">
