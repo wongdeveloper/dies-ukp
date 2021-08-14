@@ -197,6 +197,23 @@
 
     /* CARD KEGIATAN TRTD */
 
+    .haft-article-card-mobile{
+        min-width: 100% !important;
+        width: auto !important;
+        min-height: 250px !important;
+        background-color: #FFFCF5;
+        border-radius: 15px !important;
+    }
+    .article-img-mobile{
+        border-radius: 30px !important;
+        background-color: #F6AD3C !important;
+    }
+    .link-article a{
+        text-decoration: none !important;
+        font-weight: bold !important;
+        color: #D02762 !important;
+    }
+
     .haft-article-card{
         min-width: 100% !important;
         width: auto !important;
@@ -211,11 +228,6 @@
         min-height: 200px !important;
         background-color: #1B325E !important;
     }
-    .link-article a{
-        text-decoration: none !important;
-        font-weight: bold !important;
-        color: #D02762 !important;
-    }
     
 
 
@@ -228,6 +240,9 @@
         max-width: 400px !important;
         min-height: 300px !important;
         background-color:#D02762 !important;
+    }
+    .tentang-img-mobile{
+        background-color: #D02762 !important;
     }
     .text-tentang{
         font-size: 14pt !important;
@@ -1153,92 +1168,157 @@
     </div>
 {{-- ================== --}}
 
-<div class="container">
-    <div class="row pt-5 pb-2">
-        <div class="col-1">
-            {{-- SPACE --}}
-        </div>
-        <div class="col-10 pt-3 pb-4 haft-article-card shadow p-3 mb-5 bg-white">
-            <div class="row ps-4 pe-2 ">
-                <div class="col-3 article-img">
-                    {{-- BUAT GAMBAR --}}
+<div class="container pt-3">
+    {{-- BUAT NON HP --}}
+        <div class="row pt-5 pb-2 d-none d-md-flex">
+            <div class="col-1">
+                {{-- SPACE --}}
+            </div>
+            <div class="col-10 pt-3 pb-4 haft-article-card shadow p-3 mb-5 bg-white">
+                <div class="row ps-4 pe-2 ">
+                    <div class="col-3 article-img">
+                        {{-- BUAT GAMBAR --}}
+                    </div>
+                    <div class="col-9 ps-4">
+                        <div class="row pt-2 title-article">
+                            <h2>Judul Kegiatan</h2>
+                        </div>
+                        <div class="row pt-1 text-article">
+                            <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, mollitia eius qui, error veritatis quibusdam officiis repellendus doloribus, delectus provident ea cum impedit! Quis nihil sit id, reiciendis magni corporis! "</p>
+                        </div>
+                        <div class="row link-article">
+                            <p> <a href="#"> Read More</a> </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-9 ps-4">
-                    <div class="row pt-2 title-article">
-                        <h2>Judul Kegiatan</h2>
+            </div>
+            <div class="col-1">
+                {{-- SPACE --}}
+            </div>
+        </div>
+        <div class="row pt-5 pb-2 d-none d-md-flex">
+            <div class="col-1">
+                {{-- SPACE --}}
+            </div>
+            <div class="col-10 pt-3 pb-4 haft-article-card shadow p-3 mb-5 bg-white">
+                <div class="row ps-4 pe-2 ">
+                    <div class="col-3 article-img">
+                        {{-- BUAT GAMBAR --}}
                     </div>
-                    <div class="row pt-1 text-article">
-                        <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, mollitia eius qui, error veritatis quibusdam officiis repellendus doloribus, delectus provident ea cum impedit! Quis nihil sit id, reiciendis magni corporis! "</p>
+                    <div class="col-9 ps-4">
+                        <div class="row pt-2 title-article">
+                            <h2>Judul Kegiatan</h2>
+                        </div>
+                        <div class="row pt-1 text-article">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda ratione beatae, iure placeat asperiores quia aliquam! Error, commodi dolores, soluta, expedita numquam enim omnis laborum ex maiores iure saepe? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque veniam quam numquam voluptate distinctio sapiente quaerat aperiam, impedit corporis molestiae dolore a, illum maxime earum dignissimos odio? Incidunt, corporis velit.</p>
+                        </div>
+                        <div class="row link-article">
+                            <p> <a href="#"> Read More</a> </p>
+                        </div>
                     </div>
-                    <div class="row link-article">
-                        <p> <a href="#"> Read More</a> </p>
+                </div>
+            </div>
+            <div class="col-1">
+                {{-- SPACE --}}
+            </div>
+        </div>
+        <div class="row pt-5 pb-2 d-none d-md-flex">
+            <div class="col-1">
+                {{-- SPACE --}}
+            </div>
+            <div class="col-10 pt-3 pb-4 haft-article-card shadow p-3 mb-5 bg-white">
+                <div class="row ps-4 pe-2 ">
+                    <div class="col-3 article-img">
+                        {{-- BUAT GAMBAR --}}
+                    </div>
+                    <div class="col-9 ps-4">
+                        <div class="row pt-2 title-article">
+                            <h2>Judul Kegiatan</h2>
+                        </div>
+                        <div class="row pt-1 text-article">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda ratione beatae, iure placeat asperiores quia aliquam! Error, commodi dolores, soluta, expedita numquam enim omnis laborum ex maiores iure saepe? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque veniam quam numquam voluptate distinctio sapiente quaerat aperiam, impedit corporis molestiae dolore a, illum maxime earum dignissimos odio? Incidunt, corporis velit.</p>
+                        </div>
+                        <div class="row link-article">
+                            <p> <a href="#"> Read More</a> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+                {{-- SPACE --}}
+            </div>
+        </div>
+        <div class="row pt-2 pb-4 d-none d-md-flex">
+            <div class="col">
+                <center>
+                    <h3><a href="/Kegiatan" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">  Lihat Kegiatan Lainnya</a></h3>
+                </center>
+            </div>
+        </div>
+    {{-- ================== --}}
+    
+    {{-- BUAT HP --}}
+        <div class="row d-flex d-md-none">
+            <div class="col-12 pt-3 pb-4 haft-article-card-mobile shadow p-3 mb-5 bg-white">
+                <div class="row ps-4 pe-2 ">
+                    <div class="col-5 article-img-mobile">
+                        {{-- BUAT GAMBAR --}}
+                    </div>
+                    <div class="col-7 ps-4">
+                        <div class="row pt-2 title-article">
+                            <h2 style="font-size:1.2rem">Judul Kegiatan</h2>
+                        </div>
+                        <div class="row pt-1 text-article">
+                            <p style="font-size:0.7rem">" Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, mollitia eius qui, error veritatis quibusdam officiis repellendus doloribus, delectus provident ea cum impedit! Quis nihil sit id, reiciendis magni corporis! "</p>
+                        </div>
+                        <div class="row link-article">
+                            <p> <a href="#" style="font-size:0.8rem"> Read More</a> </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-1">
-            {{-- SPACE --}}
-        </div>
-    </div>
-    <div class="row pt-5 pb-2">
-        <div class="col-1">
-            {{-- SPACE --}}
-        </div>
-        <div class="col-10 pt-3 pb-4 haft-article-card shadow p-3 mb-5 bg-white">
-            <div class="row ps-4 pe-2 ">
-                <div class="col-3 article-img">
-                    {{-- BUAT GAMBAR --}}
-                </div>
-                <div class="col-9 ps-4">
-                    <div class="row pt-2 title-article">
-                        <h2>Judul Kegiatan</h2>
+        <div class="row d-flex d-md-none">
+            <div class="col-12 pt-3 pb-4 haft-article-card-mobile shadow p-3 mb-5 bg-white">
+                <div class="row ps-4 pe-2 ">
+                    <div class="col-5 article-img-mobile">
+                        {{-- BUAT GAMBAR --}}
                     </div>
-                    <div class="row pt-1 text-article">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda ratione beatae, iure placeat asperiores quia aliquam! Error, commodi dolores, soluta, expedita numquam enim omnis laborum ex maiores iure saepe? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque veniam quam numquam voluptate distinctio sapiente quaerat aperiam, impedit corporis molestiae dolore a, illum maxime earum dignissimos odio? Incidunt, corporis velit.</p>
-                    </div>
-                    <div class="row link-article">
-                        <p> <a href="#"> Read More</a> </p>
+                    <div class="col-7 ps-4">
+                        <div class="row pt-2 title-article">
+                            <h2 style="font-size:1.2rem">Judul Kegiatan</h2>
+                        </div>
+                        <div class="row pt-1 text-article">
+                            <p style="font-size:0.7rem">" Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, mollitia eius qui, error veritatis quibusdam officiis repellendus doloribus, delectus provident ea cum impedit! Quis nihil sit id, reiciendis magni corporis! "</p>
+                        </div>
+                        <div class="row link-article">
+                            <p> <a href="#" style="font-size:0.8rem"> Read More</a> </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-1">
-            {{-- SPACE --}}
-        </div>
-    </div>
-    <div class="row pt-5 pb-2">
-        <div class="col-1">
-            {{-- SPACE --}}
-        </div>
-        <div class="col-10 pt-3 pb-4 haft-article-card shadow p-3 mb-5 bg-white">
-            <div class="row ps-4 pe-2 ">
-                <div class="col-3 article-img">
-                    {{-- BUAT GAMBAR --}}
-                </div>
-                <div class="col-9 ps-4">
-                    <div class="row pt-2 title-article">
-                        <h2>Judul Kegiatan</h2>
+        <div class="row d-flex d-md-none">
+            <div class="col-12 pt-3 pb-4 haft-article-card-mobile shadow p-3 mb-5 bg-white">
+                <div class="row ps-4 pe-2 ">
+                    <div class="col-5 article-img-mobile">
+                        {{-- BUAT GAMBAR --}}
                     </div>
-                    <div class="row pt-1 text-article">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda ratione beatae, iure placeat asperiores quia aliquam! Error, commodi dolores, soluta, expedita numquam enim omnis laborum ex maiores iure saepe? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque veniam quam numquam voluptate distinctio sapiente quaerat aperiam, impedit corporis molestiae dolore a, illum maxime earum dignissimos odio? Incidunt, corporis velit.</p>
-                    </div>
-                    <div class="row link-article">
-                        <p> <a href="#"> Read More</a> </p>
+                    <div class="col-7 ps-4">
+                        <div class="row pt-2 title-article">
+                            <h2 style="font-size:1.2rem">Judul Kegiatan</h2>
+                        </div>
+                        <div class="row pt-1 text-article">
+                            <p style="font-size:0.7rem">" Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, mollitia eius qui, error veritatis quibusdam officiis repellendus doloribus, delectus provident ea cum impedit! Quis nihil sit id, reiciendis magni corporis! "</p>
+                        </div>
+                        <div class="row link-article">
+                            <p> <a href="#" style="font-size:0.8rem"> Read More</a> </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-1">
-            {{-- SPACE --}}
-        </div>
-    </div>
-    <div class="row pt-2 pb-4">
-        <div class="col">
-            <center>
-                <h3><a href="/Kegiatan" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">  Lihat Kegiatan Lainnya</a></h3>
-            </center>
-        </div>
-    </div>
+    {{-- ================== --}}
 </div>
 
 {{-- BUAT NON HP --}}
@@ -1252,45 +1332,76 @@
         </div>
     </div>
 {{-- ================== --}}
+
 {{-- BUAT HP --}}
-<div class="row pt-4 ps-2 ms-0 haft-title-pink d-flex d-md-none">
-    <div class="row pt-2">
-        <div class="col-12">
-            <h2 style="font-size:26pt;">Tentang TRTD</h2>
+    <div class="row pt-4 ps-2 ms-0 haft-title-pink d-flex d-md-none">
+        <div class="row pt-2">
+            <div class="col-12">
+                <h2 style="font-size:26pt;">Tentang TRTD</h2>
+            </div>
         </div>
     </div>
-</div>
 {{-- ================== --}}
 
 <div class="container pb-4">
-    <div class="row pt-5 pb-2 ps-3">
-        <div class="col-1">
-            {{-- BUAT SPACE --}}
-        </div>
-        <div class="col-10">
-            <div class="row ps-4 pe-2 ">
-                <div class="col-4 tentang-img">
-                    {{-- BUAT GAMBAR --}}
-                </div>
-                <div class="col-8 ps-4">
-                    <div class="row pt-1 text-tentang">
-                        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita non similique repellendus, rerum corrupti soluta, voluptate maxime eos aliquam nostrum, harum sed odit? Vitae hic, quos magnam nihil iste quo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda ratione beatae, iure placeat asperiores quia aliquam! Error, commodi dolores, soluta, expedita numquam enim omnis laborum ex maiores iure saepe? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque veniam quam numquam voluptate distinctio sapiente quaerat aperiam, impedit corporis molestiae dolore a, illum maxime earum dignissimos odio? Incidunt, corporis velit.</p>
+    {{-- BUAT NON HP --}}
+        <div class="row pt-5 pb-2 ps-3 d-none d-md-flex">
+            <div class="col-1">
+                {{-- BUAT SPACE --}}
+            </div>
+            <div class="col-10">
+                <div class="row ps-4 pe-2 ">
+                    <div class="col-4 tentang-img">
+                        {{-- BUAT GAMBAR --}}
                     </div>
-                    
+                    <div class="col-8 ps-4">
+                        <div class="row pt-1 text-tentang">
+                            <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita non similique repellendus, rerum corrupti soluta, voluptate maxime eos aliquam nostrum, harum sed odit? Vitae hic, quos magnam nihil iste quo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda ratione beatae, iure placeat asperiores quia aliquam! Error, commodi dolores, soluta, expedita numquam enim omnis laborum ex maiores iure saepe? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque veniam quam numquam voluptate distinctio sapiente quaerat aperiam, impedit corporis molestiae dolore a, illum maxime earum dignissimos odio? Incidunt, corporis velit.</p>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
+            <div class="col-1">
+                {{-- BUAT SPACE --}}
+            </div>
         </div>
-        <div class="col-1">
-            {{-- BUAT SPACE --}}
+        <div class="row pt-5 pb-5 d-none d-md-flex">
+            <div class="col">
+                <center>
+                    <h3><a href="#" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">Lihat Selengkapnya</a></h3>
+                </center>
+            </div>
         </div>
-    </div>
-    <div class="row pt-5 pb-5">
-        <div class="col">
-            <center>
-                <h3><a href="#" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">Lihat Selengkapnya</a></h3>
-            </center>
+    {{-- ================== --}}
+
+    {{-- BUAT HP --}}
+        <div class="row pt-5 pb-2 ps-3 d-flex d-md-none">
+            <div class="col-11">
+                <div class="row ps-4 pe-2 ">
+                    <div class="col-7 tentang-img-mobile">
+                        {{-- BUAT GAMBAR --}}
+                    </div>
+                    <div class="col-5 ps-4">
+                        <div class="row pt-1 text-tentang">
+                            <p style="font-size:0.8rem">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita non similique repellendus, Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita non similique repellendus,</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+                {{-- BUAT SPACE --}}
+            </div>
         </div>
-    </div>
+        <div class="row pt-5 pb-5 d-flex d-md-none">
+            <div class="col">
+                <center>
+                    <h3><a href="/Tentang" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">Lihat Selengkapnya</a></h3>
+                </center>
+            </div>
+        </div>
+    {{-- ================== --}}
 </div>
 
 

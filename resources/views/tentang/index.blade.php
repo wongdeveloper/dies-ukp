@@ -177,6 +177,31 @@
 
 
     /* ========================= */
+    /* ISI TENTANG */
+        .container-isi-blue{
+            background-color: #1B325E !important;
+            width: auto !important;
+            min-height: 300px !important;
+        }
+        .container-isi-pink{
+            background-color: #D02762 !important;
+            width: auto !important;
+            min-height: 300px !important;
+        }
+        .container-isi-yellow{
+            background-color: #F6AD3C !important;
+            width: auto !important;
+            min-height: 300px !important;
+        }
+        .container-img{
+            background-color: #fff;
+            min-height: 300px !important;
+        }
+        .container-teks{
+            color: #fff !important;
+        }
+
+    /* ================= */
 
 
 
@@ -197,10 +222,10 @@
 </style>
 @section('content')
 <div class="ucapan-content">
-   
-    <div class="container-fluid ucapan-teks">
-        {{-- BUAT NON HP --}}
-            <div class="row pt-5 title d-none d-md-flex">
+    
+    {{-- BUAT NON HP --}}
+        <div class="container-fluid pb-5 ucapan-teks d-none d-md-block">
+            <div class="row pt-5 title">
                 <div class="col-2"></div>        
                 <div class="col-4">
                     <h1>Tentang TRTD</h1>
@@ -208,31 +233,187 @@
                 <div class="col-6"></div>
                 
             </div>
-            <div class="row line-pink d-none d-md-flex">
+            <div class="row line-pink">
                 <div class="col-2"></div>
                 <div class="col-3">
                     <hr style="border: 2px solid; opacity: 5; color: #D02762;">
                 </div>
             </div>
-        {{-- ---------------- --}}
+            <div class="row pt-4">
+                <div class="col container-isi-blue">
+                    <div class="row">
+                        <div class="col-2">
+                            {{-- BUAT JARAK --}}
+                        </div>
+                        <div class="col-3 container-img">
+    
+                        </div>
+                        <div class="col-6 pt-5 container-teks">
+                            <div class="row">
+                                <div class="col">
+                                    <h1>Judul Section</h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem voluptate tempora cumque tempore voluptas earum animi voluptatibus nihil laborum dicta pariatur, vitae in quia eligendi nemo aliquid, maxime sunt!</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row pt-4">
+                <div class="col container-isi-pink" style="text-align: right">
+                    <div class="row">
+                        <div class="col-1">
+                            {{-- BUAT JARAK --}}
+                        </div>
+                        <div class="col-6 pt-5 container-teks">
+                            <div class="row">
+                                <div class="col">
+                                    <h1>Judul Section</h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem voluptate tempora cumque tempore voluptas earum animi voluptatibus nihil laborum dicta pariatur, vitae in quia eligendi nemo aliquid, maxime sunt!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 container-img">
+    
+                        </div>
+                        <div class="col-2">
+                            {{-- BUAT JARAK --}}
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-4">
+                <div class="col container-isi-yellow">
+                    <div class="row">
+                        <div class="col-2">
+                            {{-- BUAT JARAK --}}
+                        </div>
+                        <div class="col-3 container-img">
+    
+                        </div>
+                        <div class="col-6 pt-5 container-teks">
+                            <div class="row">
+                                <div class="col">
+                                    <h1>Judul Section</h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem voluptate tempora cumque tempore voluptas earum animi voluptatibus nihil laborum dicta pariatur, vitae in quia eligendi nemo aliquid, maxime sunt!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{-- ---------------- --}}
+    {{-- BUAT HP --}}
+    <div class="container-fluid pb-5 ucapan-teks d-block d-md-none">
+        <div class="row pt-5 title">
+            <div class="col">
+                <h1>Tentang TRTD</h1>
+            </div>
+            
+        </div>
+        <div class="row line-pink">
+            <div class="col-6">
+                <hr style="border: 2px solid; opacity: 5; color: #D02762;">
+            </div>
+        </div>
+        <div class="row pt-4">
+            <div class="col container-isi-blue">
+                <div class="row">
+                    <div class="col-1">
+                        {{-- BUAT JARAK --}}
+                    </div>
+                    <div class="col-5 container-img">
 
-        {{-- BUAT HP --}}
-            <div class="row pt-5 title d-flex d-md-none">
-                <div class="col">
-                    <h1>Tentang TRTD</h1>
+                    </div>
+                    <div class="col-6 pt-5 container-teks">
+                        <div class="row">
+                            <div class="col">
+                                <h1 style="font-size: 1.2rem">Judul Section</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p style="font-size: 0.7rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem voluptate tempora cumque tempore voluptas earum animi voluptatibus nihil laborum dicta pariatur, vitae in quia eligendi nemo aliquid, maxime sunt!</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
                 </div>
                 
             </div>
-            <div class="row line-pink d-flex d-md-none">
-                <div class="col-6">
-                    <hr style="border: 2px solid; opacity: 5; color: #D02762;">
+        </div>
+        <div class="row pt-4">
+            <div class="col container-isi-pink" style="text-align: right">
+                <div class="row">
+                    <div class="col-6 pt-5 container-teks">
+                        <div class="row">
+                            <div class="col">
+                                <h1 style="font-size: 1.2rem">Judul Section</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p style="font-size: 0.7rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem voluptate tempora cumque tempore voluptas earum animi voluptatibus nihil laborum dicta pariatur, vitae in quia eligendi nemo aliquid, maxime sunt!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5 container-img">
+
+                    </div>
+                    <div class="col-1">
+                        {{-- BUAT JARAK --}}
+                    </div>
+                    
                 </div>
             </div>
-        {{-- ---------------- --}}
+        </div>
+        <div class="row pt-4">
+            <div class="col container-isi-yellow">
+                <div class="row">
+                    <div class="col-1">
+                        {{-- BUAT JARAK --}}
+                    </div>
+                    <div class="col-5 container-img">
 
-
-        
+                    </div>
+                    <div class="col-6 pt-5 container-teks">
+                        <div class="row">
+                            <div class="col">
+                                <h1 style="font-size: 1.2rem">Judul Section</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p style="font-size: 0.7rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem voluptate tempora cumque tempore voluptas earum animi voluptatibus nihil laborum dicta pariatur, vitae in quia eligendi nemo aliquid, maxime sunt!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    
+    {{-- ---------------- --}}
     
 
    

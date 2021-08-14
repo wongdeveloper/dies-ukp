@@ -14,12 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/Beranda', function () {
     return view('home.index');
 });
+
+// Route::get('/Beranda', function () {
+//     return view('home.index');
+// });
+
+Route::get('/Kegiatan/{slug}', function () {
+    return view('kegiatan.template');
+});
+
 
 Route::get('/Tentang', function () {
     return view('tentang.index');
