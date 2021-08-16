@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Dyrynda\Database\Support\CascadeSoftDeletes;
 
 class Wish extends Model
 {
@@ -12,6 +13,7 @@ class Wish extends Model
     use SoftDeletes;
 
     protected $fillable = ["name", "role_id", "wish", "is_vip"];
+    protected $cascadeDeletes = ['wish_images', 'wish_videos'];
 
     //Scopes
     public function scopeNameLike($query, $value)

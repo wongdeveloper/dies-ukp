@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Countdown;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateCountdownRequest extends FormRequest
 {
@@ -13,7 +14,11 @@ class UpdateCountdownRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // if (Auth::user()->isAdmin) {
+        //     return true;
+        // }
+        // return false;
+        return true;
     }
 
     /**
@@ -24,7 +29,7 @@ class UpdateCountdownRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'countdown' => 'required|date|after:today'
         ];
     }
 }

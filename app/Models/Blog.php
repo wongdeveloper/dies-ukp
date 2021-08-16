@@ -5,14 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Http\Requests\StoreBlogRequest;
-use App\Http\Requests\UpdateBlogRequest;
+use Dyrynda\Database\Support\CascadeSoftDeletes;
 
 class Blog extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $fillable = ["title", "description", "image_id", "video_id"];
+    use CascadeSoftDeletes;
+    protected $fillable = ["title", "slug", "description", "image_id", "video_id"];
+    protected $cascadeDeletes = ['videos', 'images'];
 
     //Scope
     public function scopeImageId($query, $imgid)
@@ -35,6 +36,11 @@ class Blog extends Model
         return $query->orderBy('title');
     }
 
+    public function scopeOrderByDate($query)
+    {
+        return $query->orderBy('created_at');
+    }
+
     //Relation
     public function video()
     {
@@ -45,58 +51,5 @@ class Blog extends Model
     {
         return $this->hasOne(Image::class);
     }
-
-    // /**
-    //  * Index Function
-    //  * @return \Illuminate\http\Response
-    //  * 
-    //  */
-    // public function index()
-    // {
-
-    // }
-
-    // /**
-    //  * Show Create Form
-    //  * @return \Illuminate\Http\Response
-    //  * 
-    //  */
-    // public function create()
-    // {
-
-    // }
-
-    // /**
-    //  * Store to Storage
-    //  * @param \App\Http\Requests\StoreBlogRequest
-    //  * @return \Illuminate\Http\Response
-    //  * 
-    //  */
-    // public function store(StoreBlogRequest $request)
-    // {
-
-    // }
-
-    // /**
-    //  * Show Edit Form
-    //  * @param int $bid
-    //  * @return \Illuminate\Http\Response
-    //  * 
-    //  */
-    // public function edit(int $bid)
-    // {
-
-    // }
-
-    // /**
-    //  * Update Specific Storage
-    //  * @param \App\Http\Requests\UpdateBlogRequest
-    //  * @return \Illuminate\Http\Response
-    //  * 
-    //  */
-    // public function update(UpdateBlogRequest $request)
-    // {
-
-    // }
 
 }

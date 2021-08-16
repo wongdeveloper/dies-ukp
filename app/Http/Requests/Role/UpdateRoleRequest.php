@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Role;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateRoleRequest extends FormRequest
 {
@@ -13,7 +14,11 @@ class UpdateRoleRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // if (Auth::user()->isAdmin) {
+        //     return true;
+        // }
+        // return false;
+        return true;
     }
 
     /**
@@ -24,7 +29,8 @@ class UpdateRoleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'rid' => 'required|integer|exists:roles,id',
+            'name' => 'required|string|min:1|max:255'
         ];
     }
 }

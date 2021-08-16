@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Dyrynda\Database\Support\CascadeSoftDeletes;
 
 class EmbedVideo extends Model
 {
@@ -12,6 +13,7 @@ class EmbedVideo extends Model
     use SoftDeletes;
 
     protected $fillable = ["name", "video_id"];
+    protected $cascadeDeletes = ['videos'];
 
     //Scope
     public function scopeVideoId($query, $vid)

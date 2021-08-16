@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Role;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreRoleRequest extends FormRequest
 {
@@ -13,7 +14,11 @@ class StoreRoleRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // if (Auth::user()->isAdmin) {
+        //     return true;
+        // }
+        // return false;
+        return true;
     }
 
     /**
@@ -24,7 +29,7 @@ class StoreRoleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|min:1|max:255'
         ];
     }
 }

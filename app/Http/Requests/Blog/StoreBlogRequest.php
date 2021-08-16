@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Blog;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreBlogRequest extends FormRequest
 {
@@ -13,7 +14,11 @@ class StoreBlogRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // if (Auth::user()->isAdmin) {
+        //     return true;
+        // }
+        // return false;
+        return true;
     }
 
     /**
@@ -24,7 +29,10 @@ class StoreBlogRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|string|min:1|max:128',
+            'description' => 'required|string|min:1',
+            'image' => 'required|image|mimes:png,jpg,jpeg,HEIF|max:10240',
+            'video' => 'nullable|mimetypes:video/avi, video/mpeg, video/quicktime, video/mp4|max:102400'
         ];
     }
 }
