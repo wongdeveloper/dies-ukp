@@ -36,7 +36,13 @@ class WishController extends Controller
      */
     public function store(StoreWishRequest $request)
     {
-        
+        $wish = Wish::create([
+            'name' => $request->name,
+            'role_id' => $request->rid,
+            'wish' => $request->wish,
+            'is_vip' => 0
+        ]);
+        return back()->with('success', 'Ucapan anda berhasil ditambahkan');
     }
 
     /**
@@ -57,6 +63,12 @@ class WishController extends Controller
      */
     public function update(UpdateWishRequest $request)
     {
-        
+        $wish = Wish::findOrFail($request->wid)->update([
+            'name' => $request->name,
+            'role_id' => $request->rid,
+            'wish' => $request->wish,
+            'is_vip' => 0
+        ]);
+        return back()->with('success', 'Ucapan anda berhasil diubah');
     }
 }

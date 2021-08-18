@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Wish;
+namespace App\Http\Requests\WIshImage;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateWishRequest extends FormRequest
+class StoreWishImageRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,11 @@ class UpdateWishRequest extends FormRequest
     public function rules()
     {
         return [
-            'wid' => 'required|integer|exists:wishes,id',
-            'name' => 'required|string|min:1|max:256',
+            'name' => 'required|string|min:1',
             'rid' => 'required|integer|exists:roles,id',
-            'wish' => 'nullable|string',
+            'title' => 'required|string|min:1|max:255',
+            'description' => 'required|string|min:1',
+            'image' => 'required|image|mimes:png,jpg,jpeg,HEIF|max:10240'
         ];
     }
 }
