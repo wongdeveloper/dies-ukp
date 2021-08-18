@@ -21,6 +21,26 @@ Route::get('/', function () {
 //     return view('home.index');
 // });
 
+Route::get('/admin', function () {
+    return view('admin.gate');
+});
+
+Route::get('/admin/login/in/ucapan', function () {
+    return view('admin.login.index');
+});
+
+Route::get('/admin/login/in/ucapan/foto', function () {
+    return view('admin.login.foto');
+});
+
+Route::get('/admin/login/in/ucapan/video', function () {
+    return view('admin.login.video');
+});
+
+Route::get('/admin/login/in/ucapan/umum', function () {
+    return view('admin.login.umum');
+});
+
 Route::get('/Kegiatan/{slug}', function () {
     return view('kegiatan.template');
 });
