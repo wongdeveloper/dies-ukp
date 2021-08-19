@@ -24,12 +24,45 @@
     <meta name="theme-color" content="#ffffff">
 
     {{-- ARCHITECT UI --}}
-    <link rel="stylesheet" href="{{asset('assets/architectui/assets/CSS/normalize.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/architectui/assets/CSS/component.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/architectui/assets/CSS/croppie.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/architectui/assets/CSS/jquery-ui.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/architectui/assets/css/normalize.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/architectui/assets/css/component.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/architectui/assets/css/croppie.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/architectui/assets/css/jquery-ui.css')}}">
     <link href="{{asset('assets/architectui/main.css')}}" rel="stylesheet">
     <script type="text/javascript" src="{{asset('assets/architectui/assets/scripts/main.js')}}"></script>
+
+    {{-- extensions --}}
+
+    {{-- bootstrap extension --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    {{--CSS--}}
+
+    {{-- JQUERRY --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    {{-- JQUERRY CONFIRM --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css"
+        integrity="sha512-0V10q+b1Iumz67sVDL8LPFZEEavo6H/nBSyghr7mm9JEQkOAm91HNoZQRvQdjennBb/oEuW+8oZHVpIKq+d25g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"
+        integrity="sha512-zP5W8791v1A6FToy+viyoyUUyjCzx+4K8XZCKzW28AnCoepPNIXecxh9mvGuy3Rt78OzEsU+VCvcObwAMvBAww=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{--FONT--}}
+
+    {{-- CDN w3SCHOOL BUAT NAVBAR --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {{-- INTERNAL JS --}}
+    <script src="{{ asset('js/ucapan.js')}}"></script>
+    
+    {{-- JQUEY DATATABLES --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
     
   
 </head>
@@ -283,6 +316,38 @@
         font-family: "Font Awesome 5 Free" !important;
         color: white !important;
     }
+    /* HAFT MODAL */
+        .haft-header-modal{
+            width: 100%;
+            background-color: #1B325E !important;
+            color:#fff !important;
+            font-weight: bold !important;
+            height: 65px !important;
+            font-size: 14pt !important;
+            
+        }
+        .haft-modal-btn{
+            cursor: pointer;
+            background-color: #D02762!important;
+            border: 2px solid white !important;
+            color: white !important;
+            border-radius: 20px !important;
+            min-width: 80px !important;
+            min-height: 45px !important;
+        }
+        .haft-modal-btn:hover{
+            cursor: pointer;
+            background-color: white !important;
+            border: 2px solid #D02762 !important;
+            color: #D02762 !important;
+            border-radius: 20px !important;
+            
+        }
+
+    
+
+
+    /* =================== */
 
     @media only screen and (max-width: 991px) {
         #content {
@@ -348,20 +413,21 @@
 </body>
 @yield('js')
 
-<!-- <script type="text/javascript" src="/admin/login/architectui/assets/scripts/main.js"></script> -->
+{{-- <!-- <script type="text/javascript" src="/admin/login/architectui/assets/scripts/main.js"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/assets/Script/vanilla.js"></script>
+<script src="{{asset('assets/js/vanilla.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 <script src="https://kit.fontawesome.com/158176bbc5.js" crossorigin="anonymous"></script>
 <!-- <script src="https://draggabilly.desandro.com/draggabilly.pkgd.js"></script> -->
 <!-- <script src="/assets/scripts/modal-image.js"></script> -->
-<script src="/admin/login/assets/scripts/jquery.custom-file-input.js"></script>
-<script src="/admin/login/assets/scripts/croppie.js"></script>
-<script src="/admin/login/assets/scripts/exif.js"></script>
-<script src="/admin/login/assets/scripts/jquery-ui.js"></script>
+<script src="{{asset('assets/architectui/assets/scripts/jquery.custom-file-input.js')}}"></script>
+<script src="{{asset('assets/architectui/assets/scripts/croppie.js')}}"></script>
+<script src="{{asset('assets/architectui/assets/scripts/exif.js')}}"></script>
+<script src="{{asset('assets/architectui/assets/scripts/jquery-ui.js')}}"></script>
 <!-- <script src="/admin/login/assets/scripts/check-it.js"></script> -->
-<script src="/admin/admin.js"></script>
+<!-- <script src="/admin/admin.js"></script> -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script> --}}
 
 
 

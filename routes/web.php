@@ -41,6 +41,10 @@ Route::get('/admin/login/in/ucapan/umum', function () {
     return view('admin.login.umum');
 });
 
+Route::get('/admin/login/in/kegiatan', function () {
+    return view('admin.login.kegiatan');
+});
+
 Route::get('/Kegiatan/{slug}', function () {
     return view('kegiatan.template');
 });
@@ -49,6 +53,8 @@ Route::get('/Kegiatan/{slug}', function () {
 Route::get('/Tentang', function () {
     return view('tentang.index');
 });
+
+
 
 Route::get('/Kegiatan', function () {
     return view('kegiatan.index');

@@ -11,7 +11,7 @@
     .haft-btn-pink {
         background-color: #D02762 !important;
         color:#FFFCF5 !important;
-        width: 150 !important;
+        width: auto !important;
         height: 45px !important;
         border-radius: 30px !important;
         
@@ -27,10 +27,8 @@
     <div class="col-9">
 
     </div>
-    <div class=" col-3">
-        <div class="col haft-btn-pink" data-bs-toggle="modal" data-bs-target="#modal-ucapan">
-            <p class="text-center pt-2">Unggah Ucapan</p>
-        </div>
+    <div class="col-3 haft-btn-pink" data-bs-toggle="modal" data-bs-target="#modal-ucapan">
+        <p class="text-center pt-2">Unggah Ucapan</p>
     </div>
 </div>
 <table class="rwd-table table table-borderless table-hover">
