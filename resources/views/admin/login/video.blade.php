@@ -27,31 +27,27 @@
     <div class="col-9">
 
     </div>
-    <div class="col-3 haft-btn-pink" data-bs-toggle="modal" data-bs-target="#modal-ucapan">
+    <a href="/admin/login/in/kegiatan/create/video" class="col-3 haft-btn-pink">
         <p class="text-center pt-2">Unggah Ucapan</p>
-    </div>
+    </a>
 </div>
 <table class="rwd-table table table-borderless table-hover">
     <thead>
         <tr>
             
             <th>#</th>
-            <th>Nama</th>
-            <th>Email</th>
-            <th>NIK</th>
-            <th>Nomor Telp</th>
-            <th>Gender</th>
+            <th>Judul Video</th>
+            <th>Caption Video</th>
+            <th>Link</th>
             <th class="text-center">Action</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td scope="row">1</td>
-            <td>Yanto</td>
-            <td>CEO</td>
-            <td>CFO</td>
-            <td>098746389475940</td>
-            <td>Laki-laki</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam possimus dolorem dolor recusandae laborum! Ut commodi quisquam debitis perspiciatis aut unde iure. Non cum quam doloremque rem nulla velit quas.</td>
+            <td>www.youtube.com/lalal</td>
             <td nowrap="nowrap">
                 <center>
                 <button id="delete-team-btn"  class="btn btn-danger" >

@@ -41,6 +41,17 @@ Route::get('/admin/login/in/ucapan/umum', function () {
     return view('admin.login.umum');
 });
 
+Route::get('/admin/login/in/kegiatan/create/artikel', function () {
+    return view('admin.create.article');
+});
+
+Route::get('/admin/login/in/kegiatan/create/video', function () {
+    return view('admin.create.video');
+});
+Route::get('/admin/login/in/kegiatan/create/teks', function () {
+    return view('admin.create.teks');
+});
+
 Route::get('/admin/login/in/kegiatan', function () {
     return view('admin.login.kegiatan');
 });

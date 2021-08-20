@@ -27,31 +27,33 @@
     <div class="col-9">
 
     </div>
-    <div class="col-3 haft-btn-pink" data-bs-toggle="modal" data-bs-target="#modal-ucapan">
+    <a href="/admin/login/in/kegiatan/create/teks" class="col-3 haft-btn-pink" >
         <p class="text-center pt-2">Unggah Ucapan</p>
-    </div>
+    </a >
 </div>
 <table class="rwd-table table table-borderless table-hover">
     <thead>
         <tr>
             
             <th>#</th>
-            <th>Nama</th>
-            <th>Email</th>
-            <th>NIK</th>
-            <th>Nomor Telp</th>
-            <th>Gender</th>
+            <th>Foto</th>
+            <th>Nama Pemberi Ucapan</th>
+            <th>Lembaga/Perusahaan Pemberi Ucapan</th>
+            <th>Jabatan</th>
+            <th>ucapan</th>
+            
             <th class="text-center">Action</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td scope="row">1</td>
-            <td>Yanto</td>
+            <td>Yanto Mardigu.jpg</td>
+            <td>Yanto Mardigu</td>
+            <td>PT Markonah</td>
             <td>CEO</td>
-            <td>CFO</td>
-            <td>098746389475940</td>
-            <td>Laki-laki</td>
+            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque libero exercitationem consectetur minima maxime harum, pariatur non, provident officia veritatis porro quam voluptates autem obcaecati corporis placeat eius quisquam laudantium.</td>
+            
             <td nowrap="nowrap">
                 <center>
                 <button id="delete-team-btn"  class="btn btn-danger" >
