@@ -10,10 +10,12 @@ use Dyrynda\Database\Support\CascadeSoftDeletes;
 class Wish extends Model
 {
     use HasFactory;
+    use CascadeSoftDeletes;
     use SoftDeletes;
 
-    protected $fillable = ["name", "role_id", "wish", "is_vip"];
-    protected $cascadeDeletes = ['wish_images', 'wish_videos'];
+    protected $fillable = ["name", "role_id", "email", "detail1", "detail2", "wish", "image_id", "image_title", "video_id", "video_title", "is_vip"];
+    protected $cascadeDeletes = ['videos', 'images'];
+
 
     //Scopes
     public function scopeNameLike($query, $value)
@@ -27,14 +29,13 @@ class Wish extends Model
     }
 
     //Relation
-    public function wishVideo()
+    public function image()
     {
-        return $this->hasOne(WishVideo::class);
+        return $this->hasOne(Image::class);
     }
-
-    public function wishImage()
+    public function video()
     {
-        return $this->hasOne(WishImage::class);
+        return $this->hasOne(Video::class);
     }
 
     //Accessor

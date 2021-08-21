@@ -1,55 +1,41 @@
 $('#modal-ucapan-foto').on('hidden.bs.modal', function () {
         $('#Msg_Form')[0].reset();
         $('#kategori').val('0');
-        $('#form-radio-lk').attr('hidden', true);
-        $('#form-lk1').attr('required', false);
-        $('#form-list-lk').attr('hidden', true);
-        $('#list-lk').attr('required', false);
+        // $('#form-radio-lk').attr('hidden', true);
+        // $('#form-lk1').attr('required', false);
+        // $('#form-list-lk').attr('hidden', true);
+        // $('#list-lk').attr('required', false);
         $('#formJurusan').attr('hidden', true);
         $('#inputJurusan').attr('required', false);
         $('#formAngkatan').attr('hidden', true);
         $('#inputAngkatan').attr('required', false);
-        $('#formLK').attr('hidden', true);
-        $('#inputLK').attr('required', false);
+        // $('#formLK').attr('hidden', true);
+        // $('#inputLK').attr('required', false);
         $('#formMsg').attr('hidden', true);
     });
 
     $(document).ready(function () {
         
-        if($("#status").text() == -1){
-            Swal.fire(
-                'Terima Kasih!',
-                'Upload kenangan foto anda bersama Pak Jones Syaranamual akan tayang pada rubrik Gallery pada tanggal 5 Desember 2020. Terima kasih!',
-                'success'
-            )
-        }
-        if($("#status").text() == 1){
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Terjadi kesalahan saat mengirim data harap coba lagi!'
-            })
-        }
-        $('#btnadd').click(function () {
-            if ($('#kategori').val() == "0" && $('#inputNama').val() == '') {
-                alert("Mohon memasukkan kategori dan nama");
-            }else if($('#kategori').val() == "0" && $('#inputNama').val() != ''){
-                alert("Mohon memasukkan kategori");
-            }else if($('input[name=lk]:checked', '#Msg_Form').val() == '1' && $('#list-lk').val() == '0'){
-                alert("Mohon memilih list LK");
-            }     
-        });
+        // $('#btnadd').click(function () {
+        //     if ($('#kategori').val() == "0" && $('#inputNama').val() == '') {
+        //         alert("Mohon memasukkan kategori dan nama");
+        //     }else if($('#kategori').val() == "0" && $('#inputNama').val() != ''){
+        //         alert("Mohon memasukkan kategori");
+        //     }else if($('input[name=lk]:checked', '#Msg_Form').val() == '1' && $('#list-lk').val() == '0'){
+        //         alert("Mohon memilih list LK");
+        //     }     
+        // });
         $('#kategori').change(function () {
-            $('#form-radio-lk').attr('hidden', true);
-            $('#form-lk1').attr('required', false);
-            $('#form-list-lk').attr('hidden', true);
-            $('#list-lk').attr('required', false);
+            // $('#form-radio-lk').attr('hidden', true);
+            // $('#form-lk1').attr('required', false);
+            // $('#form-list-lk').attr('hidden', true);
+            // $('#list-lk').attr('required', false);
             $('#formJurusan').attr('hidden', true);
             $('#inputJurusan').attr('required', false);
             $('#formAngkatan').attr('hidden', true);
             $('#inputAngkatan').attr('required', false);
-            $('#formLK').attr('hidden', true);
-            $('#inputLK').attr('required', false);
+            // $('#formLK').attr('hidden', true);
+            // $('#inputLK').attr('required', false);
             $('#formMsg').attr('hidden', true);
             $('#formKategori2').attr('hidden', true);
             $('#inlineRadio1').attr('required', false);

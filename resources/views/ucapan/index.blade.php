@@ -801,7 +801,7 @@
                 <h1>Ucapan dalam Foto</h1>
             </div>
             <div class="col-3"></div>
-            <div class="col-3 haft-btn-pink" data-bs-toggle="modal" data-bs-target="#modal-ucapan">
+            <div class="col-3 haft-btn-pink" id="show-photo-modal" data-bs-toggle="modal" data-bs-target="#modal-ucapan-foto">
                 <p class="text-center pt-2">Unggah Fotomu</p>
             </div>
         </div>
@@ -825,7 +825,7 @@
             </div>
         </div>
         <div class="row ps-2 d-flex d-md-none">
-            <div class="col-10 haft-btn-pink-mobile" data-bs-toggle="modal" data-bs-target="#modal-ucapan">
+            <div class="col-10 haft-btn-pink-mobile" id="show-photo-modal" data-bs-toggle="modal" data-bs-target="#modal-ucapan-foto">
                 <p class="text-center pt-2">Unggah Fotomu</p>
             </div>
         </div>
@@ -1391,7 +1391,7 @@
             </div>
             <div class="col-3"></div>
             <div class="col-3 haft-btn-yellow">
-                <p class="text-center pt-2" data-bs-toggle="modal" data-bs-target="#modal-ucapan">Unggah Ucapanmu</p>
+                <p class="text-center pt-2" data-bs-toggle="modal" data-bs-target="#modal-ucapan-foto">Unggah Ucapanmu</p>
             </div>
         </div>
         <div class="row line-yellow d-none d-md-flex">
@@ -1413,7 +1413,7 @@
             </div>
         </div>
         <div class="row ps-2 d-flex d-md-none">
-            <div class="col-10 haft-btn-yellow-mobile" data-bs-toggle="modal" data-bs-target="#modal-ucapan">
+            <div class="col-10 haft-btn-yellow-mobile" id="show-photo-modal" data-bs-toggle="modal" data-bs-target="#modal-ucapan-foto">
                 <p class="text-center pt-2">Unggah Fotomu</p>
             </div>
         </div>
@@ -1976,7 +1976,7 @@
 
 
     {{-- Modal Ucapan --}}
-    <div class="modal fade haft-modal" id="modal-ucapan" tabindex="-1">
+    <div class="modal fade haft-modal" id="modal-ucapan-foto" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="row p-0 m-0 pt-3 ps-3 haft-header-modal">
@@ -1984,7 +1984,7 @@
                     <h3 style="">Unggah Ucapanmu !</h3>
                 </div>
             </div>
-            <form action="#" method="post" enctype="multipart/form-data" id="Msg_Form">
+            <form action="{{ url('wish/store') }}" method="post" enctype="multipart/form-data" id="Msg_Form">
                 @csrf
                 <div class="row haft-form">
                     <div class="col">
@@ -2070,26 +2070,26 @@
                             </div>
                             <div class="col-1"></div>
                         </div>
-                        <div class="row pt-3">
+                        <div class="row pt-3 modal-photo">
                             <div class="col-1"></div>
                             <div class="col-10">
                                 <div class="form-group">
                                     <label for="inputKarya">Ucapan Dalam Bentuk Foto (maks. 10MB Orientasi Landscape)</label>
                                     <div class="input-group mb-3">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="file">
+                                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="image">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-1"></div>
                         </div>
-                        <div class="row pt-3">
+                        <div class="row pt-3 modal-photo">
                             <div class="col-1"></div>
                             <div class="col-10">
                                 <div class="form-group" id="formJudulMsg">
                                     <label for="notes">Judul Foto (Max 50 Characters)</label>
-                                    <textarea class="form-control" name="judulMsg" id="inputjudulMsg" rows="3" placeholder="Judul" maxlength="50"></textarea>
+                                    <textarea class="form-control" name="image_title" id="inputjudulMsg" rows="3" placeholder="Judul" maxlength="50"></textarea>
                                 </div>
                             </div>
                             <div class="col-1"></div>
@@ -2099,34 +2099,40 @@
                             <div class="col-10">
                                 <div class="form-group" id="formMsg">
                                     <label for="notes">Ucapan Dalam Bentuk Teks (Max 400 Characters)</label>
-                                    <textarea class="form-control" name="msg" id="inputMsg" rows="3" placeholder="Message" minlength="5" maxlength="400" required></textarea>
+                                    <textarea class="form-control" name="wish" id="inputMsg" rows="3" placeholder="Message" minlength="5" maxlength="400" required></textarea>
                                 </div>
                             </div>
                             <div class="col-1"></div>
                         </div>
                     </div>
                 </div>
-            </form>
-            <div class="row pt-2 pb-5">
-                <div class="col text-center">
-                    <button class="btn haft-modal-btn submit-ucapan-foto" data-bs-dismiss="modal">
-                        <p style="margin: 0; font-size:15pt">Unggah</p>
-                    </button>
+                <div class="row pt-2 pb-5">
+                    <div class="col text-center">
+                        <button class="btn haft-modal-btn submit-ucapan-foto">
+                            <p style="margin: 0; font-size:15pt">Unggah</p>
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </form>
           </div>
         </div>
     </div>
-    
-
-    
 </div>
-
-
-
-
-
-
-    
 @endsection
 
+@section('js')
+    <script>
+        $(document).ready(function () {
+            $('.modal-photo').hide();
+        });
+
+        $(document).on('hidden.bs.modal', '#modal-ucapan-foto', function () {
+            $('.modal-photo').hide();
+            $('#Msg_Form')[0].reset();
+        });
+
+        $(document).on('click', '[id="show-photo-modal"]',function () {
+            $('.modal-photo').show();
+        });
+    </script>
+@endsection

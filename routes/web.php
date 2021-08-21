@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WishController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,9 +65,9 @@ Route::get('/Ucapan', function () {
     return view('ucapan.index');
 });
 
-Route::get('/Ucapan', function () {
-    return view('ucapan.index');
-});
+// Route::get('/Ucapan', function () {
+//     return view('ucapan.index');
+// });
 
 Route::get('/Ucapan/Video', function () {
     return view('ucapan.video');
@@ -76,4 +77,8 @@ Route::get('/Ucapan/Foto', function () {
 });
 Route::get('/Ucapan/Teks', function () {
     return view('ucapan.teks');
+});
+
+Route::prefix('wish')->name('wish.')->group(function(){
+    Route::post('/store', [WishController::class, 'store'])->name('store');
 });

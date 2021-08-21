@@ -26,8 +26,17 @@ class UpdateWishRequest extends FormRequest
         return [
             'wid' => 'required|integer|exists:wishes,id',
             'name' => 'required|string|min:1|max:256',
-            'rid' => 'required|integer|exists:roles,id',
+            'kategori' => 'required|integer|exists:roles,id',
+            'email' => 'required|email',
+            'detail1' => 'nullable|string',
+            'detail2' => 'nullable|string',
+            'jurusan' => 'nullable|string',
+            'angkatan' => 'nullable|string',
             'wish' => 'nullable|string',
+            'image_title' => 'nullable|string|min:1|max:255',
+            'image' => 'nullable|image|mimes:png,jpg,jpeg,HEIF|max:10240',
+            'video_title' => 'nullable|string|min:1|max:255',
+            'video' => 'nullable|string'
         ];
     }
 }
