@@ -67,7 +67,11 @@
   
 </head>
 <style>
-
+    .haft-form{
+        width: auto !important;
+        background-color: #fff !important;
+        
+    }
     .rwd-table {
         margin: 1em 0;
         min-width: 300px;
@@ -318,7 +322,7 @@
     }
     /* HAFT MODAL */
         .haft-header-modal{
-            width: 100%;
+            width: 100% !important;
             background-color: #1B325E !important;
             color:#fff !important;
             font-weight: bold !important;
@@ -342,6 +346,9 @@
             color: #D02762 !important;
             border-radius: 20px !important;
             
+        }
+        a{
+            text-decoration: none !important;
         }
 
     

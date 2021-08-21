@@ -23,14 +23,7 @@
     }
 </style>
 @section('content')
-<div class="row">
-    <div class="col-9">
 
-    </div>
-    <div class="col-3 haft-btn-pink" data-bs-toggle="modal" data-bs-target="#modal-ucapan">
-        <p class="text-center pt-2">Unggah Ucapan</p>
-    </div>
-</div>
 <table class="rwd-table table table-borderless table-hover">
     <thead>
         <tr>
