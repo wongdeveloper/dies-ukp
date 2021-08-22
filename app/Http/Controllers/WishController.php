@@ -86,12 +86,11 @@ class WishController extends Controller
      */
     public function store(StoreWishRequest $request)
     {
-        // dd($request);
         $detail1 = null;
         $detail2 = null;
         $image = null;
         $video = null;
-        switch ($request->rid) {
+        switch ($request->kategori) {
             case '1':
             case '3':
                 $detail1 = $request->jurusan;
