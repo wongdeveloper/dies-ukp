@@ -5,7 +5,7 @@
 @endsection
 
 @section('content-title')
-    <h1>Unggah Teks Ucapan Undangan</h1>
+    <h1>Edit Teks Ucapan TRTD/h1>
 @endsection
 
 <style>
@@ -34,7 +34,7 @@
 <div class="container haft-form">
     <div class="row pt-3 ps-3 haft-form-header">
         <div class="col">
-            <h2>Unggah Teks Ucapan Undangan</h2>
+            <h2>Edit Teks Ucapan TRTD</h2>
         </div>
     </div> 
     <form action="{{ route('admin.ucapan.store') }}" method="post" enctype="multipart/form-data" id="Msg_Form">
