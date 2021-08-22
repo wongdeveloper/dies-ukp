@@ -202,7 +202,7 @@
         color:inherit
     }
     .alert-dismissible .close{
-        top:10;
+        top:10px;
         right:5px;
         padding:5px
     }

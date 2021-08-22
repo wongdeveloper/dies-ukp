@@ -376,6 +376,87 @@
         }
 
     }
+
+    .image-preview {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .image-preview:hover {opacity: 0.7;}
+
+    /* The Modal (background) */
+    .modal-custom-image {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 10000; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+    
+    /* Modal Content (Image) */
+    .modal-content-custom {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+    
+    /* Caption of Modal Image (Image Text) - Same Width as the Image */
+    #caption-custom {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+    
+    /* Add Animation - Zoom in the Modal */
+    .modal-content-custom, #caption-custom {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+    
+    @keyframes zoom {
+        from {transform:scale(0)}
+        to {transform:scale(1)}
+    }
+    
+    /* The Close Button */
+    .close-custom {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    
+    .close-custom:hover,
+    .close-custom:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+        .modal-content-custom {
+            width: 100%;
+        }
+    }
 </style>
 
 <body>
@@ -383,7 +464,7 @@
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
 
         <div class="app-header header-shadow  header-text-dark" style="background-color:#1B325E">
-            <?php include 'assets/architectui/assets/addon/header.php' ?>
+            @include('admin.header')
         </div>
         
         <div class="ui-theme-settings">
@@ -395,7 +476,7 @@
 
         <div class="app-main ">
             <div class="app-sidebar sidebar-shadow sidebar-text-light" style="background-color:#F6AD3C">
-                <?php include 'assets/architectui/assets/addon/sidebar.php' ?>
+                @include('admin.sidebar')
             </div>
             <div class="app-main__outer">
                 <div class="app-main__inner">
@@ -416,8 +497,28 @@
     </div>
 
    
-   
+   {{-- Modal Image --}}
+    <div id="imageModal" class="modal-custom-image">
+        <span class="close-custom">&times;</span>
+        <img class="modal-content-custom" id="img01">
+        <div id="caption-custom"></div>
+    </div>
 </body>
+<script>
+    $(document).on('click', '.image-preview', function () {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption-custom");
+
+        modal.style.display = "block";
+        modalImg.src = $(this).data('src');
+    });
+
+    $(document).on('click', '.close-custom', function () {
+        var modal = document.getElementById("imageModal");
+        modal.style.display = "none";
+    });
+</script>
 @yield('js')
 
 {{-- <!-- <script type="text/javascript" src="/admin/login/architectui/assets/scripts/main.js"></script> -->

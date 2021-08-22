@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
+
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -24,46 +25,53 @@ Route::get('/', function () {
 //     return view('home.index');
 // });
 
-Route::get('/admin', function () {
-    return view('admin.gate');
-});
+// Route::get('/admin', function () {
+//     return view('admin.gate');
+// });
 
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/', [AdminController::class, 'index'])->name('index');
-    Route::post('/login', [AdminController::class, 'login'])->name('login');
+    // Route::post('/login', [AdminController::class, 'login'])->name('login');
     Route::prefix('ucapan')->name('ucapan.')->middleware(['admin'])->group(function(){
         Route::get('/', [AdminController::class, 'wish_index'])->name('index');
         Route::get('/create', [AdminController::class, 'wish_create'])->name('create');
         Route::post('/store', [AdminController::class, 'wish_store'])->name('store');
-        Route::get('/edit', [AdminController::class, 'wish_edit'])->name('edit');
+        Route::get('/edit/{id}', [AdminController::class, 'wish_edit'])->name('edit');
         Route::post('/update', [AdminController::class, 'wish_update'])->name('update');
         Route::get('/destroy/{id}', [AdminController::class, 'wish_destroy'])->name('destroy');
 
         Route::prefix('foto')->name('photo.')->middleware(['admin'])->group(function () {
             Route::get('/', [AdminController::class, 'photo_index'])->name('index');
             Route::get('/create', [AdminController::class, 'photo_create'])->name('create');
-            Route::post('/store', [AdminController::class, 'photo_store'])->name('store');
-            Route::get('/edit', [AdminController::class, 'photo_edit'])->name('edit');
-            Route::post('/update', [AdminController::class, 'photo_update'])->name('update');
-            Route::get('/destroy/{id}', [AdminController::class, 'photo_destroy'])->name('destroy');
+            // Route::post('/store', [AdminController::class, 'photo_store'])->name('store');
+            Route::get('/edit/{id}', [AdminController::class, 'photo_edit'])->name('edit');
+            // Route::post('/update', [AdminController::class, 'photo_update'])->name('update');
+            // Route::get('/destroy/{id}', [AdminController::class, 'photo_destroy'])->name('destroy');
         });
 
         Route::prefix('video')->name('video.')->middleware(['admin'])->group(function () {
             Route::get('/', [AdminController::class, 'video_index'])->name('index');
             Route::get('/create', [AdminController::class, 'video_create'])->name('create');
-            Route::post('/store', [AdminController::class, 'video_store'])->name('store');
-            Route::get('/edit', [AdminController::class, 'video_edit'])->name('edit');
-            Route::post('/update', [AdminController::class, 'video_update'])->name('update');
-            Route::get('/destroy/{id}', [AdminController::class, 'video_destroy'])->name('destroy');
+            // Route::post('/store', [AdminController::class, 'video_store'])->name('store');
+            Route::get('/edit/{id}', [AdminController::class, 'video_edit'])->name('edit');
+            // Route::post('/update', [AdminController::class, 'video_update'])->name('update');
+            // Route::get('/destroy/{id}', [AdminController::class, 'video_destroy'])->name('destroy');
         });
-        // Route::get('/umum', [AdminController::class, 'general'])->name('general');
+        Route::prefix('umum')->name('general.')->middleware(['admin'])->group(function () {
+            Route::get('/', [AdminController::class, 'general_index'])->name('index');
+            Route::get('/create', [AdminController::class, 'general_create'])->name('create');
+            // Route::post('/store', [AdminController::class, 'general_store'])->name('store');
+            Route::get('/edit/{id}', [AdminController::class, 'general_edit'])->name('edit');
+            // Route::post('/update', [AdminController::class, 'general_update'])->name('update');
+            // Route::get('/destroy/{id}', [AdminController::class, 'general_destroy'])->name('destroy');
+        });
     });
 
     Route::prefix('kegiatan')->name('blog.')->middleware(['admin'])->group(function(){
         Route::get('/', [BlogController::class, 'index'])->name('index');
         Route::get('/create', [BlogController::class, 'create'])->name('create');
         Route::post('/store', [BlogController::class, 'store'])->name('store');
-        Route::get('/edit', [BlogController::class, 'edit'])->name('edit');
+        Route::get('/edit/{id}', [BlogController::class, 'edit'])->name('edit');
         Route::post('/update', [BlogController::class, 'update'])->name('update');
         Route::get('/destroy/{id}', [BlogController::class, 'destroy'])->name('destroy');
     });

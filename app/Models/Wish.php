@@ -14,7 +14,6 @@ class Wish extends Model
     use SoftDeletes;
 
     protected $fillable = ["name", "role_id", "email", "detail1", "detail2", "wish", "image_id", "image_title", "video_id", "video_title", "is_vip"];
-    protected $cascadeDeletes = ['videos', 'images'];
 
 
     //Scopes

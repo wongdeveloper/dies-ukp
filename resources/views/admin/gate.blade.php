@@ -102,9 +102,73 @@
     @media only screen and (max-width: 527px) {}
 
     @media only screen and (max-width: 391px) {}
+
+    .alert-dismissible .close{
+        position:absolute;
+        top:0;
+        right:0;
+        padding:.75rem 1.25rem;
+        color:inherit
+    }
+    .alert-dismissible .close{
+        top:10px;
+        right:5px;
+        padding:5px
+    }
+    .close{
+        float:right;
+        font-size:1.5rem;
+        font-weight:700;
+        line-height:1;
+        color:#000;
+        text-shadow:0 1px 0#fff;
+        opacity:.5
+    }
+    .close:hover{
+        color:#000;
+        text-decoration:none
+    }
+    .close:not(:disabled):not(.disabled){
+        cursor:pointer
+    }
+    .close:not(:disabled):not(.disabled):hover,.close:not(:disabled):not(.disabled):focus{
+        opacity:.75
+    }
+    button.close{
+        padding:0;
+        background-color:transparent;
+        border:0;
+        appearance:none
+    }
+    a.close.disabled{
+        pointer-events:none
+    }
 </style>
 
 <body style="background-color: #F6AD3C">
+    @if(Session::has('error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close"
+            aria-label="Close" data-bs-dismiss="alert"><span
+                aria-hidden="true">×</span></button>{{ Session::get( 'error' ) }}</div>
+    @endif
+    
+    @if(Session::has('warning'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert"><button type="button" class="close"
+            aria-label="Close" data-bs-dismiss="alert"><span
+                aria-hidden="true">×</span></button>{{ Session::get( 'warning' ) }}</div>
+    @endif
+    
+    @if(Session::has('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close"
+            aria-label="Close" data-bs-dismiss="alert"><span
+                aria-hidden="true">×</span></button>{{ Session::get( 'success' ) }}</div>
+    @endif
+    
+    @if(Session::has('info'))
+    <div class="alert alert-info alert-dismissible fade show" role="alert"><button type="button" class="close"
+            aria-label="Close" data-bs-dismiss="alert"><span
+                aria-hidden="true">×</span></button>{{ Session::get( 'info' ) }}</div>
+    @endif
     <div style="min-height: 100vh;">
         <div class="p-4 p-md-1" style="padding-top: 15%!important;">
             <div class="card mb-3 mx-auto p-3 mt-5 mt-md-3 haft-card">
@@ -120,11 +184,12 @@
                         <div class="card-body">
                             <h5 class="card-title" style="color:#1B325E">Login</h5>
                             <div class="card-text">
-                                <form action="{{ route('admin.login') }}" method="post">
+                                <form action="{{ url('admin/login') }}" method="post">
+                                    @csrf
                                     <div class="row">
                                         <div class="col">
                                             <div class="input-group mb-3">
-                                                <input type="text" class="form-control" placeholder="Username" name="username" id="username" required="">
+                                                <input type="text" class="form-control" placeholder="Username" name="username" id="username" required>
                                             </div>
                                         </div>
                                     </div>
