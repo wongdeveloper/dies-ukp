@@ -1081,6 +1081,53 @@
                 </div>
 
                 <div class="col-1"></div>
+
+                @foreach ($wish_videos as $key => $wish_video)
+                    @if ($key % 3 == 0)
+                        <div class="col-2"></div>
+                    @endif
+                    <div class="col-3 mt-3">
+                        <div class="card card-block mx-2 haft-card-galeri-yellow">
+                            <div class="row pt-4">
+                                <div class="col-1"></div>
+                                <div class="col-10">
+                                    <div class="haft-card-img overlay-container">
+                                        <img src="https://img.youtube.com/vi/{{ $wish_video->youtube_id }}/0.jpg" alt="" class="image">
+                                        <div class="overlay">
+                                            <a href="#" data-video-id="{{ $wish_video->youtube_id }}" class="overlay-icon modal-video-card" title="Play Video">
+                                                <i class="fas fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-1"></div>
+                                <div class="col-10">
+                                    <div class="haft-card-text">
+                                        <center>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h5>{{ $wish_video->video_title }}</h5>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p>" {{ $wish_video->wish }} "</p>
+                                                </div>
+                                            </div>
+                                        </center>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    @if (($key+1) % 3 == 0 || (count($wish_videos)-1) == ($key))
+                        <div class="col-1"></div>
+                    @endif
+                @endforeach
             </div>
         {{-- ========== --}}
 
@@ -1635,7 +1682,45 @@
             
                         </div>
                     </div>
-                </div> 
+                </div>
+                @foreach ($wish_videos as $wish_video)
+                    <div class="card card-block mx-2 haft-card-galeri-pink">
+                        <div class="row pt-4">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <div class="haft-card-img overlay-container">
+                                    <img src="https://img.youtube.com/vi/{{ $wish_video->youtube_id }}/0.jpg" alt="" class="image">
+                                    <div class="overlay">
+                                        <a href="#" data-video-id="{{ $wish_video->youtube_id }}" class="overlay-icon modal-video-card" title="Play Video">
+                                            <i class="fas fa-play"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <div class="haft-card-text">
+                                    <center>
+                                        <div class="row">
+                                            <div class="col">
+                                                <h5>{{ $wish_video->video_title }}</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p>" {{ $wish_video->wish }} "</p>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                @endforeach 
             </div>
         {{-- +++++++++ --}}
         <div class="row pt-5 pb-5"></div>

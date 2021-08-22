@@ -42,6 +42,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{--FONT--}}
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
     {{-- CDN w3SCHOOL BUAT NAVBAR --}}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -49,6 +52,8 @@
     {{-- INTERNAL JS --}}
     <script src="{{ asset('js/ucapan.js')}}"></script>
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/modal-video.min.css') }}">
+    <script src="{{ asset('js/jquery-modal-video.min.js') }}"></script>
 
     @yield('custom-import')
 
@@ -188,6 +193,209 @@
         
         
     }
+
+    .alert-dismissible .close{
+        position:absolute;
+        top:0;
+        right:0;
+        padding:.75rem 1.25rem;
+        color:inherit
+    }
+    .alert-dismissible .close{
+        top:10;
+        right:5px;
+        padding:5px
+    }
+    .close{
+        float:right;
+        font-size:1.5rem;
+        font-weight:700;
+        line-height:1;
+        color:#000;
+        text-shadow:0 1px 0#fff;
+        opacity:.5
+    }
+    .close:hover{
+        color:#000;
+        text-decoration:none
+    }
+    .close:not(:disabled):not(.disabled){
+        cursor:pointer
+    }
+    .close:not(:disabled):not(.disabled):hover,.close:not(:disabled):not(.disabled):focus{
+        opacity:.75
+    }
+    button.close{
+        padding:0;
+        background-color:transparent;
+        border:0;
+        appearance:none
+    }
+    a.close.disabled{
+        pointer-events:none
+    }
+
+    /* Container needed to position the overlay. Adjust the width as needed */
+    .overlay-container {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    /* Make the image to responsive */
+    .image {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* The overlay effect (full height and width) - lays on top of the container and over the image */
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .3s ease;
+        background-color:rgba(0, 0, 0, 0.7);
+    }
+    
+    /* When you mouse over the container, fade in the overlay icon*/
+    .overlay-container:hover .overlay {
+        opacity: 1;
+    }
+    
+    /* The icon inside the overlay is positioned in the middle vertically and horizontally */
+    .overlay-icon {
+        color: white;
+        font-size: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    
+    /* When you move the mouse over the icon, change color */
+    .fa-play:hover {
+        color: #eee;
+    }
+
+    .fa-play {
+        color: white;
+    }
+
+    .fa-search{
+        color: white;
+    }
+
+    .fa-search:hover{
+        color: #eee;
+    }
+
+
+    .image-responsive-container{
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .image-responsive-middle{
+        vertical-align: middle;
+        margin-left: -5px;
+    }
+
+    .image-responsive-container:before,
+    .image-responsive-container_before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    .image-responsive-container {
+        list-style:none;
+        behavior: expression(
+        function(t){
+        t.insertAdjacentHTML('afterBegin','<span class="frame_before"></span>');
+        t.runtimeStyle.behavior = 'none';
+        }(this)
+        );
+    }
+    
+    /* The Modal (background) */
+    .modal-custom-image {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 10000; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+    
+    /* Modal Content (Image) */
+    .modal-content-custom {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+    
+    /* Caption of Modal Image (Image Text) - Same Width as the Image */
+    #caption-custom {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+    
+    /* Add Animation - Zoom in the Modal */
+    .modal-content-custom, #caption-custom {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+    
+    @keyframes zoom {
+        from {transform:scale(0)}
+        to {transform:scale(1)}
+    }
+    
+    /* The Close Button */
+    .close-custom {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    
+    .close-custom:hover,
+    .close-custom:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+        .modal-content-custom {
+            width: 100%;
+        }
+    }
+
 </style>
 
 <body style="background-color: #F9F2EA;">
@@ -297,7 +505,25 @@
             
         </div>
     </nav>
+    @if(Session::has('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close"
+            aria-label="Close" data-bs-dismiss="alert"><span aria-hidden="true">×</span></button>{{ Session::get( 'error' ) }}</div>
+    @endif
 
+    @if(Session::has('warning'))
+        <div class="alert alert-warning alert-dismissible fade show" role="alert"><button type="button" class="close"
+            aria-label="Close" data-bs-dismiss="alert"><span aria-hidden="true">×</span></button>{{ Session::get( 'warning' ) }}</div>
+    @endif
+
+    @if(Session::has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close"
+            aria-label="Close" data-bs-dismiss="alert"><span aria-hidden="true">×</span></button>{{ Session::get( 'success' ) }}</div>
+    @endif
+
+    @if(Session::has('info'))
+        <div class="alert alert-info alert-dismissible fade show" role="alert"><button type="button" class="close"
+            aria-label="Close" data-bs-dismiss="alert"><span aria-hidden="true">×</span></button>{{ Session::get( 'info' ) }}</div>
+    @endif
     @yield('content')
 
     <footer class="haft-footer-nomobile pt-5 position-relative w-100 d-none d-md-block" style="bottom: 0" id="footer">
@@ -403,7 +629,17 @@
             x.style.display = "block";
         }
     }
+    function extractVideoID(url) {
+        var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+        var match = url.match(regExp);
+        if (match && match[7].length == 11) {
+            return match[7];
+        } else {
+            alert("Could not extract video ID.");
+        }
+    }
     
+    $('.modal-video-card').modalVideo();
 </script>
 
 </html>

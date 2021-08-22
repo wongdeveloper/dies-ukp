@@ -245,7 +245,7 @@
         <div class="row pt-3 d-none d-md-flex">
             <div class="col-2"></div>
 
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-galeri-pink " >
                     <div class="row pt-4">
                         <div class="col-1">
@@ -287,7 +287,7 @@
                     
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-galeri-yellow">
                     <div class="row pt-4">
                         <div class="col-1">
@@ -328,7 +328,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-galeri-blue">
                     <div class="row pt-4">
                         <div class="col-1">
@@ -371,11 +371,10 @@
             </div>
 
             <div class="col-1"></div>
-        </div>
-        <div class="row pt-3 d-none d-md-flex">
+
             <div class="col-2"></div>
 
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-galeri-blue " >
                     <div class="row pt-4">
                         <div class="col-1">
@@ -417,7 +416,7 @@
                     
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-galeri-pink">
                     <div class="row pt-4">
                         <div class="col-1">
@@ -458,7 +457,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-galeri-yellow">
                     <div class="row pt-4">
                         <div class="col-1">
@@ -499,8 +498,53 @@
                     </div>
                 </div> 
             </div>
-
             <div class="col-1"></div>
+            @foreach ($wish_videos as $key => $wish_video)
+                @if ($key % 3 == 0)
+                    <div class="col-2"></div>
+                @endif
+                <div class="col-3 mt-3">
+                    <div class="card card-block mx-2 haft-card-galeri-yellow">
+                        <div class="row pt-4">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <div class="haft-card-img overlay-container">
+                                    <img src="https://img.youtube.com/vi/{{ $wish_video->youtube_id }}/0.jpg" alt="" class="image">
+                                    <div class="overlay">
+                                        <a href="#" data-video-id="{{ $wish_video->youtube_id }}" class="overlay-icon modal-video-card" title="Play Video">
+                                            <i class="fas fa-play"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <div class="haft-card-text">
+                                    <center>
+                                        <div class="row">
+                                            <div class="col">
+                                                <h5>{{ $wish_video->video_title }}</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p>" {{ $wish_video->wish }} "</p>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                </div>
+                @if (($key+1) % 3 == 0 || (count($wish_videos)-1) == ($key))
+                    <div class="col-1"></div>
+                @endif
+            @endforeach
         </div>
 
         {{-- BUAT HP --}}
@@ -778,7 +822,45 @@
         
                     </div>
                 </div>
-            </div> 
+            </div>
+            @foreach ($wish_videos as $wish_video)
+                <div class="card card-block mx-2 haft-card-galeri-pink">
+                    <div class="row pt-4">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <div class="haft-card-img overlay-container">
+                                <img src="https://img.youtube.com/vi/{{ $wish_video->youtube_id }}/0.jpg" alt="" class="image">
+                                <div class="overlay">
+                                    <a href="#" data-video-id="{{ $wish_video->youtube_id }}" class="overlay-icon modal-video-card" title="Play Video">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <div class="haft-card-text">
+                                <center>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5>{{ $wish_video->video_title }}</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>" {{ $wish_video->wish }} "</p>
+                                        </div>
+                                    </div>
+                                </center>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+            @endforeach 
         </div>
 
         <div class="row pt-5 pb-2">
@@ -834,7 +916,7 @@
         <div class="row pt-3 d-none d-md-flex">
             <div class="col-2"></div>
 
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-galeri-pink " >
                     <div class="row pt-4">
                         <div class="col-1">
@@ -876,7 +958,7 @@
                     
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-galeri-yellow">
                     <div class="row pt-4">
                         <div class="col-1">
@@ -917,7 +999,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-galeri-blue">
                     <div class="row pt-4">
                         <div class="col-1">
@@ -960,11 +1042,9 @@
             </div>
 
             <div class="col-1"></div>
-        </div>
-        <div class="row pt-3 d-none d-md-flex">
             <div class="col-2"></div>
 
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-galeri-blue " >
                     <div class="row pt-4">
                         <div class="col-1">
@@ -1006,7 +1086,7 @@
                     
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-galeri-pink">
                     <div class="row pt-4">
                         <div class="col-1">
@@ -1047,7 +1127,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-galeri-yellow">
                     <div class="row pt-4">
                         <div class="col-1">
@@ -1088,8 +1168,53 @@
                     </div>
                 </div> 
             </div>
-
             <div class="col-1"></div>
+            @foreach ($wish_images as $key => $wish_image)
+                @if ($key % 3 == 0)
+                    <div class="col-2"></div>
+                @endif
+                <div class="col-3 mt-3">
+                    <div class="card card-block mx-2 haft-card-galeri-yellow">
+                        <div class="row pt-4">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <div class="haft-card-img overlay-container image-responsive-container">
+                                    <img src="{{ asset($wish_image->image->path) }}" class="image image-responsive-middle" alt="View Image">
+                                    <div class="overlay">
+                                        <a href="#" class="overlay-icon image-modal-trigger" data-src="{{ asset($wish_image->image->path) }}" title="View Image">
+                                            <i class="fas fa-search"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <div class="haft-card-text">
+                                    <center>
+                                        <div class="row">
+                                            <div class="col">
+                                                <h5>{{ $wish_image->image_title }}</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p>" {{ $wish_image->wish }} "</p>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                </div>
+                @if (($key+1) % 3 == 0 || (count($wish_images)-1) == ($key))
+                    <div class="col-1"></div>
+                @endif
+            @endforeach
         </div>
 
         {{-- BUAT HP --}}
@@ -1368,6 +1493,45 @@
                     </div>
                 </div>
             </div> 
+            @foreach ($wish_images as $wish_image)
+                <div class="card card-block mx-2 haft-card-galeri-pink">
+                    <div class="row pt-4">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <div class="haft-card-img overlay-container image-responsive-container">
+                                <img src="{{ asset($wish_image->image->path) }}" class="image image-responsive-middle" alt="View Image">
+                                <div class="overlay">
+                                    <a href="#" class="overlay-icon image-modal-trigger" data-src="{{ asset($wish_image->image->path) }}"
+                                        title="View Image">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <div class="haft-card-text">
+                                <center>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5>{{ $wish_image->image_title }}</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>" {{ $wish_image->wish }} "</p>
+                                        </div>
+                                    </div>
+                                </center>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+            @endforeach
         </div>
         <div class="row pt-5 pb-2">
             <div class="col-1"></div>
@@ -1421,7 +1585,7 @@
         {{-- BUAT NON HP --}}
         <div class="row pt-3 d-none d-md-flex">
             <div class="col-2"></div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card  mx-2 haft-card-vip-pink">
                     <div class="row pt-2">
                         <div class="col-1">
@@ -1470,7 +1634,7 @@
                     
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card  mx-2 haft-card-vip-yellow">
                     <div class="row pt-2">
                         <div class="col-1">
@@ -1519,7 +1683,7 @@
                     
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card - mx-2 haft-card-vip-blue">
                     <div class="row pt-2">
                         <div class="col-1">
@@ -1569,10 +1733,8 @@
                 </div>
             </div>
             <div class="col-1"></div>
-        </div>
-        <div class="row pt-3 d-none d-md-flex">
             <div class="col-2"></div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-vip-blue">
                     <div class="row pt-2">
                         <div class="col-1">
@@ -1621,7 +1783,7 @@
                     
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-vip-pink">
                     <div class="row pt-2">
                         <div class="col-1">
@@ -1670,7 +1832,7 @@
                     
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mt-3">
                 <div class="card card-block mx-2 haft-card-vip-yellow">
                     <div class="row pt-2">
                         <div class="col-1">
@@ -1720,6 +1882,53 @@
                 </div>
             </div>
             <div class="col-1"></div>
+            @foreach ($wish_texts as $key => $wish_text)
+                @if ($key % 3 == 0)
+                    <div class="col-2"></div>
+                @endif
+                <div class="col-3 mt-3">
+                    <div class="card card-block mx-2 haft-card-vip-yellow">
+                        <div class="row pt-2">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <div class="haft-vip-card-text">
+                                    <center>
+                                        <div class="row">
+                                            <div class="col">
+                                                <h5>{{ $wish_text->name }}</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="jabatan">{{ $wish_text->role->name }}</p>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                        <div class="row pt-1">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <div class="haft-vip-card-wish">
+                                    <center>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="wish">" {{ $wish_text->wish }} "</p>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                </div>
+                @if (($key+1) % 3 == 0 || (count($wish_texts)-1) == ($key))
+                    <div class="col-1"></div>
+                @endif
+            @endforeach
         </div>
 
         {{-- BUAT HP --}}
@@ -1959,6 +2168,45 @@
                 
                 
             </div>
+            @foreach ($wish_texts as $wish_text)
+                <div class="card card-block mx-2 haft-card-vip-blue">
+                    <div class="row pt-2">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <div class="haft-vip-card-text">
+                                <center>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5>{{ $wish_text->name }}</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="jabatan">{{ $wish_text->role->name }}</p>
+                                        </div>
+                                    </div>
+                                </center>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row pt-1">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <div class="haft-vip-card-wish">
+                                <center>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="wish">" {{ $wish_text->wish }} "</p>
+                                        </div>
+                                    </div>
+                                </center>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+            @endforeach
         </div>
 
         
@@ -1974,6 +2222,14 @@
         </div>
     </div>
 
+    {{-- Modal Image --}}
+    <div id="imageModal" class="modal-custom-image">
+        <span class="close-custom">&times;</span>
+    
+        <img class="modal-content-custom" id="img01">
+    
+        <div id="caption-custom"></div>
+    </div>
 
     {{-- Modal Ucapan --}}
     <div class="modal fade haft-modal" id="modal-ucapan-foto" tabindex="-1">
@@ -2013,11 +2269,9 @@
                                     <label class="my-1 mr-2" for="kategori">Kategori</label>
                                     <select class="custom-select my-1 mr-sm-2" id="kategori" name="kategori" aria-placeholder="" required>
                                         <option hidden value="0">Kategori</option>
-                                        <option value="1">Mahasiswa</option>
-                                        <option value="2">Dosen/Tenaga Kependidikan</option>
-                                        <option value="3">Alumni</option>
-                                        <option value="4">YPTK Petra</option>
-                                        <option value="5">Umum</option>
+                                        @foreach ($roles as $role)
+                                            <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -2133,6 +2387,21 @@
 
         $(document).on('click', '[id="show-photo-modal"]',function () {
             $('.modal-photo').show();
+        });
+
+
+        $(document).on('click', '.image-modal-trigger', function () {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption-custom");
+
+            modal.style.display = "block";
+            modalImg.src = $(this).data('src');
+        });
+
+        $(document).on('click', '.close-custom', function () {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
         });
     </script>
 @endsection

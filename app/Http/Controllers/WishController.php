@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Role;
 use App\Models\Wish;
 use App\Models\Image;
 use App\Models\Video;
@@ -18,7 +19,54 @@ class WishController extends Controller
      */
     public function index()
     {
-        
+        $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->get();
+        $wish_videos = Wish::where('video_id', '!=', 'NULL')->whereNull('image_id')->get();
+        foreach ($wish_videos as $key => $wish_video) {
+            parse_str(parse_url($wish_video->video->path, PHP_URL_QUERY), $my_array_of_vars);
+            $wish_video->youtube_id = $my_array_of_vars['v'];
+        }
+        $wish_texts = Wish::whereNull('video_id')->whereNull('image_id')->get();
+        $roles = Role::all();
+        return view('ucapan.index', compact('wish_images', 'wish_videos', 'wish_texts', 'roles'));
+    }
+
+    /**
+     * View Video Page
+     * @return \Illuminate\Http\Response
+     * 
+     */
+    public function video()
+    {
+        $wish_videos = Wish::where('video_id', '!=', 'NULL')->whereNull('image_id')->get();
+        foreach ($wish_videos as $key => $wish_video) {
+            parse_str(parse_url($wish_video->video->path, PHP_URL_QUERY), $my_array_of_vars);
+            $wish_video->youtube_id = $my_array_of_vars['v'];
+        }
+        return view('ucapan.video', compact('wish_videos'));
+    }
+
+    /**
+     * View Image Page
+     * @return \Illuminate\Http\Response
+     * 
+     */
+    public function image()
+    {
+        $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->get();
+        $roles = Role::all();
+        return view('ucapan.foto', compact('wish_images', 'roles'));
+    }
+
+    /**
+     * View Text Page
+     * @return \Illuminate\Http\Response
+     * 
+     */
+    public function text()
+    {
+        $wish_texts = Wish::whereNull('video_id')->whereNull('image_id')->get();
+        $roles = Role::all();
+        return view('ucapan.teks', compact('wish_texts', 'roles'));
     }
 
     /**
@@ -57,7 +105,7 @@ class WishController extends Controller
 
         if ($request->hasFile('image')) {
             $image_name = uniqid() . '.' . $request->image->extension();
-            $request->image->move(public_path('assets/images/wishes', $image_name));
+            $request->image->move(public_path('assets/images/wishes'), $image_name);
             $image_path = asset('assets/images/wishes/' . $image_name);
             $image = Image::create([
                 'path' => $image_path

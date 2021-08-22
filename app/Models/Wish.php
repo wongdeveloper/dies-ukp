@@ -31,11 +31,15 @@ class Wish extends Model
     //Relation
     public function image()
     {
-        return $this->hasOne(Image::class);
+        return $this->belongsTo(Image::class);
     }
     public function video()
     {
-        return $this->hasOne(Video::class);
+        return $this->belongsTo(Video::class);
+    }
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
 
     //Accessor

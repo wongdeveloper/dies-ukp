@@ -120,28 +120,31 @@
                         <div class="card-body">
                             <h5 class="card-title" style="color:#1B325E">Login</h5>
                             <div class="card-text">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="Username" name="username" id="username" required="">
+                                <form action="{{ route('admin.login') }}" method="post">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="Username" name="username" id="username" required="">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="input-group mb-3">
-                                            <input type="password" class="form-control" placeholder="Password" name="password" id="password" required="">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="input-group mb-3">
+                                                <input type="password" class="form-control" placeholder="Password" name="password" id="password"
+                                                    required>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-7">
-                                        {{-- BUAT SPACE --}}
+                                    <div class="row">
+                                        <div class="col-7">
+                                            {{-- BUAT SPACE --}}
+                                        </div>
+                                        <div class="col-5">
+                                            <button type="submit" class="btn haft-login-btn" name="login" id="login">Sign In</button>
+                                        </div>
                                     </div>
-                                    <div class="col-5">
-                                        <button type="submit" class="btn haft-login-btn" name="login" id="login">Sign In</button>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
