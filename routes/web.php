@@ -89,3 +89,6 @@ Route::prefix('Ucapan')->name('ucapan.')->group(function(){
 Route::prefix('wish')->name('wish.')->group(function(){
     Route::post('/store', [WishController::class, 'store'])->name('store');
 });
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
