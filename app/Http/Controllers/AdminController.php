@@ -153,7 +153,7 @@ class AdminController extends Controller
 
     public function photo_index()
     {
-        $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->get();
+        $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->where('is_vip', '0')->get();
         return view('admin.login.foto', compact('wish_images'));
     }
 
@@ -186,7 +186,7 @@ class AdminController extends Controller
 
     public function video_index()
     {
-        $wish_videos = Wish::where('video_id', '!=', 'NULL')->whereNull('image_id')->get();
+        $wish_videos = Wish::where('video_id', '!=', 'NULL')->whereNull('image_id')->where('is_vip', '0')->get();
         foreach ($wish_videos as $key => $wish_video) {
             parse_str(parse_url($wish_video->video->path, PHP_URL_QUERY), $my_array_of_vars);
             $wish_video->youtube_id = $my_array_of_vars['v'];

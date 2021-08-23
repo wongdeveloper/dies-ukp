@@ -30,7 +30,7 @@ class StoreEmbedVideoRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:1|max:128',
-            'video' => 'required|mimetypes:video/avi, video/mpeg, video/quicktime, video/mp4|max:102400'
+            'video' => 'required|string'
         ];
     }
 }

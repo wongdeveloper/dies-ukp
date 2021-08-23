@@ -13,7 +13,7 @@ class EmbedVideo extends Model
     use SoftDeletes;
 
     protected $fillable = ["name", "video_id"];
-    protected $cascadeDeletes = ['videos'];
+    protected $cascadeDeletes = ['video'];
 
     //Scope
     public function scopeVideoId($query, $vid)
@@ -34,6 +34,6 @@ class EmbedVideo extends Model
     //Relation
     public function video()
     {
-        return $this->hasOne(Video::class);
+        return $this->belongsTo(Video::class);
     }
 }

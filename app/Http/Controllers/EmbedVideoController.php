@@ -18,7 +18,12 @@ class EmbedVideoController extends Controller
      */
     public function index()
     {
-
+        $embed_videos = EmbedVideo::all();
+        foreach ($embed_videos as $key => $embed_video) {
+            parse_str(parse_url($embed_video->video->path, PHP_URL_QUERY), $my_array_of_vars);
+            $embed_video->youtube_id = $my_array_of_vars['v'];
+        }
+        return view('admin.login.embed_video', compact('embed_videos'));
     }
 
     /**
@@ -28,7 +33,7 @@ class EmbedVideoController extends Controller
      */
     public function create()
     {
-        return view('embed_video.create');
+        return view('admin.create.embed_video');
     }
 
     /**
@@ -40,21 +45,21 @@ class EmbedVideoController extends Controller
     public function store(StoreEmbedVideoRequest $request)
     {
         $video = null;
-        if (!$request->hasFile('video')) {
-            alert()->error('Video Empty!', 'Please make sure video are uploaded');
-        }else{
-            $video_name = uniqid() . '.' . $request->video->extension();
-            $request->video->move(public_path('assets/videos/embed', $video_name));
-            $video_path = asset('assets/videos/embed/' . $video_name);
+        if (isset($request->video)) {
             $video = Video::create([
-                'path' => $video_path
+                'path' => $request->video
             ]);
+        }else{
+            alert()->error('Video Empty!', 'Please make sure video are uploaded');
         }
 
         EmbedVideo::create([
             'name' => $request->name,
             'video_id' => $video ? $video->id : null
         ]);
+
+        return back()->with('success', 'Embed Video Successfully Created');
+
     }
 
     /**
@@ -66,7 +71,7 @@ class EmbedVideoController extends Controller
     public function edit(int $evid)
     {
         $embed_video = EmbedVideo::findOrFail($evid);
-        return view('embed_video.edit', compact('embed_video'));
+        return view('admin.edit.embed_video', compact('embed_video'));
     }
 
     /**
@@ -78,15 +83,12 @@ class EmbedVideoController extends Controller
     public function update(UpdateEmbedVideoRequest $request)
     {
         $video = null;
-        if (!$request->hasFile('video')) {
-            alert()->error('Video Empty!', 'Please make sure video are uploaded');
-        } else {
-            $video_name = uniqid() . '.' . $request->video->extension();
-            $request->video->move(public_path('assets/videos/embed', $video_name));
-            $video_path = asset('assets/videos/embed/' . $video_name);
+        if (isset($request->video)) {
             $video = Video::create([
-                'path' => $video_path
+                'path' => $request->video
             ]);
+        } else {
+            alert()->error('Video Empty!', 'Please make sure video are uploaded');
         }
 
         $embedVideo = EmbedVideo::findOrFail($request->evid);
@@ -95,5 +97,18 @@ class EmbedVideoController extends Controller
             'name' => $request->name,
             'video_id' => $video ? $video->id : $embedVideo->video_id
         ]);
+        return back()->with('success', 'Embed Video Successfully Updated');
+        
+    }
+
+    /**
+     * Delete Resource in Storage
+     * @return \Illuminate\Http\Response
+     * 
+     */
+    public function destroy(int $id)
+    {
+        EmbedVideo::findOrFail($id)->delete();
+        return back()->with('success', 'Embed Video Successfully Deleted');
     }
 }

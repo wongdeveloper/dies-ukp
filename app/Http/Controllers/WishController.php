@@ -19,7 +19,7 @@ class WishController extends Controller
      */
     public function index()
     {
-        $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->get();
+        $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->where('is_vip', 0)->get();
         $wish_videos = Wish::where('video_id', '!=', 'NULL')->whereNull('image_id')->get();
         foreach ($wish_videos as $key => $wish_video) {
             parse_str(parse_url($wish_video->video->path, PHP_URL_QUERY), $my_array_of_vars);

@@ -31,7 +31,7 @@ class UpdateEmbedVideoRequest extends FormRequest
         return [
             'evid' => 'required|integer|exists:embed_videos,id',
             'name' => 'required|string|min:1|max:128',
-            'video' => 'required|mimetypes:video/avi, video/mpeg, video/quicktime, video/mp4|max:102400'
+            'video' => 'required|string'
         ];
     }
 }
