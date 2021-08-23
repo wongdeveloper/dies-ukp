@@ -387,6 +387,41 @@
                                 {{-- SPACE --}}
                             </div>
                         </div>
+                        @foreach ($blogs as $blog)
+                            <div class="row pt-2 pb-2">
+                                <div class="col-2">
+                                    {{-- SPACE --}}
+                                </div>
+                                <div class="col-8 pt-3 pb-4 haft-article-card shadow p-3 mb-5 bg-white">
+                                    <div class="row ps-4 pe-2 ">
+                                        <div class="col-3 article-img p-0 m-0">
+                                            <img src="{{ asset($blog->image->path) }}" alt="" width="100%" height="auto" style="border-radius: 30px">
+                                        </div>
+                                        <div class="col-9 ps-4">
+                                            <div class="row pt-2 title-article">
+                                                <h2>{{ $blog->title }}</h2>
+                                            </div>
+                                            <div class="row pt-1 text-article">
+                                                @php
+                                                    $preview_text = $blog->description;
+                                                    if (strlen($preview_text) > 50) {
+                                                        $preview_text = Str::substr($preview_text, 0, 50);
+                                                    }
+                                                    $preview_text .= '...';
+                                                @endphp
+                                                <p>{{ $preview_text }}</p>
+                                            </div>
+                                            <div class="row link-article">
+                                                <p><a href="{{ url('/Kegiatan/' . $blog->slug) }}"> Read More</a> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    {{-- SPACE --}}
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-1">
@@ -469,6 +504,35 @@
                     </div>
                 </div>
             </div>
+            @foreach ($blogs as $blog)
+                @php
+                    $preview_text = $blog->description;
+                    if (strlen($preview_text) > 50) {
+                        $preview_text = Str::substr($preview_text, 0, 50);
+                    }
+                    $preview_text .= '...';
+                @endphp
+                <div class="row d-flex d-md-none">
+                    <div class="col-12 pt-3 pb-4 haft-article-card-mobile shadow p-3 mb-5 bg-white">
+                        <div class="row ps-4 pe-2 ">
+                            <div class="col-5 article-img-mobile p-0 m-0">
+                                <img src="{{ asset($blog->image->path) }}" alt="" width="100%" height="auto" style="border-radius: 30px">
+                            </div>
+                            <div class="col-7 ps-4">
+                                <div class="row pt-2 title-article">
+                                    <h2 style="font-size:1.2rem">{{ $blog->title }}</h2>
+                                </div>
+                                <div class="row pt-1 text-article">
+                                    <p style="font-size:0.7rem">{{ $preview_text }}</p>
+                                </div>
+                                <div class="row link-article">
+                                    <p> <a href="{{ url('/Kegiatan/' . $blog->slug) }}" style="font-size:0.8rem"> Read More</a> </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
             
         </div>
     {{-- +++++++++++ --}}

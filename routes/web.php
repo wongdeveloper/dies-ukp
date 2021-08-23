@@ -52,9 +52,9 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::prefix('video')->name('video.')->middleware(['admin'])->group(function () {
             Route::get('/', [AdminController::class, 'video_index'])->name('index');
             Route::get('/create', [AdminController::class, 'video_create'])->name('create');
-            // Route::post('/store', [AdminController::class, 'video_store'])->name('store');
+            Route::post('/store', [AdminController::class, 'video_store'])->name('store');
             Route::get('/edit/{id}', [AdminController::class, 'video_edit'])->name('edit');
-            // Route::post('/update', [AdminController::class, 'video_update'])->name('update');
+            Route::post('/update', [AdminController::class, 'video_update'])->name('update');
             // Route::get('/destroy/{id}', [AdminController::class, 'video_destroy'])->name('destroy');
         });
         Route::prefix('umum')->name('general.')->middleware(['admin'])->group(function () {
@@ -68,7 +68,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
     });
 
     Route::prefix('kegiatan')->name('blog.')->middleware(['admin'])->group(function(){
-        Route::get('/', [BlogController::class, 'index'])->name('index');
+        // Route::get('/', [BlogController::class, 'index'])->name('index');
+        Route::get('/', [BlogController::class, 'admin'])->name('admin')->middleware(['admin']);
         Route::get('/create', [BlogController::class, 'create'])->name('create');
         Route::post('/store', [BlogController::class, 'store'])->name('store');
         Route::get('/edit/{id}', [BlogController::class, 'edit'])->name('edit');
@@ -108,18 +109,14 @@ Route::prefix('admin')->name('admin.')->group(function(){
 //     return view('admin.login.kegiatan');
 // });
 
-Route::get('/Kegiatan/{slug}', function () {
-    return view('kegiatan.template');
-});
-
 
 Route::get('/Tentang', function () {
     return view('tentang.index');
 });
 
-Route::get('/Kegiatan', function () {
-    return view('kegiatan.index');
-});
+Route::get('/Kegiatan', [BlogController::class, 'index'])->name('blog.index');
+
+Route::get('/Kegiatan/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 Route::prefix('Ucapan')->name('ucapan.')->group(function(){
     Route::get('/', [WishController::class, 'index'])->name('index');

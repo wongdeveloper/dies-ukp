@@ -26,7 +26,7 @@ class WishController extends Controller
             $wish_video->youtube_id = $my_array_of_vars['v'];
         }
         $wish_texts = Wish::whereNull('video_id')->whereNull('image_id')->get();
-        $roles = Role::all();
+        $roles = Role::where('id', '!=', '6')->get();
         return view('ucapan.index', compact('wish_images', 'wish_videos', 'wish_texts', 'roles'));
     }
 
@@ -53,7 +53,7 @@ class WishController extends Controller
     public function image()
     {
         $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->get();
-        $roles = Role::all();
+        $roles = Role::where('id', '!=', '6')->get();
         return view('ucapan.foto', compact('wish_images', 'roles'));
     }
 
@@ -65,7 +65,7 @@ class WishController extends Controller
     public function text()
     {
         $wish_texts = Wish::whereNull('video_id')->whereNull('image_id')->get();
-        $roles = Role::all();
+        $roles = Role::where('id', '!=', '6')->get();
         return view('ucapan.teks', compact('wish_texts', 'roles'));
     }
 
@@ -153,7 +153,7 @@ class WishController extends Controller
     {
         $wish = Wish::findOrFail($request->wid)->update([
             'name' => $request->name,
-            'role_id' => $request->rid,
+            'role_id' => $request->kategori,
             'wish' => $request->wish,
             'is_vip' => 0
         ]);

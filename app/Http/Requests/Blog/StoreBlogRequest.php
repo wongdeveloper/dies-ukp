@@ -32,7 +32,7 @@ class StoreBlogRequest extends FormRequest
             'title' => 'required|string|min:1|max:128',
             'description' => 'required|string|min:1',
             'image' => 'required|image|mimes:png,jpg,jpeg,HEIF|max:10240',
-            'video' => 'nullable|mimetypes:video/avi, video/mpeg, video/quicktime, video/mp4|max:102400'
+            'video' => 'nullable|string'
         ];
     }
 }

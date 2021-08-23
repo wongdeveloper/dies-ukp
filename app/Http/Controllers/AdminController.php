@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Wish\StoreWishRequest;
 use App\Http\Requests\Wish\UpdateWishRequest;
+use App\Http\Requests\WishVideo\StoreWishVideoRequest;
+use App\Http\Requests\WishVideo\UpdateWishVideoRequest;
 use Illuminate\Http\Request;
 use App\Models\Wish;
 use App\Models\Role;
@@ -25,7 +27,8 @@ class AdminController extends Controller
 
     public function wish_create()
     {
-        return view('admin.create.teks');
+        $role = Role::where('id', '=', '6')->first();
+        return view('admin.create.teks', compact('role'));
     }
 
     public function wish_store(StoreWishRequest $request)
@@ -68,7 +71,7 @@ class AdminController extends Controller
 
         $wish = Wish::create([
             'name' => $request->name,
-            'email' => $request->email,
+            'email' => isset($request->email) ? $request->email : null,
             'role_id' => $request->kategori,
             'detail1' => $detail1,
             'detail2' => $detail2,
@@ -128,7 +131,7 @@ class AdminController extends Controller
 
         $wish = Wish::findOrFail($request->wid)->update([
             'name' => $request->name,
-            'email' => $request->email,
+            'email' => isset($request->email) ? $request->email : null,
             'role_id' => $request->kategori,
             'detail1' => $detail1,
             'detail2' => $detail2,
@@ -167,7 +170,8 @@ class AdminController extends Controller
     public function photo_edit(int $id)
     {
         $wish_image = Wish::findOrFail($id);
-        return view('admin.edit.foto', compact('wish_image'));
+        $roles = Role::all();
+        return view('admin.edit.foto', compact('wish_image', 'roles'));
     }
 
     // public function photo_update(UpdateWishRequest $request)
@@ -195,10 +199,30 @@ class AdminController extends Controller
         return view('admin.create.video');
     }
 
-    // public function video_store(StoreWishRequest $request)
-    // {
+    public function video_store(StoreWishVideoRequest $request)
+    {
 
-    // }
+        if (isset($request->video)) {
+            $video = Video::create([
+                'path' => $request->video
+            ]);
+        }
+
+        $wish = Wish::create([
+            'name' => null,
+            'email' => null,
+            'role_id' => null,
+            'detail1' => null,
+            'detail2' => null,
+            'wish' => $request->wish,
+            'image_id' => null,
+            'image_title' => null,
+            'video_id' => !is_null($video) ? $video->id : null,
+            'video_title' => isset($request->video_title) ? $request->video_title : null,
+            'is_vip' => 0
+        ]);
+        return back()->with('success', 'Ucapan anda berhasil ditambahkan');
+    }
 
     public function video_edit(int $id)
     {
@@ -206,9 +230,29 @@ class AdminController extends Controller
         return view('admin.edit.video', compact('wish_video'));
     }
 
-    // public function video_update(UpdateWishRequest $request)
-    // {
-    // }
+    public function video_update(UpdateWishVideoRequest $request)
+    {
+        if (isset($request->video)) {
+            $video = Video::create([
+                'path' => $request->video
+            ]);
+        }
+
+        $wish = Wish::findOrFail($request->wid)->update([
+            'name' => null,
+            'email' => null,
+            'role_id' => null,
+            'detail1' => null,
+            'detail2' => null,
+            'wish' => $request->wish,
+            'image_id' => null,
+            'image_title' => null,
+            'video_id' => !is_null($video) ? $video->id : null,
+            'video_title' => isset($request->video_title) ? $request->video_title : null,
+            'is_vip' => 0
+        ]);
+        return back()->with('success', 'Ucapan anda berhasil ditambahkan');
+    }
 
     // public function video_destroy(int $id)
     // {
@@ -217,14 +261,13 @@ class AdminController extends Controller
     public function general_index()
     {
         $wishes = Wish::whereNull('video_id')->whereNull('image_id')->where('is_vip', 0)->get();
-        return view('admin.login.general', compact('wishes'));
+        return view('admin.login.umum', compact('wishes'));
     }
 
-    public function general_create()
-    {
-
-        return view('admin.create.general');
-    }
+    // public function general_create()
+    // {
+    //     return view('admin.create.general');
+    // }
 
     // public function general_store(StoreWishRequest $request)
     // {
@@ -233,7 +276,8 @@ class AdminController extends Controller
     public function general_edit(int $id)
     {
         $wish = Wish::findOrFail($id);
-        return view('admin.edit.general', compact('wish'));
+        $roles = Role::where('id', '!=', '6')->get();
+        return view('admin.edit.teksumum', compact('wish', 'roles'));
     }
 
     // public function general_update(UpdateWishRequest $request)

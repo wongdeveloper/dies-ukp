@@ -26,6 +26,6 @@ class RedirectIfAuthenticated
                 return redirect(RouteServiceProvider::HOME);
             }
         }
-        return $next($request)->with('error', 'Username or Password Invalid');
+        return $next($request);
     }
 }

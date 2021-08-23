@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     
     <title>
         @yield('title')
@@ -63,7 +64,14 @@
     
     {{-- JQUEY DATATABLES --}}
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/modal-video.min.css') }}">
+    <script src="{{ asset('js/jquery-modal-video.min.js') }}"></script>
     
+    {{-- Croppie --}}
+    <link rel="stylesheet" href="{{ asset('css/croppie.css') }}">
+    <script src="{{ asset('js/croppie.min.js') }}"></script>
+    <script src="{{ asset('js/exif.js') }}"></script>
   
 </head>
 <style>
@@ -166,10 +174,6 @@
         50% {
             border-color: #D02762 !important;
         }
-    }
-
-    .jconfirm .jconfirm-box.jconfirm-type-green {
-        border-color: #D02762 !important;
     }
 
     .jconfirm .jconfirm-box .jconfirm-buttons button.btn-green {
@@ -457,6 +461,67 @@
             width: 100%;
         }
     }
+
+    /* Container needed to position the overlay. Adjust the width as needed */
+    .overlay-container {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    /* Make the image to responsive */
+    .image {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* The overlay effect (full height and width) - lays on top of the container and over the image */
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .3s ease;
+        background-color:rgba(0, 0, 0, 0.7);
+    }
+    
+    /* When you mouse over the container, fade in the overlay icon*/
+    .overlay-container:hover .overlay {
+        opacity: 1;
+    }
+    
+    /* The icon inside the overlay is positioned in the middle vertically and horizontally */
+    .overlay-icon {
+        color: white;
+        font-size: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    
+    /* When you move the mouse over the icon, change color */
+    .fa-play:hover {
+        color: #eee;
+    }
+
+    .fa-play {
+        color: white;
+    }
+
+    .fa-search{
+        color: white;
+    }
+
+    .fa-search:hover{
+        color: #eee;
+    }
 </style>
 
 <body>
@@ -480,6 +545,29 @@
             </div>
             <div class="app-main__outer">
                 <div class="app-main__inner">
+                    @if(Session::has('error'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close"
+                            aria-label="Close" data-bs-dismiss="alert"><span
+                                aria-hidden="true">×</span></button>{{ Session::get( 'error' ) }}</div>
+                    @endif
+                    
+                    @if(Session::has('warning'))
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert"><button type="button" class="close"
+                            aria-label="Close" data-bs-dismiss="alert"><span
+                                aria-hidden="true">×</span></button>{{ Session::get( 'warning' ) }}</div>
+                    @endif
+                    
+                    @if(Session::has('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close"
+                            aria-label="Close" data-bs-dismiss="alert"><span
+                                aria-hidden="true">×</span></button>{{ Session::get( 'success' ) }}</div>
+                    @endif
+                    
+                    @if(Session::has('info'))
+                    <div class="alert alert-info alert-dismissible fade show" role="alert"><button type="button" class="close"
+                            aria-label="Close" data-bs-dismiss="alert"><span
+                                aria-hidden="true">×</span></button>{{ Session::get( 'info' ) }}</div>
+                    @endif
                     <div class="app-page-title">
                         <div class="page-title-wrapper">
                             <div class="page-title-heading">

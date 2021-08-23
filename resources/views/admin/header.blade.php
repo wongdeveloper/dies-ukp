@@ -75,9 +75,12 @@
             <div class="widget-content p-0">
                 <div class="widget-content-wrapper">
                     <div class="widget-content-right ml-3">
-                        <a href="#" class="p-2 btn haft-btn" title="Logout" id="logout" style="">
+                        <a href="{{ route('logout') }}" class="p-2 btn haft-btn" title="Logout" id="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Keluar
                         </a>
+                        <form id="logout-form" class="d-none" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                        </form>
                     </div>
                 </div>
             </div>

@@ -197,7 +197,7 @@
         .container-video{
             width: auto !important;
             background-color: #D02762 !important;
-            min-height: 300px !important;
+            min-height: 500px !important;
         }
     /* ========================= */
 
@@ -224,7 +224,7 @@
             <div class="row pt-5 ps-3 title">
                 <div class="col-2"></div>        
                 <div class="col-4">
-                    <h1>Judul Kegiatan</h1>
+                    <h1>{{ $blog->title }}</h1>
                 </div>
                 <div class="col-6"></div>
                 
@@ -237,22 +237,22 @@
             </div>
             <div class="row pt-3 gambar-cover">
                 <div class="col-2"></div>
-                <div class="col container-img">
-                    {{-- BUAT GAMBAR COVER --}}
+                <div class="col container-img p-0">
+                    <img src="{{ asset($blog->image->path) }}" alt="" width="100%" height="auto">
                 </div>
                 <div class="col-2"></div>
             </div>
             <div class="row pt-3 isi-teks">
                 <div class="col-2"></div>
                 <div class="col">
-                    <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti molestiae quis delectus earum nostrum consequuntur quod laborum, quidem officiis illo, quos tempore tenetur modi consectetur hic quasi a eveniet exercitationem? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam delectus saepe explicabo unde error maxime voluptatibus corporis, a hic fugiat asperiores molestias, dolorum minus itaque modi tempora accusamus animi repudiandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium eligendi quisquam totam cupiditate dolore molestias quia eum soluta facere, eaque excepturi inventore, repellendus veritatis! Blanditiis temporibus a quod magnam quis.</p>
+                    <p style="text-align: justify;">{{ $blog->description }}</p>
                 </div>
                 <div class="col-2"></div>
             </div>
             <div class="row pt-3 video">
                 <div class="col-2"></div>
-                <div class="col container-video">
-                    {{-- BUAT GAMBAR COVER --}}
+                <div class="col container-video p-0 m-0">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ $blog->youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="col-2"></div>
             </div>
@@ -263,7 +263,7 @@
         <div class="container-fluid pb-5 ucapan-teks d-block d-md-none">
             <div class="row pt-5 ps-3 title">  
                 <div class="col">
-                    <h1>Judul Kegiatan</h1>
+                    <h1>{{ $blog->title }}</h1>
                 </div>
             </div>
             <div class="row ps-3 line-yellow">
@@ -273,22 +273,22 @@
             </div>
             <div class="row pt-3 gambar-cover">
                 <div class="col-1"></div>
-                <div class="col container-img">
-                    {{-- BUAT GAMBAR COVER --}}
+                <div class="col container-img p-0">
+                    <img src="{{ asset($blog->image->path) }}" alt="" width="100%" height="auto">
                 </div>
                 <div class="col-1"></div>
             </div>
             <div class="row pt-3 isi-teks">
                 <div class="col-1"></div>
                 <div class="col">
-                    <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti molestiae quis delectus earum nostrum consequuntur quod laborum, quidem officiis illo, quos tempore tenetur modi consectetur hic quasi a eveniet exercitationem? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam delectus saepe explicabo unde error maxime voluptatibus corporis, a hic fugiat asperiores molestias, dolorum minus itaque modi tempora accusamus animi repudiandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium eligendi quisquam totam cupiditate dolore molestias quia eum soluta facere, eaque excepturi inventore, repellendus veritatis! Blanditiis temporibus a quod magnam quis.</p>
+                    <p style="text-align: justify;">{{ $blog->description }}</p>
                 </div>
                 <div class="col-1"></div>
             </div>
             <div class="row pt-3 video">
                 <div class="col-1"></div>
-                <div class="col container-video">
-                    {{-- BUAT GAMBAR COVER --}}
+                <div class="col container-video p-0 m-0">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ $blog->youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="col-1"></div>
             </div>

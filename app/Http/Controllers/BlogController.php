@@ -25,6 +25,21 @@ class BlogController extends Controller
     }
 
     /**
+     * Show Blog on Admin Page
+     * @return \Illuminate\Http\Response
+     * 
+     */
+    public function admin()
+    {
+        $blogs = Blog::all();
+        foreach ($blogs as $key => $blog) {
+            parse_str(parse_url($blog->video->path, PHP_URL_QUERY), $my_array_of_vars);
+            $blog->youtube_id = $my_array_of_vars['v'];
+        }
+        return view('admin.login.kegiatan', compact('blogs'));
+    }
+
+    /**
      * Show specific item in the storage
      * @param string $slug
      * @return \Illuminate\Http\Response
@@ -33,6 +48,8 @@ class BlogController extends Controller
     public function show(string $slug)
     {
         $blog = Blog::where('slug', $slug)->first();
+        parse_str(parse_url($blog->video->path, PHP_URL_QUERY), $my_array_of_vars);
+        $blog->youtube_id = $my_array_of_vars['v'];
         return view('kegiatan.template', compact('blog'));
     }
 
@@ -43,7 +60,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+        return view('admin.create.article');
     }
 
     /**
@@ -61,19 +78,16 @@ class BlogController extends Controller
         }
         else{
             $image_name = uniqid() . '.' . $request->image->extension();
-            $request->image->move(public_path('assets/images/blog', $image_name));
+            $request->image->move(public_path('assets/images/blog'), $image_name);
             $image_path = asset('assets/images/blog/' . $image_name);
             $image = Image::create([
                 'path' => $image_path
             ]);
         }
 
-        if (!$request->hasFile('video')) {
-            $video_name = uniqid() . '.' . $request->video->extension();
-            $request->video->move(public_path('assets/videos/blog', $video_name));
-            $video_path = asset('assets/videos/blog/' . $video_name);
+        if (isset($request->video)) {
             $video = Video::create([
-                'path' => $video_path
+                'path' => $request->video
             ]);
         }
 
@@ -85,7 +99,7 @@ class BlogController extends Controller
             'video_id' => $video ? $video->id : null
         ]);
 
-        return redirect()->route('blog.index')->with('success', 'Post Created Successfully');
+        return back()->with('success', 'Post Created Successfully');
 
     }
 
@@ -98,7 +112,7 @@ class BlogController extends Controller
     public function edit(int $bid)
     {
         $blog = Blog::findOrFail($bid);
-        return view('blog.edit', compact('blog'));
+        return view('admin.edit.article', compact('blog'));
     }
 
     /**
@@ -115,19 +129,16 @@ class BlogController extends Controller
             alert()->error('Image Empty!', 'Please make sure image are uploaded');
         } else {
             $image_name = uniqid() . '.' . $request->image->extension();
-            $request->image->move(public_path('assets/images/blog', $image_name));
+            $request->image->move(public_path('assets/images/blog'), $image_name);
             $image_path = asset('assets/images/blog/' . $image_name);
             $image = Image::create([
                 'path' => $image_path
             ]);
         }
 
-        if (!$request->hasFile('video')) {
-            $video_name = uniqid() . '.' . $request->video->extension();
-            $request->video->move(public_path('assets/videos/blog', $video_name));
-            $video_path = asset('assets/videos/blog/' . $video_name);
+        if (isset($request->video)) {
             $video = Video::create([
-                'path' => $video_path
+                'path' => $request->video
             ]);
         }
 
@@ -141,13 +152,13 @@ class BlogController extends Controller
             'video_id' => $video ? $video->id : $blog->video_id
         ]);
 
-        return redirect()->route('blog.index')->with('success', 'Post Created Successfully');
+        return back()->with('success', 'Post Created Successfully');
 
     }
 
     public function destroy(int $id)
     {
         Blog::findOrFail($id)->delete();
-        return redirect()->route('blog.index')->with('success', 'Post deleted successfully.');
+        return back()->with('success', 'Post deleted successfully.');
     }
 }

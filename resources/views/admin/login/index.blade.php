@@ -47,7 +47,7 @@
                 <tr>
                     <td scope="row">{{ $key+1 }}</td>
                     <td>
-                        <img src="{{ $vip->image->path }}" data-src="{{ $vip->image->path }}" alt="Click to Zoom" class="image-preview">
+                        <img src="{{ $vip->image->path }}" data-src="{{ $vip->image->path }}" alt="Click to Zoom" class="image-preview" width="300" height="auto">
                     </td>
                     <td>{{ $vip->name }}</td>
                     <td>{{ $vip->detail1 }}</td>

@@ -13,7 +13,7 @@ class Blog extends Model
     use SoftDeletes;
     use CascadeSoftDeletes;
     protected $fillable = ["title", "slug", "description", "image_id", "video_id"];
-    protected $cascadeDeletes = ['videos', 'images'];
+    protected $cascadeDeletes = ['video', 'image'];
 
     //Scope
     public function scopeImageId($query, $imgid)
@@ -44,12 +44,12 @@ class Blog extends Model
     //Relation
     public function video()
     {
-        return $this->hasOne(Video::class);
+        return $this->belongsTo(Video::class);
     }
 
     public function image()
     {
-        return $this->hasOne(Image::class);
+        return $this->belongsTo(Image::class);
     }
 
 }
