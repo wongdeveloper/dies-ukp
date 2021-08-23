@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^public/(.*) /dies-ukp/$1 [R]
