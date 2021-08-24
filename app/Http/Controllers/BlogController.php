@@ -34,7 +34,11 @@ class BlogController extends Controller
         $blogs = Blog::all();
         foreach ($blogs as $key => $blog) {
             parse_str(parse_url($blog->video->path, PHP_URL_QUERY), $my_array_of_vars);
-            $blog->youtube_id = $my_array_of_vars['v'];
+            if (array_key_exists('v', $my_array_of_vars)) {
+                $blog->youtube_id = $my_array_of_vars['v'];
+            }else{
+                $blog->youtube_id = 0;
+            }
         }
         return view('admin.login.kegiatan', compact('blogs'));
     }
@@ -49,7 +53,11 @@ class BlogController extends Controller
     {
         $blog = Blog::where('slug', $slug)->first();
         parse_str(parse_url($blog->video->path, PHP_URL_QUERY), $my_array_of_vars);
-        $blog->youtube_id = $my_array_of_vars['v'];
+        if (array_key_exists('v', $my_array_of_vars)) {
+            $blog->youtube_id = $my_array_of_vars['v'];
+        }else{
+            $blog->youtube_id = 0;
+        }
         return view('kegiatan.template', compact('blog'));
     }
 

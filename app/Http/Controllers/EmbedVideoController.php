@@ -21,7 +21,11 @@ class EmbedVideoController extends Controller
         $embed_videos = EmbedVideo::all();
         foreach ($embed_videos as $key => $embed_video) {
             parse_str(parse_url($embed_video->video->path, PHP_URL_QUERY), $my_array_of_vars);
-            $embed_video->youtube_id = $my_array_of_vars['v'];
+            if (array_key_exists('v', $my_array_of_vars)) {
+                $embed_video->youtube_id = $my_array_of_vars['v'];
+            }else{
+                $embed_video->youtube_id = 0;
+            }
         }
         return view('admin.login.embed_video', compact('embed_videos'));
     }

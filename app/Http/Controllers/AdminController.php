@@ -189,7 +189,11 @@ class AdminController extends Controller
         $wish_videos = Wish::where('video_id', '!=', 'NULL')->whereNull('image_id')->where('is_vip', '0')->get();
         foreach ($wish_videos as $key => $wish_video) {
             parse_str(parse_url($wish_video->video->path, PHP_URL_QUERY), $my_array_of_vars);
-            $wish_video->youtube_id = $my_array_of_vars['v'];
+            if (array_key_exists('v', $my_array_of_vars)) {
+                $wish_video->youtube_id = $my_array_of_vars['v'];
+            }else{
+                $wish_video->youtube_id = 0;
+            }
         }
         return view('admin.login.video', compact('wish_videos'));
     }
