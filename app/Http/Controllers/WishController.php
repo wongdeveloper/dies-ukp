@@ -23,7 +23,11 @@ class WishController extends Controller
         $wish_videos = Wish::where('video_id', '!=', 'NULL')->whereNull('image_id')->get();
         foreach ($wish_videos as $key => $wish_video) {
             parse_str(parse_url($wish_video->video->path, PHP_URL_QUERY), $my_array_of_vars);
-            $wish_video->youtube_id = $my_array_of_vars['v'];
+            if (array_key_exists('v', $my_array_of_vars)) {
+                $wish_video->youtube_id = $my_array_of_vars['v'];
+            }else{
+                $wish_video->youtube_id = 0;
+            }
         }
         $wish_texts = Wish::whereNull('video_id')->whereNull('image_id')->get();
         $roles = Role::where('id', '!=', '6')->get();
@@ -40,7 +44,11 @@ class WishController extends Controller
         $wish_videos = Wish::where('video_id', '!=', 'NULL')->whereNull('image_id')->get();
         foreach ($wish_videos as $key => $wish_video) {
             parse_str(parse_url($wish_video->video->path, PHP_URL_QUERY), $my_array_of_vars);
-            $wish_video->youtube_id = $my_array_of_vars['v'];
+            if (array_key_exists('v', $my_array_of_vars)) {
+                $wish_video->youtube_id = $my_array_of_vars['v'];
+            }else{
+                $wish_video->youtube_id = 0;
+            }
         }
         return view('ucapan.video', compact('wish_videos'));
     }

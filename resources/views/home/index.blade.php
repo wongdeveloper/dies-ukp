@@ -373,7 +373,7 @@
 
         {{-- BUAT NON HP --}}
         <div class="col-6 d-none d-lg-block ">
-            <div class="row">
+            <div class="row justify-content-center">
                 
                 <div class="col-3 ">
                     <div class="col count-down-blue">
@@ -396,7 +396,7 @@
 
                     </div>
                 </div>
-                <div class="col-1"></div>
+                <!-- <div class="col-1"></div> -->
             </div>
         </div>
 
