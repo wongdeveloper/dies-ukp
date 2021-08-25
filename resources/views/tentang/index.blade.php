@@ -245,18 +245,26 @@
                         <div class="col-2">
                             {{-- BUAT JARAK --}}
                         </div>
-                        <div class="col-3 container-img">
-    
-                        </div>
-                        <div class="col-6 pt-5 container-teks">
+                        {{-- <div class="col-3 container-img">
+
+                        </div> --}}
+                        <div class="col-9 pt-4 container-teks">
                             <div class="row">
                                 <div class="col">
-                                    <h1>Judul Section</h1>
+                                    <h1>Sejarah TRTD</h1>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem voluptate tempora cumque tempore voluptas earum animi voluptatibus nihil laborum dicta pariatur, vitae in quia eligendi nemo aliquid, maxime sunt!</p>
+                            <div class="row pt-3">
+                                <div class="col" style="text-align: justify">
+                                    <p>
+                                        Pada tanggal 22 September 2021, UK Petra akan merayakan ulang tahunnya yang ke 60. 
+                                        Perayaan ulang tahun ini bertajuk <span style="font-style: italic">The Rock Turns Diamond!</span> (TRTD). 
+                                        Petra, Sang Batu Karang, mencapai ulang tahun berliannya. 
+                                        Perayaan TRTD ini mengambil tema “<span style="font-style: italic">De<span style="font-weight:bold">light</span>ful Petra, De<span style="font-weight:bold">light</span>ed World </span>”. 
+                                        Tema ini memiliki dua makna. Pertama, UK Petra yang penuh sukacita membuat dunia turut bergembira.  
+                                        Tema ini juga berisi harapan UK Petra yang dipenuhi dengan nilai LIGHT dapat menyemai nilai-nilai 
+                                        tersebut di dalam masyarakat melalui pengajaran, penelitian, dan pengabdiannya.
+                                    </p>
                                 </div>
                             </div>
                             
@@ -267,27 +275,63 @@
                 </div>
             </div>
             <div class="row pt-4">
-                <div class="col container-isi-pink" style="text-align: right">
+                <div class="col container-isi-pink" >
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col-2">
                             {{-- BUAT JARAK --}}
                         </div>
-                        <div class="col-6 pt-5 container-teks">
+                        <div class="col-9 pt-4 pb-4 container-teks">
                             <div class="row">
                                 <div class="col">
-                                    <h1>Judul Section</h1>
+                                    <h1>Bentuk Kegiatan TRTD</h1>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem voluptate tempora cumque tempore voluptas earum animi voluptatibus nihil laborum dicta pariatur, vitae in quia eligendi nemo aliquid, maxime sunt!</p>
+                            <div class="row pt-3">
+                                <div class="col" style="text-align: justify">
+                                    <p>
+                                        Perayaan 60 tahun ini dibagi menjadi tiga tahap, yaitu tahun persiapan (2019-2020), 
+                                        tahun penyambutan (2020-2021), dan tahun perayaan (2021-2022). 
+                                        Sepanjang 2019-2020, Panitia TRTD mengkampanyekan perayaan dan tema ini melalui berbagai 
+                                        media seperti aplikasi logo, sejarah UK Petra di media sosial, dan lain-lain. 
+                                        Pada tahun 2020-2021, UK Petra menyelenggarakan berbagai program dan kegiatan untuk 
+                                        menyambut perayaan ulang tahun ini seperti: 
+                                    </p>
+                                    <table style="color:#FFF">
+                                        <tr>
+                                          <td>1. Penerbitan 60+ buku karya sivitas akademika, </td>
+                                        </tr>
+                                        <tr>
+                                          <td>2. Pembimbingan dan pemilihan 60 pre-startups,</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3. Seminar dan diskusi kebangsaan bersama para pemimpin daerah dan nasional,</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4. Berbagai konferensi ilmiah internasional,</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5. O.F. Patty Award untuk seni-budaya, Wasis Sastroredjo Cup untuk olahraga pegawai, 
+                                                dan Jones Syaranamual Cup untuk olahraga mahasiswa,
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6. Pembuatan video pendek reka-ulang sejarah UK Petra</td>
+                                        </tr>
+                                    </table>
+                                    <P class="pt-3">
+                                        dan masih banyak lagi dari tiap fakultas, program studi, 
+                                        program, dan unit di lingkungan UK Petra. Adanya pandemi Covid-19 menghasilkan 
+                                        praktik-praktik baru dalam perayaan seperti virtual conference, 
+                                        electronic sports, dan digital competition. 
+
+                                    </P>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-3 container-img">
-    
-                        </div>
-                        <div class="col-2">
+                        {{-- <div class="col-3 container-img">
+
+                        </div> --}}
+                        <div class="col-1">
                             {{-- BUAT JARAK --}}
                         </div>
                         
@@ -300,18 +344,34 @@
                         <div class="col-2">
                             {{-- BUAT JARAK --}}
                         </div>
-                        <div class="col-3 container-img">
-    
-                        </div>
-                        <div class="col-6 pt-5 container-teks">
+                        {{-- <div class="col-3 container-img">
+
+                        </div> --}}
+                        <div class="col-9 pt-4 pb-4 container-teks">
                             <div class="row">
                                 <div class="col">
-                                    <h1>Judul Section</h1>
+                                    <h1>Puncak Kegiatan TRTD</h1>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row pt-3">
                                 <div class="col">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem voluptate tempora cumque tempore voluptas earum animi voluptatibus nihil laborum dicta pariatur, vitae in quia eligendi nemo aliquid, maxime sunt!</p>
+                                    <p>
+                                        Puncaknya, pada awal tahun akademik 2021-2022, 
+                                        Panitia TRTD mempersiapkan acara Dies Natalis ke 60 pada 
+                                        tanggal 22 September 2021 nanti dan menghela 
+                                        kegiatan-kegiatan pembukanya seperti Selebrasi & Bincang 60+ buku, 
+                                        peluncuran pre-startups Super 60, web ucapan selamat, 
+                                        60secondUptaker chalenge, talkshow, patung peringatan, dan lain-lain. 
+                                    </p>
+                                    <p class="pt-3">
+                                        Segala kegiatan, segala kemuliaan, hanya bagi Dia.
+                                    </p>
+                                    <p class="pt-3">
+                                        The Rock Turns Diamond!
+                                    </p>
+                                    <p>
+                                        Delightful Petra, Delighted World
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -340,18 +400,26 @@
                     <div class="col-1">
                         {{-- BUAT JARAK --}}
                     </div>
-                    <div class="col-5 container-img">
+                    {{-- <div class="col-5 container-img">
 
-                    </div>
-                    <div class="col-6 pt-5 container-teks">
+                    </div> --}}
+                    <div class="col-11 pt-5 container-teks">
                         <div class="row">
                             <div class="col">
-                                <h1 style="font-size: 1.2rem">Judul Section</h1>
+                                <h1 style="font-size: 1.2rem">Sejarah TRTD</h1>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
-                                <p style="font-size: 0.7rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem voluptate tempora cumque tempore voluptas earum animi voluptatibus nihil laborum dicta pariatur, vitae in quia eligendi nemo aliquid, maxime sunt!</p>
+                            <div class="col" style="text-align: justify">
+                                <p style="font-size: 0.7rem">
+                                    Pada tanggal 22 September 2021, UK Petra akan merayakan ulang tahunnya yang ke 60. 
+                                    Perayaan ulang tahun ini bertajuk <span style="font-style: italic">The Rock Turns Diamond!</span> (TRTD). 
+                                    Petra, Sang Batu Karang, mencapai ulang tahun berliannya. 
+                                    Perayaan TRTD ini mengambil tema “<span style="font-style: italic">De<span style="font-weight:bold">light</span>ful Petra, De<span style="font-weight:bold">light</span>ed World </span>”. 
+                                    Tema ini memiliki dua makna. Pertama, UK Petra yang penuh sukacita membuat dunia turut bergembira.  
+                                    Tema ini juga berisi harapan UK Petra yang dipenuhi dengan nilai LIGHT dapat menyemai nilai-nilai 
+                                    tersebut di dalam masyarakat melalui pengajaran, penelitian, dan pengabdiannya.
+                                </p>
                             </div>
                         </div>
                         
@@ -362,48 +430,107 @@
             </div>
         </div>
         <div class="row pt-4">
-            <div class="col container-isi-pink" style="text-align: right">
+            <div class="col container-isi-pink" style="text-align: justify">
                 <div class="row">
-                    <div class="col-6 pt-5 container-teks">
-                        <div class="row">
-                            <div class="col">
-                                <h1 style="font-size: 1.2rem">Judul Section</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <p style="font-size: 0.7rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem voluptate tempora cumque tempore voluptas earum animi voluptatibus nihil laborum dicta pariatur, vitae in quia eligendi nemo aliquid, maxime sunt!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-5 container-img">
-
-                    </div>
                     <div class="col-1">
                         {{-- BUAT JARAK --}}
                     </div>
+                    <div class="col-11 pt-5 container-teks">
+                        <div class="row">
+                            <div class="col">
+                                <h1 style="font-size: 1.2rem">
+                                    Bentuk Kegiatan TRTD
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p >
+                                    <p style="font-size: 0.7rem">
+                                        Perayaan 60 tahun ini dibagi menjadi tiga tahap, yaitu tahun persiapan (2019-2020), 
+                                        tahun penyambutan (2020-2021), dan tahun perayaan (2021-2022). 
+                                        Sepanjang 2019-2020, Panitia TRTD mengkampanyekan perayaan dan tema ini melalui berbagai 
+                                        media seperti aplikasi logo, sejarah UK Petra di media sosial, dan lain-lain. 
+                                        Pada tahun 2020-2021, UK Petra menyelenggarakan berbagai program dan kegiatan untuk 
+                                        menyambut perayaan ulang tahun ini seperti: 
+                                    </p>
+                                    <table style="color:#FFF;font-size: 0.7rem" >
+                                        <tr>
+                                          <td>1. Penerbitan 60+ buku karya sivitas akademika, </td>
+                                        </tr>
+                                        <tr>
+                                          <td>2. Pembimbingan dan pemilihan 60 pre-startups,</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3. Seminar dan diskusi kebangsaan bersama para pemimpin daerah dan nasional,</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4. Berbagai konferensi ilmiah internasional,</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5. O.F. Patty Award untuk seni-budaya, Wasis Sastroredjo Cup untuk olahraga pegawai, 
+                                                dan Jones Syaranamual Cup untuk olahraga mahasiswa,
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6. Pembuatan video pendek reka-ulang sejarah UK Petra</td>
+                                        </tr>
+                                    </table>
+                                    <P class="pt-3" style="font-size: 0.7rem">
+                                        dan masih banyak lagi dari tiap fakultas, program studi, 
+                                        program, dan unit di lingkungan UK Petra. Adanya pandemi Covid-19 menghasilkan 
+                                        praktik-praktik baru dalam perayaan seperti virtual conference, 
+                                        electronic sports, dan digital competition. 
+
+                                    </P>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <div class="col-5 container-img">
+
+                    </div> --}}
+                    {{-- <div class="col-1">
+                        {{-- BUAT JARAK 
+                    </div> --}}
                     
                 </div>
             </div>
         </div>
-        <div class="row pt-4">
+        <div class="row pt-4 pb-4">
             <div class="col container-isi-yellow">
                 <div class="row">
                     <div class="col-1">
                         {{-- BUAT JARAK --}}
                     </div>
-                    <div class="col-5 container-img">
+                    {{-- <div class="col-5 container-img">
 
-                    </div>
-                    <div class="col-6 pt-5 container-teks">
+                    </div> --}}
+                    <div class="col-11 pt-5 container-teks">
                         <div class="row">
                             <div class="col">
-                                <h1 style="font-size: 1.2rem">Judul Section</h1>
+                                <h1 style="font-size: 1.2rem">Puncak Kegiatan TRTD</h1>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <p style="font-size: 0.7rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem voluptate tempora cumque tempore voluptas earum animi voluptatibus nihil laborum dicta pariatur, vitae in quia eligendi nemo aliquid, maxime sunt!</p>
+                                <p style="font-size: 0.7rem">
+                                    Puncaknya, pada awal tahun akademik 2021-2022, 
+                                    Panitia TRTD mempersiapkan acara Dies Natalis ke 60 pada 
+                                    tanggal 22 September 2021 nanti dan menghela 
+                                    kegiatan-kegiatan pembukanya seperti Selebrasi & Bincang 60+ buku, 
+                                    peluncuran pre-startups Super 60, web ucapan selamat, 
+                                    60secondUptaker chalenge, talkshow, patung peringatan, dan lain-lain. 
+                                </p>
+                                <p class="pt-3" style="font-size: 0.7rem">
+                                    Segala kegiatan, segala kemuliaan, hanya bagi Dia.
+                                </p>
+                                <p class="pt-3" style="font-size: 0.7rem">
+                                    The Rock Turns Diamond!
+                                </p>
+                                <p style="font-size: 0.7rem">
+                                    Delightful Petra, Delighted World
+                                </p>
                             </div>
                         </div>
                     </div>
