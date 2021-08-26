@@ -231,7 +231,7 @@
                 </div>
                 <div class="col-9">
                     <div class="container-fluid">
-                        <div class="row pt-2 pb-2">
+                        <div class="row ">
                             <div class="col-2">
                                 {{-- SPACE --}}
                             </div>
@@ -257,7 +257,7 @@
                                 {{-- SPACE --}}
                             </div>
                         </div>
-                        <div class="row pt-2 pb-2">
+                        <div class="row ">
                             <div class="col-2">
                                 {{-- SPACE --}}
                             </div>
@@ -283,7 +283,7 @@
                                 {{-- SPACE --}}
                             </div>
                         </div>
-                        <div class="row pt-2 pb-2">
+                        <div class="row">
                             <div class="col-2">
                                 {{-- SPACE --}}
                             </div>
@@ -309,7 +309,7 @@
                                 {{-- SPACE --}}
                             </div>
                         </div>
-                        <div class="row pt-2 pb-2">
+                        <div class="row">
                             <div class="col-2">
                                 {{-- SPACE --}}
                             </div>
@@ -335,7 +335,7 @@
                                 {{-- SPACE --}}
                             </div>
                         </div>
-                        <div class="row pt-2 pb-2">
+                        <div class="row">
                             <div class="col-2">
                                 {{-- SPACE --}}
                             </div>
@@ -361,7 +361,7 @@
                                 {{-- SPACE --}}
                             </div>
                         </div>
-                        <div class="row pt-2 pb-2">
+                        <div class="row">
                             <div class="col-2">
                                 {{-- SPACE --}}
                             </div>
@@ -388,7 +388,7 @@
                             </div>
                         </div>
                         @foreach ($blogs as $blog)
-                            <div class="row pt-2 pb-2">
+                            <div class="row">
                                 <div class="col-2">
                                     {{-- SPACE --}}
                                 </div>

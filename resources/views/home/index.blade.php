@@ -6,9 +6,21 @@
 <style>
 
     /* ============ COUNTDOWN CSS ================= */
-    .count-down{
-        min-height: 400px !important;
+    .space-non-hp{
+        min-height: 200px !important;
         width: 100% !important;
+    }
+    .space-hp{
+        min-height: 110px !important;
+        width: 100% !important;
+    }
+    .count-down{
+        min-height: 800px !important;
+        width: 100% !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-image: url({{asset('assets/images/bg-countdown.png')}});
+        
     }
     .count-down-pink{
         border-radius:100px;
@@ -42,7 +54,7 @@
         border-radius:100px;
         background-color: #FFFCF5 !important;
         width: auto !important;
-        min-width: 80px !important;
+        min-width: 120px !important;
         max-width: 150px !important;
         max-height: 150px !important;
         min-height: 90px !important;
@@ -55,7 +67,7 @@
         border-radius:100px;
         background-color: #FFFCF5 !important;
         width: auto !important;
-        min-width: 80px !important;
+        min-width: 120px !important;
         max-width: 150px !important;
         max-height: 150px !important;
         min-height: 90px !important;
@@ -68,7 +80,7 @@
         border-radius:100px;
         background-color: #FFFCF5 !important;
         width: auto !important;
-        min-width: 80px !important;
+        min-width: 120px !important;
         max-width: 150px !important;
         max-height: 150px !important;
         min-height: 90px !important;
@@ -341,34 +353,22 @@
         .count-down-pink-mobile{
             border-radius:100px;
             background-color: #FFFCF5 !important;
-            width: auto !important;
-            min-width: 80px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 70px !important;
-            height: auto !important;
+            height: 110px !important;
+            width: 110px !important;
             border: 8px solid #D02762!important;
         }
         .count-down-blue-mobile{
             border-radius:100px;
             background-color: #FFFCF5 !important;
-            width: auto !important;
-            min-width: 80px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 70px !important;
-            height: auto !important;
+            height: 110px !important;
+            width: 110px !important;
             border: 8px solid #1B325E!important;
         }
         .count-down-yellow-mobile{
             border-radius:100px;
             background-color: #FFFCF5 !important;
-            width: auto !important;
-            min-width: 80px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 70px !important;
-            height: auto !important;
+            height: 110px !important;
+            width: 110px !important;
             border: 8px solid #F6AD3C!important;
         }
         
@@ -397,6 +397,12 @@
 </style>
 @section('content')
 <div class="container-fluid count-down">
+    <div class="row pt-5 d-none d-md-flex space-non-hp">
+        {{-- BUAT SPACE --}}
+    </div>
+    <div class="row pt-5 d-flex d-md-none space-hp">
+        {{-- BUAT SPACE --}}
+    </div>
     <div class="row pt-5 pb-5">        
         <div class="col-3 d-none d-md-block">
             {{-- BUAT SPACE NON HP --}}
@@ -404,10 +410,18 @@
 
 
         {{-- BUAT NON HP --}}
-        <div class="col-6 d-none d-lg-block ">
-            <div class="row justify-content-center">
-                
-                <div class="col-3 ">
+        <div class="col-7 d-none d-lg-block ">
+            <div class="row ">
+                <div class="col-2 ">
+                    <div class="col count-down-pink">
+                        <span class="helper"></span>
+                        <div class="second">0</div>
+                    </div>
+                </div>
+                <div class="col-1 pt-5 text-center">
+                    <h1 style="font-weight: bold">:</h1>
+                </div>
+                <div class="col-2 ">
                     <div class="col count-down-blue">
                         <span class="helper"></span>
                         <div class="hour">0</div>
@@ -416,7 +430,7 @@
                 <div class="col-1 pt-5 text-center">
                     <h1 style="font-weight: bold">:</h1>
                 </div>
-                <div class="col-3 ">
+                <div class="col-2 ">
                     <div class="col count-down-yellow">
                         <span class="helper"></span>
                         <div class="minute">0</div>
@@ -425,48 +439,103 @@
                 <div class="col-1 pt-5 text-center">
                     <h1 style="font-weight: bold">:</h1>
                 </div>
-                <div class="col-3 ">
+                <div class="col-2 ">
                     <div class="col count-down-pink">
                         <span class="helper"></span>
                         <div class="second">0</div>
                     </div>
                 </div>
+            </div>
+            <div class="row pt-2">
+                <div class="col-2 text-center" style="font-weight:bold !important;">
+                    <p style="font-size: 20pt">Hari</p>
+                </div>
+                <div class="col-1 pt-5 text-center">
+                   {{-- buat space --}}
+                </div>
+                <div class="col-2 text-center" style="font-weight:bold !important;">
+                    <p style="font-size: 20pt">Jam</p>
+                </div>
+                <div class="col-1 pt-5 text-center">
+                    {{-- buat space --}}
+                </div>
+                <div class="col-2 text-center" style="font-weight:bold !important;">
+                    <p style="font-size: 20pt">Menit</p>
+                </div>
+                <div class="col-1 pt-5 text-center">
+                    {{-- buat space --}}
+                </div>
+                <div class="col-2 text-center" style="font-weight:bold !important;">
+                    <p style="font-size: 20pt">Detik</p>
+                </div>
+                
+                
                 <!-- <div class="col-1"></div> -->
             </div>
         </div>
 
+        <div class="col-2 d-none d-md-block">
+            {{-- BUAT SPACE NON HP --}}
+        </div>
 
         {{-- BUAT HP --}}
         <div class="col-12 d-block d-lg-none">
-            <div class="row ps-3">
-                
-                <div class="col-3">
-                    <div class="col count-down-blue-mobile">
-                        <span class="helper"></span>
-                        <div class="hour">0</div>
-                    </div>
-                </div>
-                <div class="col-1 pt-2 text-center">
-                    <h1 style="font-weight: bold">:</h1>
-                </div>
-                <div class="col-3">
-                    <div class="col count-down-yellow-mobile">
-                        <span class="helper"></span>
-                        <div class="minute">0</div>
-                    </div>
-                </div>
-                <div class="col-1 pt-2 text-center">
-                    <h1 style="font-weight: bold">:</h1>
-                </div>
-                <div class="col-3">
+            <div class="row ps-3 pb-3">
+                <div class="col-5">
                     <div class="col count-down-pink-mobile">
                         <span class="helper"></span>
                         <div class="second">0</div>
                     </div>
                 </div>
-                
+                <div class="col-1 pt-4 text-center">
+                    <h1 style="font-weight: bold">:</h1>
+                </div>
+                <div class="col-5 ps-4">
+                    <div class="col count-down-blue-mobile">
+                        <span class="helper"></span>
+                        <div class="hour">0</div>
+                    </div>
+                </div>
             </div>
-            
+            <div class="row ps-3 pt-2">
+                <div class="col-5 text-center" style="font-weight:bold !important;">
+                    <p style="font-size: 20pt">Hari</p>
+                </div>
+                <div class="col-1 pt-2 text-center">
+                    {{-- BUAT SPACE --}}
+                </div>
+                <div class="col-5 text-center" style="font-weight:bold !important;">
+                    <p style="font-size: 20pt">Jam</p>
+                </div>
+            </div>
+            <div class="row ps-3 pt-5">
+                <div class="col-5">
+                    <div class="col count-down-yellow-mobile">
+                        <span class="helper"></span>
+                        <div class="minute">0</div>
+                    </div>
+                </div>
+                <div class="col-1 pt-4 text-center">
+                    <h1 style="font-weight: bold">:</h1>
+                </div>
+                <div class="col-5 ps-4">
+                    <div class="col count-down-pink-mobile">
+                        <span class="helper"></span>
+                        <div class="second">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ps-3 pt-2">
+                <div class="col-5 text-center" style="font-weight:bold !important;">
+                    <p style="font-size: 20pt">Menit</p>
+                </div>
+                <div class="col-1 pt-2 text-center">
+                    {{-- BUAT SPACE --}}
+                </div>
+                <div class="col-5 text-center" style="font-weight:bold !important;">
+                    <p style="font-size: 20pt">Detik</p>
+                </div>
+            </div>
         </div>
 
         <div class="col-3 d-none d-md-block">
@@ -474,12 +543,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10 text-center">
-            <h3>“To The Rock Turns Diamond”</h3>
-            
-        </div>
-        <div class="col-1"></div>
+        <center>
+            <div class="col-12 " style="font-weight: bold">
+                <h2>“To The Rock Turns Diamond”</h2>
+                
+            </div>
+        </center>
+        
+       
     </div>
 </div>
 
@@ -495,6 +566,7 @@
         
     </div>
 {{-- =============== --}}
+
 {{-- BUAT HP  --}}
     <div class="row pt-4 ps-2 ms-0 haft-title-ucapan-box d-flex d-md-none">
         <div class="row pt-2">
@@ -1266,9 +1338,9 @@
 
 <div class="pt-3 pb-4">
     <center>
-        <div class="haft-btn-pink btn pt-2">
+        <a href="/Ucapan" class="haft-btn-pink btn pt-2">
             <p>Unggah Ucapanmu</p>
-        </div>
+        </a>
     </center>
 </div>
 
@@ -1298,7 +1370,7 @@
 
 <div class="container pt-3">
     {{-- BUAT NON HP --}}
-        <div class="row pt-5 pb-2 d-none d-md-flex">
+        <div class="row pt-2 d-none d-md-flex">
             <div class="col-1">
                 {{-- SPACE --}}
             </div>
@@ -1324,7 +1396,7 @@
                 {{-- SPACE --}}
             </div>
         </div>
-        <div class="row pt-5 pb-2 d-none d-md-flex">
+        <div class="row pt-2 d-none d-md-flex">
             <div class="col-1">
                 {{-- SPACE --}}
             </div>
@@ -1350,7 +1422,7 @@
                 {{-- SPACE --}}
             </div>
         </div>
-        <div class="row pt-5 pb-2 d-none d-md-flex">
+        <div class="row pt-2 d-none d-md-flex">
             <div class="col-1">
                 {{-- SPACE --}}
             </div>
@@ -1377,7 +1449,7 @@
             </div>
         </div>
         @foreach($blogs as $blog)
-            <div class="row pt-5 pb-2 d-none d-md-flex">
+            <div class="row pt-2 d-none d-md-flex">
                 <div class="col-1">
                     {{-- SPACE --}}
                 </div>
@@ -1563,7 +1635,7 @@
         <div class="row pt-5 pb-5 d-none d-md-flex">
             <div class="col">
                 <center>
-                    <h3><a href="#" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">Lihat Selengkapnya</a></h3>
+                    <h3><a href="/Tentang" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">Lihat Selengkapnya</a></h3>
                 </center>
             </div>
         </div>

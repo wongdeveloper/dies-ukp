@@ -415,7 +415,7 @@
                 </div>
                 <div class="col-2 logo">
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-4 ps-5">
                             <img src="{{asset('assets/images/logo_ukp.png')}}" alt="" width="55"
                                         class="d-inline-block pe-2">
                         </div>
@@ -423,7 +423,7 @@
                             <div class="vl"></div>
                         </div>
                         <div class="col-4">
-                            <img src="{{asset('assets/images/logo_60tahun_nopadding.png')}}" alt="" width="55"
+                            <img src="{{asset('assets/images/logo_60tahun_nopadding.png')}}" alt="" width="65"
                                         class="d-inline-block pe-2">
                         </div>
                         <div class="col-4">
@@ -459,7 +459,7 @@
                     </div>
                     <div class="col-6 logo active">
                         <div class="row">
-                            <div class="col-5">
+                            <div class="col-5 ">
                                 <img src="{{asset('assets/images/logo_ukp.png')}}" alt="" width="55"
                                             class="d-inline-block pe-2">
                             </div>
@@ -537,9 +537,9 @@
                 <div class="col-2">
 
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     <div class="row">
-                        <div class="col-5">
+                        <div class="col-5 ps-3">
                             <img src="{{asset('assets/images/logo_ukp.png')}}" alt="" width="100"
                                         class="d-inline-block pe-2">
                         </div>
