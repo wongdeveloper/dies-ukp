@@ -2331,9 +2331,17 @@
                                     <label for="inputKarya">Ucapan Dalam Bentuk Foto (maks. 10MB Orientasi Landscape)</label>
                                     <div class="input-group mb-3">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="image">
+                                            <input type="file" class="custom-file-input image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="image">
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <div class="croppie-modal" style="display: none">
                                 </div>
                             </div>
                             <div class="col-1"></div>
@@ -2402,6 +2410,108 @@
         $(document).on('click', '.close-custom', function () {
             var modal = document.getElementById("imageModal");
             modal.style.display = "none";
+        });
+
+        $.ajaxSetup({
+            headers : {
+                'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        var resize = $('.croppie-modal').croppie({
+            enableExif: true,
+            enableOrientation: true,
+            viewport : {
+                width: 277.5,
+                height: 200,
+                type: 'square'
+            },
+            boundary : {
+                width: 300,
+                height: 300
+            }
+        });
+
+        $(document).on('change', '.image', function () {
+            resize.show();
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                resize.croppie('bind', {
+                    url: e.target.result
+                }).then(function(){
+                    console.log('jQuery bind complete');
+                });
+            }
+            reader.readAsDataURL(this.files[0]);
+        });
+
+        $(document).on('submit', '#Msg_Form', function (e) {
+            e.preventDefault();
+            resize.croppie('result', {
+                type: 'blob',
+                size: 'original',
+                format: 'png',
+                circle: false
+            }).then(function(img){
+                var formdata = new FormData(document.getElementById('Msg_Form'));
+                if (img != null) {
+                    formdata.append('image', img);
+                }
+                var jc = $.dialog({
+                    title: '',
+                    content: '',
+                    closeIcon: false,
+                    onOpenBefore: function() {
+                        this.showLoading(true);
+                    }
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('wish.store') }}",
+                    data: formdata,
+                    async: false,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    beforeSend: function(){
+                        jc.open();
+                    },
+                    complete: function(){
+                        jc.close();
+                    },
+                    success: function (response) {
+                        $.confirm({
+                            title: 'Success',
+                            content: 'Data successfully uploaded',
+                            type: 'green',
+                            typeAnimated: true,
+                            buttons: {
+                                close: function () {
+                                    location.reload();
+                                }
+                            }
+                        });
+                    },
+                    error: function(response){
+                        var message = null;
+                        if (response.hasOwnProperty('responseJSON')) {
+                            if (response.responseJSON.hasOwnProperty('message')) {
+                                message = response.responseJSON.message;
+                            }
+                        }
+                        $.confirm({
+                            title: 'Error',
+                            content: 'Something went wrong.<br>Error: '+ message,
+                            type: 'red',
+                            typeAnimated: true,
+                            buttons: {
+                                close: function () {
+                                }
+                            }
+                        });
+                    }
+                });
+            });
         });
     </script>
 @endsection

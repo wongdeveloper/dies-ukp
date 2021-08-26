@@ -55,6 +55,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/modal-video.min.css') }}">
     <script src="{{ asset('js/jquery-modal-video.min.js') }}"></script>
 
+    {{-- Croppie --}}
+    <link rel="stylesheet" href="{{ asset('css/croppie.css') }}">
+    <script src="{{ asset('js/croppie.min.js') }}"></script>
+    <script src="{{ asset('js/exif.js') }}"></script>
+
     @yield('custom-import')
 
     {{-- @include('sweetalert::alert') --}}
