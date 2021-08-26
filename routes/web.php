@@ -4,6 +4,7 @@ use App\Http\Controllers\WishController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EmbedVideoController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/get_countdown', [HomeController::class, 'get_countdown'])->name('home.get_countdown');
 
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/', [AdminController::class, 'index'])->name('index');
@@ -31,6 +31,14 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('/edit/{id}', [EmbedVideoController::class, 'edit'])->name('edit');
         Route::post('/update', [EmbedVideoController::class, 'update'])->name('update');
         Route::get('/destroy/{id}', [EmbedVideoController::class, 'destroy'])->name('destroy');
+    });
+    route::prefix('countdown')->name('countdown.')->middleware(['admin'])->group(function(){
+        // Route::get('/', [AdminController::class, 'countdown_index'])->name('index');
+        // Route::get('/create', [AdminController::class, 'countdown_create'])->name('create');
+        // Route::post('/store', [AdminController::class, 'countdown_store'])->name('store');
+        Route::get('/edit/{id}', [AdminController::class, 'countdown_edit'])->name('edit');
+        Route::post('/update', [AdminController::class, 'countdown_update'])->name('update');
+        // Route::get('/destroy/{id}', [AdminController::class, 'destroy'])->name('destroy');
     });
     Route::prefix('ucapan')->name('ucapan.')->middleware(['admin'])->group(function(){
         Route::get('/', [AdminController::class, 'wish_index'])->name('index');

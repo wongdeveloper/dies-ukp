@@ -60,7 +60,7 @@ class WishController extends Controller
      */
     public function image()
     {
-        $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->get();
+        $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->where('is_vip', 0)->get();
         $roles = Role::where('id', '!=', '6')->get();
         return view('ucapan.foto', compact('wish_images', 'roles'));
     }

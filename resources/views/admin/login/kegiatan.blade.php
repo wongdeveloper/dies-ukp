@@ -53,15 +53,19 @@
                 </td>
                 <td>{{ $blog->description }}</td>
                 <td>
-                    <div class="haft-card-img overlay-container">
-                        <img src="https://img.youtube.com/vi/{{ $blog->youtube_id }}/0.jpg" alt="" class="image">
-                        <div class="overlay">
-                            <a href="#" data-video-id="{{ $blog->youtube_id }}" class="overlay-icon modal-video-card"
-                                title="Play Video">
-                                <i class="fas fa-play"></i>
-                            </a>
+                    @if(!is_null($blog->video))
+                        <div class="haft-card-img overlay-container">
+                            <img src="https://img.youtube.com/vi/{{ $blog->youtube_id }}/0.jpg" alt="" class="image">
+                            <div class="overlay">
+                                <a href="#" data-video-id="{{ $blog->youtube_id }}" class="overlay-icon modal-video-card"
+                                    title="Play Video">
+                                    <i class="fas fa-play" style="font-size: 20%!important"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    @else
+                        No Video
+                    @endif
                 </td>
                 <td nowrap="nowrap">
                     <center>

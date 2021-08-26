@@ -515,8 +515,8 @@
                 <div class="row d-flex d-md-none">
                     <div class="col-12 pt-3 pb-4 haft-article-card-mobile shadow p-3 mb-5 bg-white">
                         <div class="row ps-4 pe-2 ">
-                            <div class="col-5 article-img-mobile p-0 m-0">
-                                <img src="{{ asset($blog->image->path) }}" alt="" width="100%" height="auto" style="border-radius: 30px">
+                            <div class="col-5 article-img-mobile" style="background-image: url('{{ $blog->image->path }}'); background-size: 100% 100%">
+                                <!-- <img src="{{ asset($blog->image->path) }}" alt="" width="100%" height="auto" style="border-radius: 30px"> -->
                             </div>
                             <div class="col-7 ps-4">
                                 <div class="row pt-2 title-article">

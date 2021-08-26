@@ -11,6 +11,7 @@ use App\Models\Wish;
 use App\Models\Role;
 use App\Models\Image;
 use App\Models\Video;
+use App\Models\Countdown;
 
 class AdminController extends Controller
 {
@@ -291,4 +292,19 @@ class AdminController extends Controller
     // public function general_destroy(int $id)
     // {
     // }
+
+    public function countdown_edit(int $cid)
+    {
+        $countdown = Countdown::findOrFail($cid);
+        $countdown->rfc_format = date('Y-m-d\TH:i', strtotime($countdown->date_countdown));
+        return view('admin.edit.countdown', compact('countdown'));
+    }
+
+    public function countdown_update(Request $request)
+    {
+        CountDown::findOrFail($request->cid)->update([
+            'date_countdown' => $request->dc
+        ]);
+        return back()->with('success', 'Countdown time successfully updated');
+    }
 }

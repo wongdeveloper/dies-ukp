@@ -249,13 +249,15 @@
                 </div>
                 <div class="col-2"></div>
             </div>
-            <div class="row pt-3 video">
-                <div class="col-2"></div>
-                <div class="col container-video p-0 m-0">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ $blog->youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            @if(!is_null($blog->video))
+                <div class="row pt-3 video">
+                    <div class="col-2"></div>
+                    <div class="col container-video p-0 m-0">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ $blog->youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-2"></div>
                 </div>
-                <div class="col-2"></div>
-            </div>
+            @endif
         </div>
     {{-- +++++++++++ --}}
 
@@ -285,13 +287,15 @@
                 </div>
                 <div class="col-1"></div>
             </div>
-            <div class="row pt-3 video">
-                <div class="col-1"></div>
-                <div class="col container-video p-0 m-0">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ $blog->youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            @if(!is_null($blog->video))
+                <div class="row pt-3 video">
+                    <div class="col-1"></div>
+                    <div class="col container-video p-0 m-0">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ $blog->youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-1"></div>
                 </div>
-                <div class="col-1"></div>
-            </div>
+            @endif
         </div>
     {{-- +++++++++++ --}}
     

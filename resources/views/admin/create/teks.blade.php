@@ -124,8 +124,8 @@
             enableExif: true,
             enableOrientation: true,
             viewport : {
-                width: 277.5,
-                height: 200,
+                width: 150,
+                height: 150,
                 type: 'square'
             },
             boundary : {

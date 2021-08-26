@@ -16,6 +16,8 @@
         width: 150px !important;
         min-height: 150px !important;
         border: 10px solid #D02762!important;
+        white-space:nowrap;
+        text-align: center;
     }
     .count-down-blue{
         border-radius:100px;
@@ -23,6 +25,8 @@
         width: 150px !important;
         min-height: 150px !important;
         border: 10px solid #1B325E!important;
+        white-space:nowrap;
+        text-align: center;
     }
     .count-down-yellow{
         border-radius:100px;
@@ -30,6 +34,8 @@
         width: 150px !important;
         min-height: 150px !important;
         border: 10px solid #F6AD3C!important;
+        white-space:nowrap;
+        text-align: center;
     }
 
     .count-down-pink-mobile{
@@ -42,6 +48,8 @@
         min-height: 90px !important;
         height: auto !important;
         border: 5px solid #D02762!important;
+        white-space:nowrap;
+        text-align: center;
     }
     .count-down-blue-mobile{
         border-radius:100px;
@@ -53,6 +61,8 @@
         min-height: 90px !important;
         height: auto !important;
         border: 5px solid #1B325E!important;
+        white-space:nowrap;
+        text-align: center;
     }
     .count-down-yellow-mobile{
         border-radius:100px;
@@ -64,6 +74,8 @@
         min-height: 90px !important;
         height: auto !important;
         border: 5px solid #F6AD3C!important;
+        white-space:nowrap;
+        text-align: center;
     }
 
     /* ================================================ */
@@ -361,6 +373,26 @@
         }
         
     }
+    .helper{
+        vertical-align:middle;
+        height: 80%;
+        display: inline-block;
+        width: 0;
+        margin-left: -10px;
+    }
+    .hour,.minute,.second{
+        vertical-align:middle;
+        display:inline-block;
+        font-size: 40pt;
+    }
+
+    /* .active{
+        background-color: #F6AD3C !important;
+    } */
+
+    .carousel-control-next, .carousel-control-prev{
+        width: 10%!important;
+    }
     
 </style>
 @section('content')
@@ -377,7 +409,8 @@
                 
                 <div class="col-3 ">
                     <div class="col count-down-blue">
-
+                        <span class="helper"></span>
+                        <div class="hour">0</div>
                     </div>
                 </div>
                 <div class="col-1 pt-5 text-center">
@@ -385,7 +418,8 @@
                 </div>
                 <div class="col-3 ">
                     <div class="col count-down-yellow">
-
+                        <span class="helper"></span>
+                        <div class="minute">0</div>
                     </div>
                 </div>
                 <div class="col-1 pt-5 text-center">
@@ -393,7 +427,8 @@
                 </div>
                 <div class="col-3 ">
                     <div class="col count-down-pink">
-
+                        <span class="helper"></span>
+                        <div class="second">0</div>
                     </div>
                 </div>
                 <!-- <div class="col-1"></div> -->
@@ -407,7 +442,8 @@
                 
                 <div class="col-3">
                     <div class="col count-down-blue-mobile">
-
+                        <span class="helper"></span>
+                        <div class="hour">0</div>
                     </div>
                 </div>
                 <div class="col-1 pt-2 text-center">
@@ -415,7 +451,8 @@
                 </div>
                 <div class="col-3">
                     <div class="col count-down-yellow-mobile">
-
+                        <span class="helper"></span>
+                        <div class="minute">0</div>
                     </div>
                 </div>
                 <div class="col-1 pt-2 text-center">
@@ -423,7 +460,8 @@
                 </div>
                 <div class="col-3">
                     <div class="col count-down-pink-mobile">
-
+                        <span class="helper"></span>
+                        <div class="second">0</div>
                     </div>
                 </div>
                 
@@ -471,8 +509,33 @@
 <div class="row ms-0 video-container-yellow">
     <center>
         <div class="row pt-5">
-            <div class="col">
+            <div class="col-12">
                 <h1>EMBED VIDEO</h1>
+            </div>
+            <div class="col-12 h-100 py-5">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        @foreach($embed_videos as $key => $embed_video)
+                            @if($key == 0)
+                                <div class="carousel-item active" style="background-color: #F6AD3C!important">
+                                    <iframe class="d-block" width="80%" height="500" src="https://www.youtube.com/embed/{{ $embed_video->youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            @else
+                                <div class="carousel-item" style="background-color: #F6AD3C!important">
+                                    <iframe class="d-block" width="80%" height="500" src="https://www.youtube.com/embed/{{ $embed_video->youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
         </div>
     </center>
@@ -752,7 +815,40 @@
 
             </div>
         </div>
-    </div> 
+    </div>
+    @foreach($wish_images as $wish_image)
+        <div class="card card-block mx-2 haft-card-galeri-pink">
+            <div class="row pt-4">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="haft-card-img image-responsive-container">
+                        <img src="{{ asset($wish_image->image->path) }}" class="image image-responsive-middle" alt="View Image">
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row pt-2">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="haft-card-text">
+                        <center>
+                            <div class="row">
+                                <div class="col">
+                                    <h5>{{ $wish_image->image_title }}</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p>" {{ $wish_image->wish }} "</p>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div> 
+    @endforeach
 </div>
 
 <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
@@ -1073,25 +1169,16 @@
     </div>
     <div class="card card-block mx-2 haft-card-vip-yellow">
         <div class="row pt-4">
-            <div class="col-3">
-
-            </div>
+            <div class="col-3"></div>
             <div class="col-6">
                 <center>
-                    <div class="haft-vip-card-img">
-
-                    </div>
+                    <div class="haft-vip-card-img"></div>
                 </center>
-                
             </div>
-            <div class="col-3">
-
-            </div>
+            <div class="col-3"></div>
         </div>
         <div class="row pt-2">
-            <div class="col-1">
-
-            </div>
+            <div class="col-1"></div>
             <div class="col-10">
                 <div class="haft-vip-card-text">
                     <center>
@@ -1108,14 +1195,10 @@
                     </center>
                 </div>
             </div>
-            <div class="col-1">
-
-            </div>
+            <div class="col-1"></div>
         </div>
         <div class="row pt-1">
-            <div class="col-1">
-
-            </div>
+            <div class="col-1"></div>
             <div class="col-10">
                 <div class="haft-vip-card-wish">
                     <center>
@@ -1127,13 +1210,58 @@
                     </center>
                 </div>
             </div>
-            <div class="col-1">
-
+            <div class="col-1"></div>
+        </div>
+    </div>
+    @foreach($wish_vips as $wish_vip)
+        <div class="card card-block mx-2 haft-card-vip-yellow">
+            <div class="row pt-4">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <center>
+                        <div class="haft-vip-card-img" style="background-image: url('{{ $wish_vip->image->path }}'); background-size: 100% 100%; background-repeat: no-repeat">
+                        </div>
+                    </center>
+                </div>
+                <div class="col-3"></div>
+            </div>
+            <div class="row pt-2">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="haft-vip-card-text">
+                        <center>
+                            <div class="row">
+                                <div class="col">
+                                    <h5>{{ $wish_vip->name }}</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="jabatan">"{{ $wish_vip->detail2 }} {{ $wish_vip->detail1 }}"</p>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row pt-1">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="haft-vip-card-wish">
+                        <center>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="wish">" {{ $wish_vip->wish }} "</p>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div class="col-1"></div>
             </div>
         </div>
-        
-        
-    </div>
+    @endforeach
 </div>
 
 <div class="pt-3 pb-4">
@@ -1248,6 +1376,41 @@
                 {{-- SPACE --}}
             </div>
         </div>
+        @foreach($blogs as $blog)
+            <div class="row pt-5 pb-2 d-none d-md-flex">
+                <div class="col-1">
+                    {{-- SPACE --}}
+                </div>
+                <div class="col-10 pt-3 pb-4 haft-article-card shadow p-3 mb-5 bg-white">
+                    <div class="row ps-4 pe-2 ">
+                        <div class="col-3 article-img p-0 m-0">
+                            <img src="{{ asset($blog->image->path) }}" alt="" width="100%" height="auto" style="border-radius: 30px">
+                        </div>
+                        <div class="col-9 ps-4">
+                            <div class="row pt-2 title-article">
+                                <h2>{{ $blog->title }}</h2>
+                            </div>
+                            <div class="row pt-1 text-article">
+                                @php
+                                    $preview_text = $blog->description;
+                                    if (strlen($preview_text) > 50) {
+                                        $preview_text = Str::substr($preview_text, 0, 50);
+                                    }
+                                    $preview_text .= '...';
+                                @endphp
+                                <p>{{ $preview_text }}</p>
+                            </div>
+                            <div class="row link-article">
+                                <p><a href="{{ url('/Kegiatan/' . $blog->slug) }}"> Read More</a> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1">
+                    {{-- SPACE --}}
+                </div>
+            </div>
+        @endforeach
         <div class="row pt-2 pb-4 d-none d-md-flex">
             <div class="col">
                 <center>
@@ -1318,6 +1481,37 @@
                 </div>
             </div>
         </div>
+        @foreach($blogs as $blog)
+            <div class="row d-flex d-md-none">
+                <div class="col-12 pt-3 pb-4 haft-article-card-mobile shadow p-3 mb-5 bg-white">
+                    <div class="row ps-4 pe-2 ">
+                        <div class="col-5 article-img-mobile" style="background-image: url('{{ $blog->image->path }}'); background-size: 100% 100%">
+                            <!-- <img src="{{ asset($blog->image->path) }}" alt="" width="100%" height="auto" style="border-radius: 30px"> -->
+                        </div>
+                        <div class="col-7 ps-4">
+                            <div class="row pt-2 title-article">
+                                <h2 style="font-size:1.2rem">{{ $blog->title }}</h2>
+                            </div>
+                            <div class="row pt-1 text-article">
+                                <p style="font-size:0.7rem">
+                                    @php
+                                        $preview_text = $blog->description;
+                                        if (strlen($preview_text) > 50) {
+                                            $preview_text = Str::substr($preview_text, 0, 50);
+                                        }
+                                        $preview_text .= '...';
+                                    @endphp
+                                    <p>{{ $preview_text }}</p>
+                                </p>
+                            </div>
+                            <div class="row link-article">
+                                <p><a href="{{ url('/Kegiatan/' . $blog->slug) }}"> Read More</a> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     {{-- ================== --}}
 </div>
 
@@ -1411,5 +1605,45 @@
 @endsection
 
 @section('js')
+    <script>
+        var countDownDate;
+        $.ajax({
+            type: "GET",
+            url: "{{ url('/get_countdown') }}",
+            success: function (response) {
+                console.log(response);
+                countDownDate = new Date(response.date_countdown).getTime();
+            }
+        });
+        // Set the date we're counting down to
+        // var countDownDate = new Date("Nov 24, 2021 00:00:00").getTime();
 
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            // document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+            // + minutes + "m " + seconds + "s ";
+            $('.hour').text((days*24)+hours);
+            $('.minute').text(minutes);
+            $('.second').text(seconds);
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                // document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
 @endsection
