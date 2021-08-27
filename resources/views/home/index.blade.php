@@ -284,10 +284,8 @@
             border-radius:100px;
             background-color: #FFFCF5 !important;
             width: auto !important;
-            min-width: 80px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 135px !important;
+            height: 110px !important;
+            width: 110px !important;
             height: auto !important;
             border: 8px solid #D02762!important;
         }
@@ -295,10 +293,8 @@
             border-radius:100px;
             background-color: #FFFCF5 !important;
             width: auto !important;
-            min-width: 80px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 135px !important;
+            height: 110px !important;
+            width: 110px !important;
             height: auto !important;
             border: 8px solid #1B325E!important;
         }
@@ -306,10 +302,8 @@
             border-radius:100px;
             background-color: #FFFCF5 !important;
             width: auto !important;
-            min-width: 80px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 135px !important;
+            height: 110px !important;
+            width: 110px !important;
             height: auto !important;
             border: 8px solid #F6AD3C!important;
         }
@@ -319,10 +313,8 @@
             border-radius:100px;
             background-color: #FFFCF5 !important;
             width: auto !important;
-            min-width: 95px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 90px !important;
+            height: 110px !important;
+            width: 110px !important;
             height: auto !important;
             border: 8px solid #D02762!important;
         }
@@ -330,10 +322,8 @@
             border-radius:100px;
             background-color: #FFFCF5 !important;
             width: auto !important;
-            min-width: 95px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 90px !important;
+            height: 110px !important;
+            width: 110px !important;
             height: auto !important;
             border: 8px solid #1B325E!important;
         }
@@ -341,10 +331,8 @@
             border-radius:100px;
             background-color: #FFFCF5 !important;
             width: auto !important;
-            min-width: 95px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 90px !important;
+            height: 110px !important;
+            width: 110px !important;
             height: auto !important;
             border: 8px solid #F6AD3C!important;
         }
@@ -380,7 +368,7 @@
         width: 0;
         margin-left: -10px;
     }
-    .hour,.minute,.second{
+    .day,.hour,.minute,.second{
         vertical-align:middle;
         display:inline-block;
         font-size: 40pt;
@@ -397,18 +385,15 @@
 </style>
 @section('content')
 <div class="container-fluid count-down">
-<<<<<<< HEAD
     @php
         $color_array = ["blue", "yellow", "pink"];
     @endphp
-=======
     <div class="row pt-5 d-none d-md-flex space-non-hp">
         {{-- BUAT SPACE --}}
     </div>
     <div class="row pt-5 d-flex d-md-none space-hp">
         {{-- BUAT SPACE --}}
     </div>
->>>>>>> 3dbfab42508518472247ea91ca6b79bcf3a8fc5c
     <div class="row pt-5 pb-5">        
         <div class="col-3 d-none d-md-block">
             {{-- BUAT SPACE NON HP --}}
@@ -421,7 +406,7 @@
                 <div class="col-2 ">
                     <div class="col count-down-pink">
                         <span class="helper"></span>
-                        <div class="second">0</div>
+                        <div class="day">0</div>
                     </div>
                 </div>
                 <div class="col-1 pt-5 text-center">
@@ -490,7 +475,7 @@
                 <div class="col-5">
                     <div class="col count-down-pink-mobile">
                         <span class="helper"></span>
-                        <div class="second">0</div>
+                        <div class="day">0</div>
                     </div>
                 </div>
                 <div class="col-1 pt-4 text-center">
@@ -587,10 +572,7 @@
 <div class="row ms-0 video-container-yellow">
     <center>
         <div class="row pt-5">
-            <div class="col-12">
-                <h1>EMBED VIDEO</h1>
-            </div>
-            <div class="col-12 h-100 py-5">
+            <div class="col-12 h-100 pb-5">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         @foreach($embed_videos as $key => $embed_video)
@@ -940,7 +922,8 @@
             // Display the result in the element with id="demo"
             // document.getElementById("demo").innerHTML = days + "d " + hours + "h "
             // + minutes + "m " + seconds + "s ";
-            $('.hour').text((days*24)+hours);
+            $('.day').text(days);
+            $('.hour').text(hours);
             $('.minute').text(minutes);
             $('.second').text(seconds);
 

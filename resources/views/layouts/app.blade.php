@@ -72,7 +72,8 @@
         background-color: #F9F2EA !important;
     }
     .vl {
-        border-left: 1px solid black;
+        border-left: 1px solid black !important;
+        border-color: #a3a3a3 !important;
         height: 50px;
     }   
     .v2 {
@@ -415,18 +416,18 @@
                 </div>
                 <div class="col-2 logo">
                     <div class="row">
-                        <div class="col-4 ps-5">
+                        <div class="col-4 ps-3">
                             <img src="{{asset('assets/images/logo_ukp.png')}}" alt="" width="55"
                                         class="d-inline-block pe-2">
                         </div>
                         <div class="col-1">
                             <div class="vl"></div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-4 ps-3">
                             <img src="{{asset('assets/images/logo_60tahun_nopadding.png')}}" alt="" width="65"
                                         class="d-inline-block pe-2">
                         </div>
-                        <div class="col-4">
+                        <div class="col-3">
                             {{-- BUAT SPACE --}}
                         </div>
                     </div>
@@ -559,15 +560,20 @@
                     <ul>
                         <li><h2>Tautan</h2></li>
                         <li><p>UK Petra</p></li>
-                        <li><p>Plasma Petra</p></li>
+                        
                     </ul>
                 </div>
                 <div class="col-4">
                     <ul>
                         <li><h2>Contact</h2></li>
                         <li><p>Phone: +62 31 2983000</p></li>
-                        <li><p>Fax: +62 31 8436418</p></li>
-                        <li><p>Email: info@petra.ac.id</p></li>
+                        <li>
+                            <a href="mailto:trtd@petra.ac.id">
+                                <p>
+                                    trtd@petra.ac.id
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-1">
@@ -603,15 +609,20 @@
                     <ul>
                         <li><h2>Tautan</h2></li>
                         <li><p>UK Petra</p></li>
-                        <li><p>Plasma Petra</p></li>
+                        
                     </ul>
                 </div>
                 <div class="col-6">
                     <ul>
                         <li><h2>Contact</h2></li>
                         <li><p>Phone: +62 31 2983000</p></li>
-                        <li><p>Fax: +62 31 8436418</p></li>
-                        <li><p>Email: info@petra.ac.id</p></li>
+                        <li>
+                            <a href="mailto:trtd@petra.ac.id">
+                                <p>
+                                    trtd@petra.ac.id
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

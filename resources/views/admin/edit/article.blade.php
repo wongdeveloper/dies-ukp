@@ -72,7 +72,7 @@
                         <div class="form-group" id="formMsg">
                             <label for="notes">Deskripsi Kegiatan</label>
                             <textarea class="form-control" name="description" id="inputMsg" rows="3"
-                                placeholder="Deskripsi Kegiatan" minlength="5" maxlength="400" required>{{ $blog->description }}</textarea>
+                                placeholder="Deskripsi Kegiatan" minlength="5" required>{{ $blog->description }}</textarea>
                         </div>
                     </div>
                     <div class="col-1"></div>
