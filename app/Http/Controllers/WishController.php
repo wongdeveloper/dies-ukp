@@ -19,8 +19,8 @@ class WishController extends Controller
      */
     public function index()
     {
-        $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->where('is_vip', 0)->get();
-        $wish_videos = Wish::where('video_id', '!=', 'NULL')->whereNull('image_id')->get();
+        $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->where('is_vip', 0)->orderByDesc('created_at')->limit(9)->get();
+        $wish_videos = Wish::where('video_id', '!=', 'NULL')->whereNull('image_id')->orderByDesc('created_at')->limit(9)->get();
         foreach ($wish_videos as $key => $wish_video) {
             parse_str(parse_url($wish_video->video->path, PHP_URL_QUERY), $my_array_of_vars);
             if (array_key_exists('v', $my_array_of_vars)) {
@@ -29,7 +29,7 @@ class WishController extends Controller
                 $wish_video->youtube_id = 0;
             }
         }
-        $wish_texts = Wish::whereNull('video_id')->whereNull('image_id')->get();
+        $wish_texts = Wish::whereNull('video_id')->whereNull('image_id')->orderByDesc('created_at')->limit(9)->get();
         $roles = Role::where('id', '!=', '6')->get();
         return view('ucapan.index', compact('wish_images', 'wish_videos', 'wish_texts', 'roles'));
     }
@@ -50,7 +50,8 @@ class WishController extends Controller
                 $wish_video->youtube_id = 0;
             }
         }
-        return view('ucapan.video', compact('wish_videos'));
+        $roles = Role::where('id', '!=', '6')->get();
+        return view('ucapan.video', compact('wish_videos', 'roles'));
     }
 
     /**

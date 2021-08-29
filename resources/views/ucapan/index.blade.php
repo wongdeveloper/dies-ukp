@@ -149,32 +149,32 @@
     /* ============================================ */
 
     /* HAFT MODAL */
-    .haft-header-modal{
-        width: 100%;
-        background-color: #1B325E !important;
-        color:#fff !important;
-        font-weight: bold !important;
-        height: 65px !important;
-        font-size: 14pt !important;
-        
-    }
-    .haft-modal-btn{
-        cursor: pointer;
-        background-color: #D02762!important;
-        border: 2px solid white !important;
-        color: white !important;
-        border-radius: 20px !important;
-        min-width: 80px !important;
-        min-height: 45px !important;
-    }
-    .haft-modal-btn:hover{
-        cursor: pointer;
-        background-color: white !important;
-        border: 2px solid #D02762 !important;
-        color: #D02762 !important;
-        border-radius: 20px !important;
-        
-    }
+        .haft-header-modal{
+            width: 100%;
+            background-color: #1B325E !important;
+            color:#fff !important;
+            font-weight: bold !important;
+            height: 65px !important;
+            font-size: 14pt !important;
+            
+        }
+        .haft-modal-btn{
+            cursor: pointer;
+            background-color: #D02762!important;
+            border: 2px solid white !important;
+            color: white !important;
+            border-radius: 20px !important;
+            min-width: 80px !important;
+            min-height: 45px !important;
+        }
+        .haft-modal-btn:hover{
+            cursor: pointer;
+            background-color: white !important;
+            border: 2px solid #D02762 !important;
+            color: #D02762 !important;
+            border-radius: 20px !important;
+            
+        }
     
 
 
@@ -822,38 +822,38 @@
             modal.style.display = "none";
         });
 
-        $.ajaxSetup({
-            headers : {
-                'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+        // $.ajaxSetup({
+        //     headers : {
+        //         'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
 
-        var resize = $('.croppie-modal').croppie({
-            enableExif: true,
-            enableOrientation: true,
-            viewport : {
-                width: 277.5,
-                height: 200,
-                type: 'square'
-            },
-            boundary : {
-                width: 300,
-                height: 300
-            }
-        });
+        // var resize = $('.croppie-modal').croppie({
+        //     enableExif: true,
+        //     enableOrientation: true,
+        //     viewport : {
+        //         width: 277.5,
+        //         height: 200,
+        //         type: 'square'
+        //     },
+        //     boundary : {
+        //         width: 300,
+        //         height: 300
+        //     }
+        // });
 
-        $(document).on('change', '.image', function () {
-            resize.show();
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                resize.croppie('bind', {
-                    url: e.target.result
-                }).then(function(){
-                    console.log('jQuery bind complete');
-                });
-            }
-            reader.readAsDataURL(this.files[0]);
-        });
+        // $(document).on('change', '.image', function () {
+        //     resize.show();
+        //     var reader = new FileReader();
+        //     reader.onload = function(e) {
+        //         resize.croppie('bind', {
+        //             url: e.target.result
+        //         }).then(function(){
+        //             console.log('jQuery bind complete');
+        //         });
+        //     }
+        //     reader.readAsDataURL(this.files[0]);
+        // });
 
         $(document).on('submit', '#Msg_Form', function (e) {
             e.preventDefault();

@@ -189,7 +189,7 @@
             min-height: 300px !important;
         }
         .container-isi-yellow{
-            background-color: #F6AD3C !important;
+            background-color: #db880a !important;
             width: auto !important;
             min-height: 300px !important;
         }
@@ -251,7 +251,7 @@
                         <div class="col-9 pt-4 container-teks">
                             <div class="row">
                                 <div class="col">
-                                    <h1>Sejarah TRTD</h1>
+                                    <h1>Makna TRTD</h1>
                                 </div>
                             </div>
                             <div class="row pt-3">

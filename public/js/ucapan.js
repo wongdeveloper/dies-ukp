@@ -1,4 +1,4 @@
-$('#modal-ucapan-foto').on('hidden.bs.modal', function () {
+    $('#modal-ucapan-foto').on('hidden.bs.modal', function () {
         $('#Msg_Form')[0].reset();
         $('#kategori').val('0');
         // $('#form-radio-lk').attr('hidden', true);

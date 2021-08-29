@@ -263,7 +263,8 @@
         min-width: 200px !important;
         max-width: 400px !important;
         min-height: 300px !important;
-        background-color:#D02762 !important;
+        /* background-color:#D02762 !important; */
+    
     }
     .tentang-img-mobile{
         background-color: #D02762 !important;
@@ -536,7 +537,7 @@
     <div class="row">
         <center>
             <div class="col-12 " style="font-weight: bold">
-                <h2>“To The Rock Turns Diamond”</h2>
+                <h2>“The Rock Turns Diamond”</h2>
                 
             </div>
         </center>
@@ -602,13 +603,13 @@
 </div>
 
 <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
-    @foreach($wish_images as $wish_image)
+    @foreach($wish_images as $key => $wish_image)
         <div class="card card-block mx-2 haft-card-galeri-{{ $color_array[($key+rand(0,100))%3] }}">
             <div class="row pt-4">
                 <div class="col-1"></div>
                 <div class="col-10">
                     <div class="haft-card-img image-responsive-container">
-                        <img src="{{ asset($wish_image->image->path) }}" class="image image-responsive-middle" alt="View Image">
+                        <img src="{{ asset($wish_image->image->path) }}" class="image image-responsive-middle" alt="View Image" style="max-height: 403px">
                     </div>
                 </div>
                 <div class="col-1"></div>
@@ -638,7 +639,7 @@
 </div>
 
 <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
-    @foreach($wish_vips as $wish_vip)
+    @foreach($wish_vips as $key => $wish_vip)
         <div class="card card-block mx-2 haft-card-vip-{{ $color_array[($key+rand(0,100))%3] }}">
             <div class="row pt-4">
                 <div class="col-3"></div>
@@ -723,7 +724,7 @@
 
 <div class="container pt-3">
     {{-- BUAT NON HP --}}
-        @foreach($blogs as $blog)
+        @foreach($blogs as $key => $blog)
             <div class="row pt-2 d-none d-md-flex">
                 <div class="col-1">
                     {{-- SPACE --}}
@@ -768,7 +769,7 @@
     {{-- ================== --}}
     
     {{-- BUAT HP --}}
-        @foreach($blogs as $blog)
+        @foreach($blogs as $key => $blog)
             <div class="row d-flex d-md-none">
                 <div class="col-12 pt-3 pb-4 haft-article-card-mobile shadow p-3 mb-5 bg-white">
                     <div class="row ps-4 pe-2 ">
@@ -833,11 +834,19 @@
             <div class="col-10">
                 <div class="row ps-4 pe-2 ">
                     <div class="col-4 tentang-img">
-                        {{-- BUAT GAMBAR --}}
+                        <img src="{{asset('assets/images/gambar-tentang.jpg')}}" alt="" width="290" height="330">
                     </div>
                     <div class="col-8 ps-4">
                         <div class="row pt-1 text-tentang">
-                            <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita non similique repellendus, rerum corrupti soluta, voluptate maxime eos aliquam nostrum, harum sed odit? Vitae hic, quos magnam nihil iste quo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda ratione beatae, iure placeat asperiores quia aliquam! Error, commodi dolores, soluta, expedita numquam enim omnis laborum ex maiores iure saepe? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque veniam quam numquam voluptate distinctio sapiente quaerat aperiam, impedit corporis molestiae dolore a, illum maxime earum dignissimos odio? Incidunt, corporis velit.</p>
+                            <p style="font-size:1.2rem;text-align: justify">
+                                Pada tanggal 22 September 2021, UK Petra akan merayakan ulang tahunnya yang ke 60. 
+                                Perayaan ulang tahun ini bertajuk <span style="font-style: italic">The Rock Turns Diamond!</span> (TRTD). 
+                                Petra, Sang Batu Karang, mencapai ulang tahun berliannya. 
+                                Perayaan TRTD ini mengambil tema “<span style="font-style: italic">De<span style="font-weight:bold">light</span>ful Petra, De<span style="font-weight:bold">light</span>ed World </span>”. 
+                                Tema ini memiliki dua makna. Pertama, UK Petra yang penuh sukacita membuat dunia turut bergembira.  
+                                Tema ini juga berisi harapan UK Petra yang dipenuhi dengan nilai LIGHT dapat menyemai nilai-nilai 
+                                tersebut di dalam masyarakat melalui pengajaran, penelitian, dan pengabdiannya.
+                            </p>
                         </div>
                         
                     </div>
@@ -857,15 +866,23 @@
     {{-- ================== --}}
 
     {{-- BUAT HP --}}
-        <div class="row pt-5 pb-2 ps-3 d-flex d-md-none">
+        <div class="row pt-2 pb-2 ps-1 d-flex d-md-none">
             <div class="col-11">
                 <div class="row ps-4 pe-2 ">
-                    <div class="col-7 tentang-img-mobile">
-                        {{-- BUAT GAMBAR --}}
-                    </div>
-                    <div class="col-5 ps-4">
+                    {{-- <div class="col-7 tentang-img-mobile">
+                        <img src="{{asset('assets/images/gambar-tentang.jpg')}}" alt="" width="50" height="70">
+                    </div> --}}
+                    <div class="col ps-4">
                         <div class="row pt-1 text-tentang">
-                            <p style="font-size:0.8rem">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita non similique repellendus, Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita non similique repellendus,</p>
+                            <p style="font-size:0.8rem;text-align: justify">
+                                Pada tanggal 22 September 2021, UK Petra akan merayakan ulang tahunnya yang ke 60. 
+                                Perayaan ulang tahun ini bertajuk <span style="font-style: italic">The Rock Turns Diamond!</span> (TRTD). 
+                                Petra, Sang Batu Karang, mencapai ulang tahun berliannya. 
+                                Perayaan TRTD ini mengambil tema “<span style="font-style: italic">De<span style="font-weight:bold">light</span>ful Petra, De<span style="font-weight:bold">light</span>ed World </span>”. 
+                                Tema ini memiliki dua makna. Pertama, UK Petra yang penuh sukacita membuat dunia turut bergembira.  
+                                Tema ini juga berisi harapan UK Petra yang dipenuhi dengan nilai LIGHT dapat menyemai nilai-nilai 
+                                tersebut di dalam masyarakat melalui pengajaran, penelitian, dan pengabdiannya.
+                            </p>
                         </div>
                         
                     </div>
