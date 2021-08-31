@@ -29,6 +29,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     {{--CSS--}}
+    <link rel="stylesheet" href="{{ asset('css/confetti.css') }}">
 
     {{-- JQUERRY --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -50,7 +51,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     {{-- INTERNAL JS --}}
-    <script src="{{ asset('js/ucapan.js')}}"></script>
+    <script src="{{ asset('js/ucapan.js') }}"></script>
+
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/modal-video.min.css') }}">
     <script src="{{ asset('js/jquery-modal-video.min.js') }}"></script>
@@ -59,6 +61,11 @@
     <link rel="stylesheet" href="{{ asset('css/croppie.css') }}">
     <script src="{{ asset('js/croppie.min.js') }}"></script>
     <script src="{{ asset('js/exif.js') }}"></script>
+
+    {{-- GSAP --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+    <!-- <script src="{{ asset('js/confetti.js') }}"></script> -->
 
     @yield('custom-import')
 
