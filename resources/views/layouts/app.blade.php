@@ -60,11 +60,16 @@
     <script src="{{ asset('js/croppie.min.js') }}"></script>
     <script src="{{ asset('js/exif.js') }}"></script>
 
+    {{-- FONT --}}
+    <link rel="stylesheet" href="{{ asset('font/style.css') }}">    
     @yield('custom-import')
 
     {{-- @include('sweetalert::alert') --}}
 </head>
 <style>
+    body{
+        font-family: 'Optima' !important;
+    }
     .haft-navbar-nomobile {
         background-color: #F9F2EA !important;
     }
@@ -611,7 +616,13 @@
                         <li><h2>Contact</h2></li>
                         <li><p>Phone: +62 31 2983000</p></li>
                         <li><p>Fax: +62 31 8436418</p></li>
-                        <li><p>Email: info@petra.ac.id</p></li>
+                        <li>
+                            <a href="">
+                                <p>
+                                    Email: info@petra.ac.id
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
