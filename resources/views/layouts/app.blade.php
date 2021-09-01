@@ -62,16 +62,14 @@
     <script src="{{ asset('js/croppie.min.js') }}"></script>
     <script src="{{ asset('js/exif.js') }}"></script>
 
-<<<<<<< HEAD
     {{-- FONT --}}
     <link rel="stylesheet" href="{{ asset('font/style.css') }}">    
-=======
+
     {{-- GSAP --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
     <!-- <script src="{{ asset('js/confetti.js') }}"></script> -->
 
->>>>>>> 1b422516c8a1dfc468554f31256fd12e57c98ed4
     @yield('custom-import')
 
     {{-- @include('sweetalert::alert') --}}
