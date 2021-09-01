@@ -1,0 +1,50 @@
+.dot1{
+  width:35px;
+  height:35px;
+  position:fixed;
+  background: url("../assets/images/diamond1.png");
+  background-size: 100% 100%;
+  z-index: -1000000!important;
+}
+.dot2{
+  width:35px;
+  height:35px;
+  position:fixed;
+  background: url("../assets/images/diamond2.png");
+  background-size: 100% 100%;
+  z-index: -1000000!important;
+}
+.dot3{
+  width:35px;
+  height:35px;
+  position:fixed;
+  background: url("../assets/images/diamond3.png");
+  background-size: 100% 100%;
+  z-index: -1000000!important;
+}
+.dot4{
+  width:35px;
+  height:35px;
+  position:fixed;
+  background: url("../assets/images/diamond4.png");
+  background-size: 100% 100%;
+  z-index: -1000000!important;
+}
+.dot5{
+  width:35px;
+  height:35px;
+  position:fixed;
+  background: url("../assets/images/diamond5.png");
+  background-size: 100% 100%;
+  z-index: -1000000!important;
+}
+.dot0{
+  width:35px;
+  height:35px;
+  position:fixed;
+  background: url("../assets/images/diamond6.png");
+  background-size: 100% 100%;
+  z-index: -1000000!important;
+}
+html, body, #container-confetti {min-width:100%; min-height:100%; }
+#logo-confetti{ left:50%; top:50%; position:fixed; border-radius:10px;}

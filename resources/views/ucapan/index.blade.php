@@ -149,32 +149,32 @@
     /* ============================================ */
 
     /* HAFT MODAL */
-    .haft-header-modal{
-        width: 100%;
-        background-color: #1B325E !important;
-        color:#fff !important;
-        font-weight: bold !important;
-        height: 65px !important;
-        font-size: 14pt !important;
-        
-    }
-    .haft-modal-btn{
-        cursor: pointer;
-        background-color: #D02762!important;
-        border: 2px solid white !important;
-        color: white !important;
-        border-radius: 20px !important;
-        min-width: 80px !important;
-        min-height: 45px !important;
-    }
-    .haft-modal-btn:hover{
-        cursor: pointer;
-        background-color: white !important;
-        border: 2px solid #D02762 !important;
-        color: #D02762 !important;
-        border-radius: 20px !important;
-        
-    }
+        .haft-header-modal{
+            width: 100%;
+            background-color: #1B325E !important;
+            color:#fff !important;
+            font-weight: bold !important;
+            height: 65px !important;
+            font-size: 14pt !important;
+            
+        }
+        .haft-modal-btn{
+            cursor: pointer;
+            background-color: #D02762!important;
+            border: 2px solid white !important;
+            color: white !important;
+            border-radius: 20px !important;
+            min-width: 80px !important;
+            min-height: 45px !important;
+        }
+        .haft-modal-btn:hover{
+            cursor: pointer;
+            background-color: white !important;
+            border: 2px solid #D02762 !important;
+            color: #D02762 !important;
+            border-radius: 20px !important;
+            
+        }
     
 
 
@@ -210,6 +210,7 @@
     
 </style>
 @section('content')
+<div class="fixed-top" id="container-confetti" style="z-index: -100000"></div>
 <div class="ucapan-content">
     @php
         $color_array = ["blue", "yellow", "pink"];
@@ -822,38 +823,38 @@
             modal.style.display = "none";
         });
 
-        $.ajaxSetup({
-            headers : {
-                'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+        // $.ajaxSetup({
+        //     headers : {
+        //         'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
 
-        var resize = $('.croppie-modal').croppie({
-            enableExif: true,
-            enableOrientation: true,
-            viewport : {
-                width: 277.5,
-                height: 200,
-                type: 'square'
-            },
-            boundary : {
-                width: 300,
-                height: 300
-            }
-        });
+        // var resize = $('.croppie-modal').croppie({
+        //     enableExif: true,
+        //     enableOrientation: true,
+        //     viewport : {
+        //         width: 277.5,
+        //         height: 200,
+        //         type: 'square'
+        //     },
+        //     boundary : {
+        //         width: 300,
+        //         height: 300
+        //     }
+        // });
 
-        $(document).on('change', '.image', function () {
-            resize.show();
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                resize.croppie('bind', {
-                    url: e.target.result
-                }).then(function(){
-                    console.log('jQuery bind complete');
-                });
-            }
-            reader.readAsDataURL(this.files[0]);
-        });
+        // $(document).on('change', '.image', function () {
+        //     resize.show();
+        //     var reader = new FileReader();
+        //     reader.onload = function(e) {
+        //         resize.croppie('bind', {
+        //             url: e.target.result
+        //         }).then(function(){
+        //             console.log('jQuery bind complete');
+        //         });
+        //     }
+        //     reader.readAsDataURL(this.files[0]);
+        // });
 
         $(document).on('submit', '#Msg_Form', function (e) {
             e.preventDefault();
@@ -923,5 +924,27 @@
                 });
             });
         });
+
+        TweenLite.set("#container-confetti", { perspective: 600 })
+        TweenLite.set("img", { xPercent: "-50%", yPercent: "-50%" })
+
+        var total = 100;
+        var warp = document.getElementById("container-confetti"), w = window.innerWidth, h = window.innerHeight;
+        console.log(warp);
+
+        for (i = 0; i < total; i++) {
+            var Div = document.createElement('div');
+            TweenLite.set(Div, { attr: { class: 'dot' + (i%6) }, x: R(0, w), y: R(-200, -150), z: R(-200, 200) });
+            warp.appendChild(Div);
+            animm(Div);
+        }
+
+        function animm(elm) {
+            TweenMax.to(elm, R(6, 15), { y: h + 100, ease: Linear.easeNone, repeat: -1, delay: -10 });
+            TweenMax.to(elm, R(4, 8), { x: '+=100', rotationZ: R(0, 180), repeat: -1, yoyo: true, ease: Sine.easeInOut });
+            TweenMax.to(elm, R(2, 8), { rotationX: R(0, 360), rotationY: R(0, 360), repeat: -1, yoyo: true, ease: Sine.easeInOut, delay: 5 });
+        };
+
+        function R(min, max) { return min + Math.random() * (max - min) };
     </script>
 @endsection

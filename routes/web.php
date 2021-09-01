@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EmbedVideoController;
 use App\Http\Controllers\HomeController;
+use App\Models\Role;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -80,7 +81,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 
 Route::get('/Tentang', function () {
-    return view('tentang.index');
+    $roles = Role::where('id', '!=', '6')->get();
+    return view('tentang.index', compact('roles'));
 });
 
 Route::get('/Kegiatan', [BlogController::class, 'index'])->name('blog.index');

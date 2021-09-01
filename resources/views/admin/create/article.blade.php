@@ -70,7 +70,7 @@
                     <div class="col-10">
                         <div class="form-group" id="formMsg">
                             <label for="notes">Deskripsi Kegiatan</label>
-                            <textarea class="form-control" name="description" id="inputMsg" rows="3" placeholder="Deskripsi Kegiatan" minlength="5" maxlength="400" required></textarea>
+                            <textarea class="form-control" name="description" id="inputMsg" rows="3" placeholder="Deskripsi Kegiatan" minlength="5" required></textarea>
                         </div>
                     </div>
                     <div class="col-1"></div>

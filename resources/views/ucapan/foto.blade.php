@@ -512,38 +512,38 @@
             modal.style.display = "none";
         });
 
-        $.ajaxSetup({
-            headers : {
-                'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+        // $.ajaxSetup({
+        //     headers : {
+        //         'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
 
-        var resize = $('.croppie-modal').croppie({
-            enableExif: true,
-            enableOrientation: true,
-            viewport : {
-                width: 277.5,
-                height: 200,
-                type: 'square'
-            },
-            boundary : {
-                width: 300,
-                height: 300
-            }
-        });
+        // var resize = $('.croppie-modal').croppie({
+        //     enableExif: true,
+        //     enableOrientation: true,
+        //     viewport : {
+        //         width: 277.5,
+        //         height: 200,
+        //         type: 'square'
+        //     },
+        //     boundary : {
+        //         width: 300,
+        //         height: 300
+        //     }
+        // });
 
-        $(document).on('change', '.image', function () {
-            resize.show();
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                resize.croppie('bind', {
-                    url: e.target.result
-                }).then(function(){
-                    console.log('jQuery bind complete');
-                });
-            }
-            reader.readAsDataURL(this.files[0]);
-        });
+        // $(document).on('change', '.image', function () {
+        //     resize.show();
+        //     var reader = new FileReader();
+        //     reader.onload = function(e) {
+        //         resize.croppie('bind', {
+        //             url: e.target.result
+        //         }).then(function(){
+        //             console.log('jQuery bind complete');
+        //         });
+        //     }
+        //     reader.readAsDataURL(this.files[0]);
+        // });
 
         $(document).on('submit', '#Msg_Form', function (e) {
             e.preventDefault();

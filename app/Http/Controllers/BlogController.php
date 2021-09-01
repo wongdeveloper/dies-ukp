@@ -10,6 +10,8 @@ use App\Models\Image;
 use App\Models\Video;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Role;
+
 
 class BlogController extends Controller
 {
@@ -21,7 +23,8 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::orderByDate()->get();
-        return view('kegiatan.index', compact('blogs'));
+        $roles = Role::where('id', '!=', '6')->get();
+        return view('kegiatan.index', compact('blogs', 'roles'));
     }
 
     /**
@@ -62,7 +65,8 @@ class BlogController extends Controller
                 $blog->youtube_id = 0;
             }
         }
-        return view('kegiatan.template', compact('blog'));
+        $roles = Role::where('id', '!=', '6')->get();
+        return view('kegiatan.template', compact('blog', 'roles'));
     }
 
     /**

@@ -263,7 +263,8 @@
         min-width: 200px !important;
         max-width: 400px !important;
         min-height: 300px !important;
-        background-color:#D02762 !important;
+        /* background-color:#D02762 !important; */
+    
     }
     .tentang-img-mobile{
         background-color: #D02762 !important;
@@ -284,10 +285,8 @@
             border-radius:100px;
             background-color: #FFFCF5 !important;
             width: auto !important;
-            min-width: 80px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 135px !important;
+            height: 110px !important;
+            width: 110px !important;
             height: auto !important;
             border: 8px solid #D02762!important;
         }
@@ -295,10 +294,8 @@
             border-radius:100px;
             background-color: #FFFCF5 !important;
             width: auto !important;
-            min-width: 80px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 135px !important;
+            height: 110px !important;
+            width: 110px !important;
             height: auto !important;
             border: 8px solid #1B325E!important;
         }
@@ -306,10 +303,8 @@
             border-radius:100px;
             background-color: #FFFCF5 !important;
             width: auto !important;
-            min-width: 80px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 135px !important;
+            height: 110px !important;
+            width: 110px !important;
             height: auto !important;
             border: 8px solid #F6AD3C!important;
         }
@@ -319,10 +314,8 @@
             border-radius:100px;
             background-color: #FFFCF5 !important;
             width: auto !important;
-            min-width: 95px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 90px !important;
+            height: 110px !important;
+            width: 110px !important;
             height: auto !important;
             border: 8px solid #D02762!important;
         }
@@ -330,10 +323,8 @@
             border-radius:100px;
             background-color: #FFFCF5 !important;
             width: auto !important;
-            min-width: 95px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 90px !important;
+            height: 110px !important;
+            width: 110px !important;
             height: auto !important;
             border: 8px solid #1B325E!important;
         }
@@ -341,10 +332,8 @@
             border-radius:100px;
             background-color: #FFFCF5 !important;
             width: auto !important;
-            min-width: 95px !important;
-            max-width: 150px !important;
-            max-height: 150px !important;
-            min-height: 90px !important;
+            height: 110px !important;
+            width: 110px !important;
             height: auto !important;
             border: 8px solid #F6AD3C!important;
         }
@@ -380,7 +369,7 @@
         width: 0;
         margin-left: -10px;
     }
-    .hour,.minute,.second{
+    .day,.hour,.minute,.second{
         vertical-align:middle;
         display:inline-block;
         font-size: 40pt;
@@ -397,18 +386,15 @@
 </style>
 @section('content')
 <div class="container-fluid count-down">
-<<<<<<< HEAD
     @php
         $color_array = ["blue", "yellow", "pink"];
     @endphp
-=======
     <div class="row pt-5 d-none d-md-flex space-non-hp">
         {{-- BUAT SPACE --}}
     </div>
     <div class="row pt-5 d-flex d-md-none space-hp">
         {{-- BUAT SPACE --}}
     </div>
->>>>>>> 3dbfab42508518472247ea91ca6b79bcf3a8fc5c
     <div class="row pt-5 pb-5">        
         <div class="col-3 d-none d-md-block">
             {{-- BUAT SPACE NON HP --}}
@@ -421,7 +407,7 @@
                 <div class="col-2 ">
                     <div class="col count-down-pink">
                         <span class="helper"></span>
-                        <div class="second">0</div>
+                        <div class="day">0</div>
                     </div>
                 </div>
                 <div class="col-1 pt-5 text-center">
@@ -490,7 +476,7 @@
                 <div class="col-5">
                     <div class="col count-down-pink-mobile">
                         <span class="helper"></span>
-                        <div class="second">0</div>
+                        <div class="day">0</div>
                     </div>
                 </div>
                 <div class="col-1 pt-4 text-center">
@@ -551,7 +537,7 @@
     <div class="row">
         <center>
             <div class="col-12 " style="font-weight: bold">
-                <h2>“To The Rock Turns Diamond”</h2>
+                <h2>“The Rock Turns Diamond”</h2>
                 
             </div>
         </center>
@@ -587,10 +573,7 @@
 <div class="row ms-0 video-container-yellow">
     <center>
         <div class="row pt-5">
-            <div class="col-12">
-                <h1>EMBED VIDEO</h1>
-            </div>
-            <div class="col-12 h-100 py-5">
+            <div class="col-12 h-100 pb-5">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         @foreach($embed_videos as $key => $embed_video)
@@ -620,13 +603,13 @@
 </div>
 
 <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
-    @foreach($wish_images as $wish_image)
+    @foreach($wish_images as $key => $wish_image)
         <div class="card card-block mx-2 haft-card-galeri-{{ $color_array[($key+rand(0,100))%3] }}">
             <div class="row pt-4">
                 <div class="col-1"></div>
                 <div class="col-10">
                     <div class="haft-card-img image-responsive-container">
-                        <img src="{{ asset($wish_image->image->path) }}" class="image image-responsive-middle" alt="View Image">
+                        <img src="{{ asset($wish_image->image->path) }}" class="image image-responsive-middle" alt="View Image" style="max-height: 403px">
                     </div>
                 </div>
                 <div class="col-1"></div>
@@ -656,7 +639,7 @@
 </div>
 
 <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
-    @foreach($wish_vips as $wish_vip)
+    @foreach($wish_vips as $key => $wish_vip)
         <div class="card card-block mx-2 haft-card-vip-{{ $color_array[($key+rand(0,100))%3] }}">
             <div class="row pt-4">
                 <div class="col-3"></div>
@@ -741,7 +724,7 @@
 
 <div class="container pt-3">
     {{-- BUAT NON HP --}}
-        @foreach($blogs as $blog)
+        @foreach($blogs as $key => $blog)
             <div class="row pt-2 d-none d-md-flex">
                 <div class="col-1">
                     {{-- SPACE --}}
@@ -786,7 +769,7 @@
     {{-- ================== --}}
     
     {{-- BUAT HP --}}
-        @foreach($blogs as $blog)
+        @foreach($blogs as $key => $blog)
             <div class="row d-flex d-md-none">
                 <div class="col-12 pt-3 pb-4 haft-article-card-mobile shadow p-3 mb-5 bg-white">
                     <div class="row ps-4 pe-2 ">
@@ -851,11 +834,19 @@
             <div class="col-10">
                 <div class="row ps-4 pe-2 ">
                     <div class="col-4 tentang-img">
-                        {{-- BUAT GAMBAR --}}
+                        <img src="{{asset('assets/images/gambar-tentang.jpg')}}" alt="" width="290" height="330">
                     </div>
                     <div class="col-8 ps-4">
                         <div class="row pt-1 text-tentang">
-                            <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita non similique repellendus, rerum corrupti soluta, voluptate maxime eos aliquam nostrum, harum sed odit? Vitae hic, quos magnam nihil iste quo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda ratione beatae, iure placeat asperiores quia aliquam! Error, commodi dolores, soluta, expedita numquam enim omnis laborum ex maiores iure saepe? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque veniam quam numquam voluptate distinctio sapiente quaerat aperiam, impedit corporis molestiae dolore a, illum maxime earum dignissimos odio? Incidunt, corporis velit.</p>
+                            <p style="font-size:1.2rem;text-align: justify">
+                                Pada tanggal 22 September 2021, UK Petra akan merayakan ulang tahunnya yang ke 60. 
+                                Perayaan ulang tahun ini bertajuk <span style="font-style: italic">The Rock Turns Diamond!</span> (TRTD). 
+                                Petra, Sang Batu Karang, mencapai ulang tahun berliannya. 
+                                Perayaan TRTD ini mengambil tema “<span style="font-style: italic">De<span style="font-weight:bold">light</span>ful Petra, De<span style="font-weight:bold">light</span>ed World </span>”. 
+                                Tema ini memiliki dua makna. Pertama, UK Petra yang penuh sukacita membuat dunia turut bergembira.  
+                                Tema ini juga berisi harapan UK Petra yang dipenuhi dengan nilai LIGHT dapat menyemai nilai-nilai 
+                                tersebut di dalam masyarakat melalui pengajaran, penelitian, dan pengabdiannya.
+                            </p>
                         </div>
                         
                     </div>
@@ -875,15 +866,23 @@
     {{-- ================== --}}
 
     {{-- BUAT HP --}}
-        <div class="row pt-5 pb-2 ps-3 d-flex d-md-none">
+        <div class="row pt-2 pb-2 ps-1 d-flex d-md-none">
             <div class="col-11">
                 <div class="row ps-4 pe-2 ">
-                    <div class="col-7 tentang-img-mobile">
-                        {{-- BUAT GAMBAR --}}
-                    </div>
-                    <div class="col-5 ps-4">
+                    {{-- <div class="col-7 tentang-img-mobile">
+                        <img src="{{asset('assets/images/gambar-tentang.jpg')}}" alt="" width="50" height="70">
+                    </div> --}}
+                    <div class="col ps-4">
                         <div class="row pt-1 text-tentang">
-                            <p style="font-size:0.8rem">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita non similique repellendus, Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita non similique repellendus,</p>
+                            <p style="font-size:0.8rem;text-align: justify">
+                                Pada tanggal 22 September 2021, UK Petra akan merayakan ulang tahunnya yang ke 60. 
+                                Perayaan ulang tahun ini bertajuk <span style="font-style: italic">The Rock Turns Diamond!</span> (TRTD). 
+                                Petra, Sang Batu Karang, mencapai ulang tahun berliannya. 
+                                Perayaan TRTD ini mengambil tema “<span style="font-style: italic">De<span style="font-weight:bold">light</span>ful Petra, De<span style="font-weight:bold">light</span>ed World </span>”. 
+                                Tema ini memiliki dua makna. Pertama, UK Petra yang penuh sukacita membuat dunia turut bergembira.  
+                                Tema ini juga berisi harapan UK Petra yang dipenuhi dengan nilai LIGHT dapat menyemai nilai-nilai 
+                                tersebut di dalam masyarakat melalui pengajaran, penelitian, dan pengabdiannya.
+                            </p>
                         </div>
                         
                     </div>
@@ -940,7 +939,8 @@
             // Display the result in the element with id="demo"
             // document.getElementById("demo").innerHTML = days + "d " + hours + "h "
             // + minutes + "m " + seconds + "s ";
-            $('.hour').text((days*24)+hours);
+            $('.day').text(days);
+            $('.hour').text(hours);
             $('.minute').text(minutes);
             $('.second').text(seconds);
 

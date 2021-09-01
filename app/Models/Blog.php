@@ -38,7 +38,7 @@ class Blog extends Model
 
     public function scopeOrderByDate($query)
     {
-        return $query->orderBy('created_at');
+        return $query->orderBy('created_at', 'desc');
     }
 
     //Relation
