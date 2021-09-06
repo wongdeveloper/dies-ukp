@@ -26,7 +26,9 @@ class WishController extends Controller
             if (array_key_exists('v', $my_array_of_vars)) {
                 $wish_video->youtube_id = $my_array_of_vars['v'];
             }else{
-                $wish_video->youtube_id = 0;
+                $url = parse_url($wish_video->video->path);
+                $url_path = preg_split('#/#', $url['path']);
+                $wish_video->youtube_id = $url_path[1];
             }
         }
         $wish_texts = Wish::whereNull('video_id')->whereNull('image_id')->orderByDesc('created_at')->limit(9)->get();
@@ -47,7 +49,9 @@ class WishController extends Controller
             if (array_key_exists('v', $my_array_of_vars)) {
                 $wish_video->youtube_id = $my_array_of_vars['v'];
             }else{
-                $wish_video->youtube_id = 0;
+                $url = parse_url($wish_video->video->path);
+                $url_path = preg_split('#/#', $url['path']);
+                $wish_video->youtube_id = $url_path[1];
             }
         }
         $roles = Role::where('id', '!=', '6')->get();

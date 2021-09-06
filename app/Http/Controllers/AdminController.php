@@ -193,7 +193,9 @@ class AdminController extends Controller
             if (array_key_exists('v', $my_array_of_vars)) {
                 $wish_video->youtube_id = $my_array_of_vars['v'];
             }else{
-                $wish_video->youtube_id = 0;
+                $url = parse_url($wish_video->video->path);
+                $url_path = preg_split('#/#', $url['path']);
+                $wish_video->youtube_id = $url_path[1];
             }
         }
         return view('admin.login.video', compact('wish_videos'));

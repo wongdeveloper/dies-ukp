@@ -62,7 +62,9 @@ class BlogController extends Controller
             if (array_key_exists('v', $my_array_of_vars)) {
                 $blog->youtube_id = $my_array_of_vars['v'];
             }else{
-                $blog->youtube_id = 0;
+                $url = parse_url($wish_video->video->path);
+                $url_path = preg_split('#/#', $url['path']);
+                $blog->youtube_id = $url_path[1];
             }
         }
         $roles = Role::where('id', '!=', '6')->get();

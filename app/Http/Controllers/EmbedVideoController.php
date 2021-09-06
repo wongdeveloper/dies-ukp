@@ -24,7 +24,9 @@ class EmbedVideoController extends Controller
             if (array_key_exists('v', $my_array_of_vars)) {
                 $embed_video->youtube_id = $my_array_of_vars['v'];
             }else{
-                $embed_video->youtube_id = 0;
+                $url = parse_url($wish_video->video->path);
+                $url_path = preg_split('#/#', $url['path']);
+                $embed_video->youtube_id = $url_path[1];
             }
         }
         return view('admin.login.embed_video', compact('embed_videos'));
