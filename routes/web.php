@@ -21,6 +21,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/en', function () {
+    return view('en.home');
+});
+Route::get('/en/programs', function () {
+    return view('en.programs');
+});
+Route::get('/en/wishes', function () {
+    return view('en.wishes');
+});
+Route::get('/en/about', function () {
+    return view('en.about');
+});
+Route::get('/en/wishes/photos', function () {
+    return view('en.photos');
+});
+Route::get('/en/wishes/text', function () {
+    return view('en.text');
+});
+Route::get('/en/wishes/video', function () {
+    return view('en.video');
+});
 Route::get('/get_countdown', [HomeController::class, 'get_countdown'])->name('home.get_countdown');
 
 Route::prefix('admin')->name('admin.')->group(function(){

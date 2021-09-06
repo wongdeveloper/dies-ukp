@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.app-en')
 
 @section('title')
-    Beranda | TRTD UKP 60th
+    Home | TRTD UKP 60th
 @endsection
 <style>
 
@@ -441,25 +441,25 @@
             </div>
             <div class="row pt-2">
                 <div class="col-2 text-center" style="font-weight:bold !important;">
-                    <p style="font-size: 20pt">Hari</p>
+                    <p style="font-size: 20pt">Days</p>
                 </div>
                 <div class="col-1 pt-5 text-center">
                    {{-- buat space --}}
                 </div>
                 <div class="col-2 text-center" style="font-weight:bold !important;">
-                    <p style="font-size: 20pt">Jam</p>
+                    <p style="font-size: 20pt">Hours</p>
                 </div>
                 <div class="col-1 pt-5 text-center">
                     {{-- buat space --}}
                 </div>
                 <div class="col-2 text-center" style="font-weight:bold !important;">
-                    <p style="font-size: 20pt">Menit</p>
+                    <p style="font-size: 20pt">Minutes</p>
                 </div>
                 <div class="col-1 pt-5 text-center">
                     {{-- buat space --}}
                 </div>
                 <div class="col-2 text-center" style="font-weight:bold !important;">
-                    <p style="font-size: 20pt">Detik</p>
+                    <p style="font-size: 20pt">Seconds</p>
                 </div>
                 
                 
@@ -492,13 +492,13 @@
             </div>
             <div class="row ps-3 pt-2">
                 <div class="col-5 text-center" style="font-weight:bold !important;">
-                    <p style="font-size: 20pt">Hari</p>
+                    <p style="font-size: 20pt">Days</p>
                 </div>
                 <div class="col-1 pt-2 text-center">
                     {{-- BUAT SPACE --}}
                 </div>
                 <div class="col-5 text-center" style="font-weight:bold !important;">
-                    <p style="font-size: 20pt">Jam</p>
+                    <p style="font-size: 20pt">Hours</p>
                 </div>
             </div>
             <div class="row ps-3 pt-5">
@@ -520,13 +520,13 @@
             </div>
             <div class="row ps-3 pt-2">
                 <div class="col-5 text-center" style="font-weight:bold !important;">
-                    <p style="font-size: 20pt">Menit</p>
+                    <p style="font-size: 20pt">Minutes</p>
                 </div>
                 <div class="col-1 pt-2 text-center">
                     {{-- BUAT SPACE --}}
                 </div>
                 <div class="col-5 text-center" style="font-weight:bold !important;">
-                    <p style="font-size: 20pt">Detik</p>
+                    <p style="font-size: 20pt">Seconds</p>
                 </div>
             </div>
         </div>
@@ -552,7 +552,7 @@
         <div class="row pt-2">
             <div class="col-2"></div>
             <div class="col-8">
-                <h2>Ucapan untuk Dies Natalies ke-60 UK-Petra </h2>
+                <h2>Wishes for PCU's Diamond Jubilee (60th)</h2>
             </div>
             <div class="col-2"></div>
         </div>
@@ -564,7 +564,7 @@
     <div class="row pt-4 ps-2 ms-0 haft-title-ucapan-box d-flex d-md-none">
         <div class="row pt-2">
             <div class="col-12">
-                <h2>Ucapan untuk Dies Natalies ke-60 UK-Petra </h2>
+                <h2>Wishes for PCU's Diamond Jubilee (60th)</h2>
             </div>
         </div>
         
@@ -577,7 +577,7 @@
             <div class="col-12 h-100 pb-5">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        @foreach($embed_videos as $key => $embed_video)
+                        {{-- @foreach($embed_videos as $key => $embed_video)
                             @if($key == 0)
                                 <div class="carousel-item active" style="background-color: #F6AD3C!important">
                                     <iframe class="d-block" width="80%" height="500" src="https://www.youtube.com/embed/{{ $embed_video->youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -587,7 +587,7 @@
                                     <iframe class="d-block" width="80%" height="500" src="https://www.youtube.com/embed/{{ $embed_video->youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             @endif
-                        @endforeach
+                        @endforeach --}}
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -604,7 +604,7 @@
 </div>
 
 <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
-    @foreach($wish_images as $key => $wish_image)
+    {{-- @foreach($wish_images as $key => $wish_image)
         <div class="card card-block mx-2 haft-card-galeri-{{ $color_array[($key+rand(0,100))%3] }}" style="max-width: 300px !important;">
             <div class="row pt-4">
                 <div class="col-1"></div>
@@ -636,7 +636,7 @@
                 <div class="col-1"></div>
             </div>
         </div> 
-    @endforeach
+    @endforeach --}}
 </div>
 
 {{-- <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
@@ -692,7 +692,7 @@
 </div> --}}
 
 <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
-    @foreach ($wish_texts as $key => $wish_text)
+    {{-- @foreach ($wish_texts as $key => $wish_text)
         <div class="card card-block mx-2 haft-card-vip-{{ $color_array[($key+rand(0,100))%3] }}" style="max-width: 300px">
             <div class="row pt-2">
                 <div class="col-1"></div>
@@ -730,13 +730,13 @@
                 <div class="col-1"></div>
             </div>
         </div>
-    @endforeach
+    @endforeach --}}
 </div>
 
 <div class="pt-3 pb-4">
     <center>
         <a href="/Ucapan" class="haft-btn-pink btn pt-2">
-            <p>Unggah Ucapanmu</p>
+            <p>Upload Your Wishes</p>
         </a>
     </center>
 </div>
@@ -746,7 +746,7 @@
         <div class="row pt-2">
             <div class="col-2"></div>
             <div class="col-8">
-                <h2>Kegiatan TRTD</h2>
+                <h2>TRTD Programs</h2>
             </div>
             <div class="col-2"></div>
         </div>
@@ -758,7 +758,7 @@
     <div class="row pt-4 ps-2 ms-0 haft-title-yellow d-flex d-md-none">
         <div class="row pt-2">
             <div class="col-12">
-                <h2 style="font-size:26pt;">Kegiatan TRTD</h2 >
+                <h2 style="font-size:26pt;">TRTD Programs</h2 >
             </div>
         </div>
         
@@ -767,10 +767,10 @@
 
 <div class="container pt-3">
     {{-- BUAT NON HP --}}
-        @foreach($blogs as $key => $blog)
+        {{-- @foreach($blogs as $key => $blog)
             <div class="row pt-2 d-none d-md-flex">
                 <div class="col-1">
-                    {{-- SPACE --}}
+                    
                 </div>
                 <div class="col-10 pt-3 pb-4 haft-article-card shadow p-3 mb-5 bg-white">
                     <div class="row ps-4 pe-2 ">
@@ -798,21 +798,21 @@
                     </div>
                 </div>
                 <div class="col-1">
-                    {{-- SPACE --}}
+                   
                 </div>
             </div>
-        @endforeach
+        @endforeach --}}
         <div class="row pt-2 pb-4 d-none d-md-flex">
             <div class="col">
                 <center>
-                    <h3><a href="/Kegiatan" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">  Lihat Kegiatan Lainnya</a></h3>
+                    <h3><a href="/Kegiatan" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">Click for Other Programs</a></h3>
                 </center>
             </div>
         </div>
     {{-- ================== --}}
     
     {{-- BUAT HP --}}
-        @foreach($blogs as $key => $blog)
+        {{-- @foreach($blogs as $key => $blog)
             <div class="row d-flex d-md-none">
                 <div class="col-12 pt-3 pb-4 haft-article-card-mobile shadow p-3 mb-5 bg-white">
                     <div class="row ps-4 pe-2 ">
@@ -842,7 +842,7 @@
                     </div>
                 </div>
             </div>
-        @endforeach
+        @endforeach --}}
     {{-- ================== --}}
 </div>
 
@@ -851,7 +851,7 @@
         <div class="row pt-2">
             <div class="col-2"></div>
             <div class="col-8">
-                <h2>Tentang TRTD</h2>
+                <h2>About TRTD</h2>
             </div>
             <div class="col-2"></div>
         </div>
@@ -862,7 +862,7 @@
     <div class="row pt-4 ps-2 ms-0 haft-title-pink d-flex d-md-none">
         <div class="row pt-2">
             <div class="col-12">
-                <h2 style="font-size:26pt;">Tentang TRTD</h2>
+                <h2 style="font-size:26pt;">About TRTD</h2>
             </div>
         </div>
     </div>
@@ -882,13 +882,13 @@
                     <div class="col-8 ps-4">
                         <div class="row pt-1 text-tentang">
                             <p style="font-size:1.2rem;text-align: justify">
-                                Pada tanggal 22 September 2021, UK Petra akan merayakan ulang tahunnya yang ke 60. 
-                                Perayaan ulang tahun ini bertajuk <span style="font-style: italic">The Rock Turns Diamond!</span> (TRTD). 
-                                Petra, Sang Batu Karang, mencapai ulang tahun berliannya. 
-                                Perayaan TRTD ini mengambil tema “<span style="font-style: italic">De<span style="font-weight:bold">light</span>ful Petra, De<span style="font-weight:bold">light</span>ed World </span>”. 
-                                Tema ini memiliki dua makna. Pertama, UK Petra yang penuh sukacita membuat dunia turut bergembira.  
-                                Tema ini juga berisi harapan UK Petra yang dipenuhi dengan nilai LIGHT dapat menyemai nilai-nilai 
-                                tersebut di dalam masyarakat melalui pengajaran, penelitian, dan pengabdiannya.
+                                On September 22, 2021. Petra Christian University (PCU) will celebrate
+                                it's 60th anniversary. This celebration is entitled The Rock Turns Diamond
+                                (TRTD). Petra, the Rock, comes to it's diamond anniversary. TRTD celebration takes 
+                                "Delightful Petra, Delighted World" as it's theme. This theme has two meanings. First,
+                                PCU is joyful and makes the world feel this joy. This theme also has hopes that 
+                                PCU that lives the LIGHT values can also sow the values into the society through teaching-learning, 
+                                research, and community outreach programs.
                             </p>
                         </div>
                         
@@ -918,13 +918,13 @@
                     <div class="col ps-4">
                         <div class="row pt-1 text-tentang">
                             <p style="font-size:0.8rem;text-align: justify">
-                                Pada tanggal 22 September 2021, UK Petra akan merayakan ulang tahunnya yang ke 60. 
-                                Perayaan ulang tahun ini bertajuk <span style="font-style: italic">The Rock Turns Diamond!</span> (TRTD). 
-                                Petra, Sang Batu Karang, mencapai ulang tahun berliannya. 
-                                Perayaan TRTD ini mengambil tema “<span style="font-style: italic">De<span style="font-weight:bold">light</span>ful Petra, De<span style="font-weight:bold">light</span>ed World </span>”. 
-                                Tema ini memiliki dua makna. Pertama, UK Petra yang penuh sukacita membuat dunia turut bergembira.  
-                                Tema ini juga berisi harapan UK Petra yang dipenuhi dengan nilai LIGHT dapat menyemai nilai-nilai 
-                                tersebut di dalam masyarakat melalui pengajaran, penelitian, dan pengabdiannya.
+                                On September 22, 2021. Petra Christian University (PCU) will celebrate
+                                it's 60th anniversary. This celebration is entitled The Rock Turns Diamond
+                                (TRTD). Petra, the Rock, comes to it's diamond anniversary. TRTD celebration takes 
+                                "Delightful Petra, Delighted World" as it's theme. This theme has two meanings. First,
+                                PCU is joyful and makes the world feel this joy. This theme also has hopes that 
+                                PCU that lives the LIGHT values can also sow the values into the society through teaching-learning, 
+                                research, and community outreach programs.
                             </p>
                         </div>
                         
@@ -938,7 +938,7 @@
         <div class="row pt-5 pb-5 d-flex d-md-none">
             <div class="col">
                 <center>
-                    <h3><a href="/Tentang" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">Lihat Selengkapnya</a></h3>
+                    <h3><a href="/Tentang" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">Click for Details</a></h3>
                 </center>
             </div>
         </div>

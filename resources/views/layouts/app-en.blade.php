@@ -501,26 +501,26 @@
                 </div>
                 <div class="col-5 pt-3">
                     <ul>
-                        <li> <a href="/" id="navbar">Beranda</a> </li>
-                        <li> <a href="/Ucapan" id="navbar">Ucapan</a> </li>
-                        <li> <a href="/Kegiatan" id="navbar">Kegiatan</a> </li>
-                        <li> <a href="/Tentang" id="navbar">Tentang TRTD</a> </li>
+                        <li> <a href="/" id="navbar">Home</a> </li>
+                        <li> <a href="/en/wishes" id="navbar">Wishes</a> </li>
+                        <li> <a href="/en/programs" id="navbar">Program</a> </li>
+                        <li> <a href="/en/about" id="navbar">About TRTD</a> </li>
                     </ul>
                 </div>
 
                 <div class="col-2">
                     <a class="btn pt-2 unggah-ucapan dropdown-toggle"  role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        Unggah Ucapan
+                        Upload Your Wishes
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li>
                             <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-ucapan-foto-nav">
-                                Unggah Ucapan Teks
+                                Wishes in Words
                             </a>
                         </li>
                         <li>
                             <a class="dropdown-item" id="show-photo-modal" data-bs-toggle="modal" data-bs-target="#modal-ucapan-foto-nav">
-                                Unggah Ucapan Foto
+                                Wishes in Photos
                             </a>
                         </li>
                     </ul>
@@ -568,38 +568,38 @@
                 <div id="myLinks" class="option">
                     <div class="row pt-2 ps-2">
                         <div class="col">   
-                            <a href="/" >Beranda</a>
+                            <a href="/" >Home</a>
                         </div>
                     </div>
                     <div class="row pt-2 ps-2">
                         <div class="col">
-                            <a href="/Ucapan" >Ucapan</a>
+                            <a href="/en/wishes" >Wishes</a>
                         </div>
                     </div>
                     <div class="row pt-2 ps-2">
                         <div class="col">
-                            <a href="/Kegiatan" >Kegiatan</a>
+                            <a href="/en/programs" >Program</a>
                         </div>
                     </div>
                     <div class="row pt-2 ps-2">
                         <div class="col">
-                            <a href="/Tentang" >Tentang TRTD</a>
+                            <a href="/en/about" >About TRTD</a>
                         </div>
                     </div>
                     <div class="row pt-2 ">
                         <div class="col-8">
                             <a class="btn pt-2 unggah-ucapan dropdown-toggle"  role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                Unggah Ucapan
+                                Upload Your Wishes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li>
                                     <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-ucapan-foto-nav">
-                                        Unggah Ucapan Teks
+                                        Wishes in Words
                                     </a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" id="show-photo-modal" data-bs-toggle="modal" data-bs-target="#modal-ucapan-foto-nav">
-                                        Unggah Ucapan Foto
+                                        Wishes in Photos
                                     </a>
                                 </li>
                             </ul>
@@ -662,7 +662,7 @@
                     <div class="row">
                         <div class="col" >
                             <h2>
-                                Tautan
+                                Link
                             </h2>
                         </div>
                     </div>
@@ -688,14 +688,14 @@
                 <div class="col-4">
                     <div class="row">
                         <div class="col">
-                            <h2>Kontak</h2>
+                            <h2>Contact</h2>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <a href="https://api.whatsapp.com/send?phone=6281234067323">
                                 <p style="color:#fff;">
-                                    Telepon: +62 812-3406-7323
+                                    Phone: +62 812-3406-7323
                                 </p>
                                 
                             </a>
@@ -765,8 +765,8 @@
                 <div class="col-6">
 
                     <ul>
-                        <li><h2>Kontak</h2></li>
-                        <li><p>Telepon: +62 31 2983000</p></li>
+                        <li><h2>Contact</h2></li>
+                        <li><p>Phone: +62 31 2983000</p></li>
                         <li>
                             <a href="">
                                 <p>
@@ -787,7 +787,7 @@
           <div class="modal-content">
             <div class="row p-0 m-0 pt-3 ps-3 haft-header-modal">
                 <div class="col">
-                    <h3 style="">Unggah Ucapanmu !</h3>
+                    <h3 style="">Upload your Wishes!</h3>
                 </div>
             </div>
             <form action="{{ url('wish/store') }}" method="post" enctype="multipart/form-data" id="Msg_Form_Nav">
@@ -797,8 +797,8 @@
                         <div class="row pt-3">
                             <div class="col-1"></div>
                             <div class="col-10">
-                                <label for="name" class="form-label">Nama Lengkap : </label>
-                                <input type="text" class="form-control" id="name" name="name"placeholder="Nama Lengkap">
+                                <label for="name" class="form-label">Full Name : </label>
+                                <input type="text" class="form-control" id="name" name="name"placeholder="Full Name">
                             </div>
                             <div class="col-1"></div>
                         </div>
@@ -816,12 +816,12 @@
                             <div class="col-1"></div>
                             <div class="col-10">
                                 <div class="form-group">
-                                    <label class="my-1 mr-2" for="kategori">Kategori</label>
+                                    <label class="my-1 mr-2" for="kategori">Category</label>
                                     <select class="custom-select my-1 mr-sm-2" id="kategori" name="kategori" aria-placeholder="" required>
-                                        <option hidden value="0">Kategori</option>
-                                        @foreach ($roles as $role)
+                                        <option hidden value="0">Category</option>
+                                        {{-- @foreach ($roles as $role)
                                             <option value="{{ $role->id }}">{{ $role->name }}</option>
-                                        @endforeach
+                                        @endforeach --}}
                                     </select>
                                 </div>
                             </div>
@@ -878,7 +878,7 @@
                             <div class="col-1"></div>
                             <div class="col-10">
                                 <div class="form-group">
-                                    <label for="inputKarya">Ucapan Dalam Bentuk Foto (maks. 10MB Orientasi Landscape)</label>
+                                    <label for="inputKarya">Photos Wishes (Max. 10MB Landscape Orientation)</label>
                                     <div class="input-group mb-3">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="image">
@@ -900,7 +900,7 @@
                             <div class="col-1"></div>
                             <div class="col-10">
                                 <div class="form-group" id="formJudulMsg">
-                                    <label for="notes">Judul Foto (Max 50 Characters)</label>
+                                    <label for="notes">Title of Photo (Max 50 Characters)</label>
                                     <textarea class="form-control" name="image_title" id="inputjudulMsg" rows="3" placeholder="Judul" maxlength="50"></textarea>
                                 </div>
                             </div>
@@ -910,7 +910,7 @@
                             <div class="col-1"></div>
                             <div class="col-10">
                                 <div class="form-group" id="formMsg">
-                                    <label for="notes">Ucapan Dalam Bentuk Teks (Max 400 Characters)</label>
+                                    <label for="notes">Wishes in Words (Max 400 Characters)</label>
                                     <textarea class="form-control" name="wish" id="inputMsg" rows="3" placeholder="Message" minlength="5" maxlength="400" required></textarea>
                                 </div>
                             </div>
@@ -921,7 +921,7 @@
                 <div class="row pt-2 pb-5">
                     <div class="col text-center">
                         <button class="btn haft-modal-btn submit-ucapan-foto">
-                            <p style="margin: 0; font-size:15pt">Unggah</p>
+                            <p style="margin: 0; font-size:15pt">Upload</p>
                         </button>
                     </div>
                 </div>
