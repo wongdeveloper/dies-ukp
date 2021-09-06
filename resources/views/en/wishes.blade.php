@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.app-en')
 
 @section('title')
-    Ucapan | TRTD UKP 60th
+    Wishes | TRTD UKP 60th
 @endsection
 <style>
 
@@ -220,7 +220,7 @@
         <div class="row pt-5 title d-none d-md-flex">
             <div class="col-2"></div>        
             <div class="col-10">
-                <h1>Ucapan dalam Video</h1>
+                <h1>Wishes in Videos</h1>
             </div>
         </div>
         <div class="row line-blue d-none d-md-flex">
@@ -233,7 +233,7 @@
         {{-- BUAT HP --}}
         <div class="row pt-5 title d-flex d-md-none">
             <div class="col">
-                <h1>Ucapan dalam Video</h1>
+                <h1>Wishes in Videos</h1>
             </div>
         </div>
         <div class="row line-blue d-flex d-md-none">
@@ -246,7 +246,7 @@
 
         {{-- BUAT NON HP --}}
         <div class="row pt-3 d-none d-md-flex">
-            @foreach ($wish_videos as $key => $wish_video)
+            {{-- @foreach ($wish_videos as $key => $wish_video)
                 @if ($key % 3 == 0)
                     <div class="col-2"></div>
                 @endif
@@ -291,12 +291,12 @@
                 @if (($key+1) % 3 == 0 || (count($wish_videos)-1) == ($key))
                     <div class="col-1"></div>
                 @endif
-            @endforeach
+            @endforeach --}}
         </div>
 
         {{-- BUAT HP --}}
         <div class="pt-5 pb-2 d-flex d-md-none flex-row flex-nowrap overflow-auto ">
-            @foreach ($wish_videos as $wish_video)
+            {{-- @foreach ($wish_videos as $wish_video)
                 <div class="card card-block mx-2 haft-card-galeri-{{ $color_array[($key+rand(0,100))%3] }}">
                     <div class="row pt-4">
                         <div class="col-1"></div>
@@ -333,14 +333,14 @@
                         <div class="col-1"></div>
                     </div>
                 </div>
-            @endforeach 
+            @endforeach  --}}
         </div>
 
         <div class="row pt-5 pb-2">
             <div class="col-1"></div>
             <div class="col">
                 <center>
-                    <h3><a href="/Ucapan/Video" style="color: #1B325E !important ;text-decoration:none;cursor: pointer;">Lihat Ucapan Video Lainnya !</a></h3>
+                    <h3><a href="/en/wishes/video" style="color: #1B325E !important ;text-decoration:none;cursor: pointer;">See More !</a></h3>
                 </center>
                 
             </div>
@@ -353,11 +353,11 @@
         <div class="row pt-5 title d-none d-md-flex">    
             <div class="col-2"></div>   
             <div class="col-4">
-                <h1>Ucapan dalam Foto</h1>
+                <h1>Wishes in Photos</h1>
             </div>
             <div class="col-3"></div>
             <div class="col-3 haft-btn-pink" id="show-photo-modal" data-bs-toggle="modal" data-bs-target="#modal-ucapan-foto">
-                <p class="text-center pt-2">Unggah Fotomu</p>
+                <p class="text-center pt-2">Upload Your Photos</p>
             </div>
         </div>
         <div class="row line-pink d-none d-md-flex">
@@ -370,7 +370,7 @@
         {{-- BUAT HP --}}
         <div class="row pt-5 title d-flex d-md-none">    
             <div class="col-10">
-                <h1>Ucapan dalam Foto</h1>
+                <h1>Wishes in Photos</h1>
             </div>
             
         </div>
@@ -381,13 +381,13 @@
         </div>
         <div class="row ps-2 d-flex d-md-none">
             <div class="col-10 haft-btn-pink-mobile" id="show-photo-modal" data-bs-toggle="modal" data-bs-target="#modal-ucapan-foto">
-                <p class="text-center pt-2">Unggah Fotomu</p>
+                <p class="text-center pt-2">Upload Your Photos</p>
             </div>
         </div>
 
         {{-- BUAT NON HP --}}
         <div class="row pt-3 d-none d-md-flex">
-            @foreach ($wish_images as $key => $wish_image)
+            {{-- @foreach ($wish_images as $key => $wish_image)
                 @if ($key % 3 == 0)
                     <div class="col-2"></div>
                 @endif
@@ -432,12 +432,12 @@
                 @if (($key+1) % 3 == 0 || (count($wish_images)-1) == ($key))
                     <div class="col-1"></div>
                 @endif
-            @endforeach
+            @endforeach --}}
         </div>
 
         {{-- BUAT HP --}}
         <div class="pt-5 pb-2 d-flex d-md-none flex-row flex-nowrap overflow-auto ">
-            @foreach ($wish_images as $wish_image)
+            {{-- @foreach ($wish_images as $wish_image)
                 <div class="card card-block mx-2 haft-card-galeri-{{ $color_array[($key+rand(0,100))%3] }}">
                     <div class="row pt-4">
                         <div class="col-1"></div>
@@ -475,13 +475,13 @@
                         <div class="col-1"></div>
                     </div>
                 </div>
-            @endforeach
+            @endforeach --}}
         </div>
         <div class="row pt-5 pb-2">
             <div class="col-1"></div>
             <div class="col">
                 <center>
-                    <h3><a href="/Ucapan/Foto" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">Lihat Ucapan Foto Lainnya !</a></h3>
+                    <h3><a href="/en/wishes/photos" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">See More !</a></h3>
                 </center>
                 
             </div>
@@ -495,11 +495,11 @@
         <div class="row pt-5 title d-none d-md-flex">
             <div class="col-2"></div>        
             <div class="col-4">
-                <h1>Ucapan dalam Teks</h1>
+                <h1>Wishes in Text</h1>
             </div>
             <div class="col-3"></div>
             <div class="col-3 haft-btn-yellow">
-                <p class="text-center pt-2" data-bs-toggle="modal" data-bs-target="#modal-ucapan-foto">Unggah Ucapanmu</p>
+                <p class="text-center pt-2" data-bs-toggle="modal" data-bs-target="#modal-ucapan-foto">Upload your Wishes</p>
             </div>
         </div>
         <div class="row line-yellow d-none d-md-flex">
@@ -511,7 +511,7 @@
         {{-- BUAT HP --}}
         <div class="row pt-5 title d-flex d-md-none">    
             <div class="col-10">
-                <h1>Ucapan dalam Teks</h1>
+                <h1>Wishes in Text</h1>
             </div>
             
         </div>
@@ -522,13 +522,13 @@
         </div>
         <div class="row ps-2 d-flex d-md-none">
             <div class="col-10 haft-btn-yellow-mobile" id="show-photo-modal" data-bs-toggle="modal" data-bs-target="#modal-ucapan-foto">
-                <p class="text-center pt-2">Unggah Fotomu</p>
+                <p class="text-center pt-2">Upload Your Photos</p>
             </div>
         </div>
 
         {{-- BUAT NON HP --}}
         <div class="row pt-3 d-none d-md-flex">
-            @foreach ($wish_texts as $key => $wish_text)
+            {{-- @foreach ($wish_texts as $key => $wish_text)
                 @if ($key % 3 == 0)
                     <div class="col-2"></div>
                 @endif
@@ -574,12 +574,12 @@
                 @if (($key+1) % 3 == 0 || (count($wish_texts)-1) == ($key))
                     <div class="col-1"></div>
                 @endif
-            @endforeach
+            @endforeach --}}
         </div>
 
         {{-- BUAT HP --}}
         <div class="pt-5 pb-2 d-flex d-md-none flex-row flex-nowrap overflow-auto ">
-            @foreach ($wish_texts as $key => $wish_text)
+            {{-- @foreach ($wish_texts as $key => $wish_text)
                 <div class="card card-block mx-2 haft-card-vip-{{ $color_array[($key+rand(0,100))%3] }}">
                     <div class="row pt-2">
                         <div class="col-1"></div>
@@ -617,7 +617,7 @@
                         <div class="col-1"></div>
                     </div>
                 </div>
-            @endforeach
+            @endforeach --}}
         </div>
 
         
@@ -626,7 +626,7 @@
             <div class="col-1"></div>
             <div class="col">
                 <center>
-                    <h3><a href="/Ucapan/Teks" style="color: #F6AD3C !important ;text-decoration:none;cursor: pointer;">Lihat Ucapan Teks Lainnya !</a></h3>
+                    <h3><a href="/en/wishes/text" style="color: #F6AD3C !important ;text-decoration:none;cursor: pointer;">See More!</a></h3>
                 </center>   
                 
             </div>
@@ -648,7 +648,7 @@
           <div class="modal-content">
             <div class="row p-0 m-0 pt-3 ps-3 haft-header-modal">
                 <div class="col">
-                    <h3 style="">Unggah Ucapanmu !</h3>
+                    <h3 style="">Upload your Wishes !</h3>
                 </div>
             </div>
             <form action="{{ url('wish/store') }}" method="post" enctype="multipart/form-data" id="Msg_Form">
@@ -658,8 +658,8 @@
                         <div class="row pt-3">
                             <div class="col-1"></div>
                             <div class="col-10">
-                                <label for="name" class="form-label">Nama Lengkap : </label>
-                                <input type="text" class="form-control" id="name" name="name"placeholder="Nama Lengkap">
+                                <label for="name" class="form-label">Full Name : </label>
+                                <input type="text" class="form-control" id="name" name="name"placeholder="Full Name">
                             </div>
                             <div class="col-1"></div>
                         </div>
@@ -677,12 +677,12 @@
                             <div class="col-1"></div>
                             <div class="col-10">
                                 <div class="form-group">
-                                    <label class="my-1 mr-2" for="kategori">Kategori</label>
+                                    <label class="my-1 mr-2" for="kategori">Category</label>
                                     <select class="custom-select my-1 mr-sm-2" id="kategori" name="kategori" aria-placeholder="" required>
-                                        <option hidden value="0">Kategori</option>
-                                        @foreach ($roles as $role)
+                                        <option hidden value="0">Category</option>
+                                        {{-- @foreach ($roles as $role)
                                             <option value="{{ $role->id }}">{{ $role->name }}</option>
-                                        @endforeach
+                                        @endforeach --}}
                                     </select>
                                 </div>
                             </div>
@@ -739,7 +739,7 @@
                             <div class="col-1"></div>
                             <div class="col-10">
                                 <div class="form-group">
-                                    <label for="inputKarya">Ucapan Dalam Bentuk Foto (maks. 10MB Orientasi Landscape)</label>
+                                    <label for="inputKarya">Photos Wishes (Max. 10MB Landscape Orientation)</label>
                                     <div class="input-group mb-3">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="image">
@@ -761,7 +761,7 @@
                             <div class="col-1"></div>
                             <div class="col-10">
                                 <div class="form-group" id="formJudulMsg">
-                                    <label for="notes">Judul Foto (Max 50 Characters)</label>
+                                    <label for="notes">Title of Photo (Max 50 Characters)</label>
                                     <textarea class="form-control" name="image_title" id="inputjudulMsg" rows="3" placeholder="Judul" maxlength="50"></textarea>
                                 </div>
                             </div>
@@ -771,7 +771,7 @@
                             <div class="col-1"></div>
                             <div class="col-10">
                                 <div class="form-group" id="formMsg">
-                                    <label for="notes">Ucapan Dalam Bentuk Teks (Max 400 Characters)</label>
+                                    <label for="notes">Wishes in Words (Max 400 Characters)</label>
                                     <textarea class="form-control" name="wish" id="inputMsg" rows="3" placeholder="Message" minlength="5" maxlength="400" required></textarea>
                                 </div>
                             </div>
@@ -782,7 +782,7 @@
                 <div class="row pt-2 pb-5">
                     <div class="col text-center">
                         <button class="btn haft-modal-btn submit-ucapan-foto">
-                            <p style="margin: 0; font-size:15pt">Unggah</p>
+                            <p style="margin: 0; font-size:15pt">Upload</p>
                         </button>
                     </div>
                 </div>
