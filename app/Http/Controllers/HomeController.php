@@ -29,8 +29,8 @@ class HomeController extends Controller
         $roles = Role::where('id', '!=', '6')->get();
         $blogs = Blog::orderByDate()->limit(3)->get();
         $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->where('is_vip', 0)->orderBy('created_at')->get();
-        $wish_vips = Wish::where('is_vip', '1')->get();
-        return view('home.index', compact('embed_videos', 'blogs', 'wish_images', 'wish_vips', 'roles'));
+        $wish_texts = Wish::whereNull('video_id')->whereNull('image_id')->orderByDesc('created_at')->limit(6)->get();
+        return view('home.index', compact('embed_videos', 'blogs', 'wish_images', 'wish_texts', 'roles'));
     }
 
     /**

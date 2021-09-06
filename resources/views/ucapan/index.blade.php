@@ -392,7 +392,7 @@
                     <div class="col-2"></div>
                 @endif
                 <div class="col-3 mt-3">
-                    <div class="card card-block mx-2 haft-card-galeri-{{ $color_array[($key+rand(0,100))%3] }}">
+                    <div class="card card-block mx-2 haft-card-galeri-{{ $color_array[($key+rand(0,100))%3] }}" >
                         <div class="row pt-4">
                             <div class="col-1"></div>
                             <div class="col-10">

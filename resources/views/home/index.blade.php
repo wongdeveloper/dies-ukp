@@ -134,6 +134,7 @@
         min-height: 200px !important;
         background-color: #D02762 !important;
         border-radius: 0px !important;
+        max-width: ;
     }
 
     .haft-card-galeri-yellow{
@@ -604,7 +605,7 @@
 
 <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
     @foreach($wish_images as $key => $wish_image)
-        <div class="card card-block mx-2 haft-card-galeri-{{ $color_array[($key+rand(0,100))%3] }}">
+        <div class="card card-block mx-2 haft-card-galeri-{{ $color_array[($key+rand(0,100))%3] }}" style="max-width: 300px !important;">
             <div class="row pt-4">
                 <div class="col-1"></div>
                 <div class="col-10">
@@ -638,7 +639,7 @@
     @endforeach
 </div>
 
-<div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
+{{-- <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
     @foreach($wish_vips as $key => $wish_vip)
         <div class="card card-block mx-2 haft-card-vip-{{ $color_array[($key+rand(0,100))%3] }}">
             <div class="row pt-4">
@@ -679,6 +680,48 @@
                             <div class="row">
                                 <div class="col">
                                     <p class="wish">" {{ $wish_vip->wish }} "</p>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    @endforeach
+</div> --}}
+
+<div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
+    @foreach ($wish_texts as $key => $wish_text)
+        <div class="card card-block mx-2 haft-card-vip-{{ $color_array[($key+rand(0,100))%3] }}" style="max-width: 300px">
+            <div class="row pt-2">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="haft-vip-card-text">
+                        <center>
+                            <div class="row">
+                                <div class="col">
+                                    <h5>{{ $wish_text->name }}</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="jabatan">{{ $wish_text->role->name }}</p>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row pt-1">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="haft-vip-card-wish">
+                        <center>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="wish">" {{ $wish_text->wish }} "</p>
                                 </div>
                             </div>
                         </center>

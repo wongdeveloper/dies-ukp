@@ -763,7 +763,7 @@
                     </div>
                 </div>
                 <div class="col-6">
-<<<<<<< HEAD
+
                     <ul>
                         <li><h2>Contact</h2></li>
                         <li><p>Phone: +62 31 2983000</p></li>
@@ -776,27 +776,6 @@
                             </a>
                         </li>
                     </ul>
-=======
-                    <div class="row">
-                        <div class="col">
-                            <h2>Contact</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p>Phone: +62 31 2983000</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <a href="mailto:trtd@petra.ac.id" >
-                                <p style="color:#fff;">
-                                    Email : trtd@petra.ac.id
-                                </p>
-                            </a>
-                        </div>
-                    </div>
->>>>>>> 1b422516c8a1dfc468554f31256fd12e57c98ed4
                 </div>
             </div>
             
