@@ -730,7 +730,7 @@
                                 <div class="form-group" >
                                     <label for="inputAngkatan">Angkatan</label>
                                     <input type="number" class="form-control" name="angkatan" id="inputAngkatan"
-                                        placeholder="Angkatan (Contoh &quot;2018&quot;)" min="1961" max="2020">
+                                        placeholder="Angkatan (Contoh &quot;2018&quot;)" min="1961" max="2021">
                                 </div>
                             </div>
                             <div class="col-1"></div>
