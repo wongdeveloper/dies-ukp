@@ -213,7 +213,7 @@
 
         {{-- BUAT NON HP --}}
             <div class="row pt-3 d-none d-md-flex">
-                {{-- @foreach ($wish_images as $key => $wish_image)
+                @foreach ($wish_images as $key => $wish_image)
                     @if ($key % 3 == 0)
                         <div class="col-2"></div>
                     @endif
@@ -258,13 +258,13 @@
                     @if (($key+1) % 3 == 0 || (count($wish_images)-1) == ($key))
                         <div class="col-1"></div>
                     @endif
-                @endforeach --}}
+                @endforeach
             </div>
         {{-- ========= --}}
 
         {{-- BUAT HP --}}
         <div class="pt-5 pb-2 d-flex d-md-none flex-row flex-nowrap overflow-auto ">
-            {{-- @foreach ($wish_images as $wish_image)
+            @foreach ($wish_images as $wish_image)
                 <div class="card card-block mx-2 haft-card-galeri-{{ $color_array[($key+rand(0,100))%3] }}">
                     <div class="row pt-4">
                         <div class="col-1"></div>
@@ -302,7 +302,7 @@
                         <div class="col-1"></div>
                     </div>
                 </div>
-            @endforeach --}}
+            @endforeach
         </div>
 
         {{-- +++++++ --}}
@@ -363,9 +363,9 @@
                                         <select class="custom-select my-1 mr-sm-2" id="kategori" name="kategori"
                                             aria-placeholder="" required>
                                             <option hidden value="0">Category</option>
-                                            {{-- @foreach ($roles as $role)
+                                            @foreach ($roles as $role)
                                             <option value="{{ $role->id }}">{{ $role->name }}</option>
-                                            @endforeach --}}
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>

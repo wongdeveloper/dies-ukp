@@ -175,7 +175,7 @@
 
         {{-- BUAT NON HP --}}
             <div class="row pt-3 d-none d-md-flex">
-                {{-- @foreach ($wish_videos as $key => $wish_video)
+                @foreach ($wish_videos as $key => $wish_video)
                     @if ($key % 3 == 0)
                         <div class="col-2"></div>
                     @endif
@@ -220,13 +220,13 @@
                     @if (($key+1) % 3 == 0 || (count($wish_videos)-1) == ($key))
                         <div class="col-1"></div>
                     @endif
-                @endforeach --}}
+                @endforeach
             </div>
         {{-- ========== --}}
 
         {{-- BUAT HP --}}
             <div class="pt-5 pb-2 d-flex d-md-none flex-row flex-nowrap overflow-auto ">
-                {{-- @foreach ($wish_videos as $wish_video)
+                @foreach ($wish_videos as $wish_video)
                     <div class="card card-block mx-2 haft-card-galeri-{{ $color_array[($key+rand(0,100))%3] }}">
                         <div class="row pt-4">
                             <div class="col-1"></div>
@@ -263,7 +263,7 @@
                             <div class="col-1"></div>
                         </div>
                     </div>
-                @endforeach  --}}
+                @endforeach
             </div>
         {{-- +++++++++ --}}
         <div class="row pt-5 pb-5"></div>

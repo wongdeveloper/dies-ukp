@@ -15,7 +15,7 @@ class HomeController extends Controller
      * Show Home Page
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $embed_videos = EmbedVideo::all();
         foreach ($embed_videos as $key => $embed_video) {
@@ -32,6 +32,9 @@ class HomeController extends Controller
         $blogs = Blog::orderByDate()->limit(3)->get();
         $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->where('is_vip', 0)->orderByDesc('created_at')->get();
         $wish_texts = Wish::whereNull('video_id')->whereNull('image_id')->orderByDesc('created_at')->limit(6)->get();
+        if ($request->segment(1) == "en") {
+            return view('en.home', compact('embed_videos', 'blogs', 'wish_images', 'wish_texts', 'roles'));
+        }
         return view('home.index', compact('embed_videos', 'blogs', 'wish_images', 'wish_texts', 'roles'));
     }
 

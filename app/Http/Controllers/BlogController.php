@@ -20,10 +20,13 @@ class BlogController extends Controller
      * @return \Illuminate\http\Response
      * 
      */
-    public function index()
+    public function index(Request $request)
     {
         $blogs = Blog::orderByDate()->get();
         $roles = Role::where('id', '!=', '6')->get();
+        if ($request->segment(1) == "en") {
+            return view('en.programs', compact('blogs', 'roles'));
+        }
         return view('kegiatan.index', compact('blogs', 'roles'));
     }
 
@@ -54,7 +57,7 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      * 
      */
-    public function show(string $slug)
+    public function show(string $slug, Request $request)
     {
         $blog = Blog::where('slug', $slug)->first();
         if (!is_null($blog->video)) {

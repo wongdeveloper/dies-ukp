@@ -231,7 +231,7 @@
                 </div>
                 <div class="col-9">
                     <div class="container-fluid">
-                        {{-- @foreach ($blogs as $blog)
+                        @foreach ($blogs as $blog)
                             <div class="row">
                                 <div class="col-2">
                                     
@@ -265,7 +265,7 @@
                                    
                                 </div>
                             </div>
-                        @endforeach --}}
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-1">
@@ -287,7 +287,7 @@
                     <hr style="border: 2px solid; opacity: 5; color:#F6AD3C;">
                 </div>
             </div>
-            {{-- @foreach ($blogs as $blog)
+            @foreach ($blogs as $blog)
                 @php
                     $preview_text = $blog->description;
                     if (strlen($preview_text) > 50) {
@@ -315,7 +315,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach --}}
+            @endforeach
             
         </div>
     {{-- +++++++++++ --}}

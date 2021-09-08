@@ -577,7 +577,7 @@
             <div class="col-12 h-100 pb-5">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        {{-- @foreach($embed_videos as $key => $embed_video)
+                        @foreach($embed_videos as $key => $embed_video)
                             @if($key == 0)
                                 <div class="carousel-item active" style="background-color: #F6AD3C!important">
                                     <iframe class="d-block" width="80%" height="500" src="https://www.youtube.com/embed/{{ $embed_video->youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -587,7 +587,7 @@
                                     <iframe class="d-block" width="80%" height="500" src="https://www.youtube.com/embed/{{ $embed_video->youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             @endif
-                        @endforeach --}}
+                        @endforeach
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -604,7 +604,7 @@
 </div>
 
 <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
-    {{-- @foreach($wish_images as $key => $wish_image)
+    @foreach($wish_images as $key => $wish_image)
         <div class="card card-block mx-2 haft-card-galeri-{{ $color_array[($key+rand(0,100))%3] }}" style="max-width: 300px !important;">
             <div class="row pt-4">
                 <div class="col-1"></div>
@@ -636,7 +636,7 @@
                 <div class="col-1"></div>
             </div>
         </div> 
-    @endforeach --}}
+    @endforeach
 </div>
 
 {{-- <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
@@ -692,7 +692,7 @@
 </div> --}}
 
 <div class="pt-5 pb-2 d-flex flex-row flex-nowrap overflow-auto ">
-    {{-- @foreach ($wish_texts as $key => $wish_text)
+    @foreach ($wish_texts as $key => $wish_text)
         <div class="card card-block mx-2 haft-card-vip-{{ $color_array[($key+rand(0,100))%3] }}" style="max-width: 300px">
             <div class="row pt-2">
                 <div class="col-1"></div>
@@ -730,7 +730,7 @@
                 <div class="col-1"></div>
             </div>
         </div>
-    @endforeach --}}
+    @endforeach
 </div>
 
 <div class="pt-3 pb-4">
@@ -767,7 +767,7 @@
 
 <div class="container pt-3">
     {{-- BUAT NON HP --}}
-        {{-- @foreach($blogs as $key => $blog)
+        @foreach($blogs as $key => $blog)
             <div class="row pt-2 d-none d-md-flex">
                 <div class="col-1">
                     
@@ -801,7 +801,7 @@
                    
                 </div>
             </div>
-        @endforeach --}}
+        @endforeach
         <div class="row pt-2 pb-4 d-none d-md-flex">
             <div class="col">
                 <center>
@@ -812,7 +812,7 @@
     {{-- ================== --}}
     
     {{-- BUAT HP --}}
-        {{-- @foreach($blogs as $key => $blog)
+        @foreach($blogs as $key => $blog)
             <div class="row d-flex d-md-none">
                 <div class="col-12 pt-3 pb-4 haft-article-card-mobile shadow p-3 mb-5 bg-white">
                     <div class="row ps-4 pe-2 ">
@@ -842,7 +842,7 @@
                     </div>
                 </div>
             </div>
-        @endforeach --}}
+        @endforeach
     {{-- ================== --}}
 </div>
 
