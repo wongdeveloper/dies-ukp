@@ -819,9 +819,9 @@
                                     <label class="my-1 mr-2" for="kategori">Category</label>
                                     <select class="custom-select my-1 mr-sm-2" id="kategori" name="kategori" aria-placeholder="" required>
                                         <option hidden value="0">Category</option>
-                                        {{-- @foreach ($roles as $role)
+                                        @foreach ($roles as $role)
                                             <option value="{{ $role->id }}">{{ $role->name }}</option>
-                                        @endforeach --}}
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

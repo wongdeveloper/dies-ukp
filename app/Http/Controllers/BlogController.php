@@ -11,6 +11,7 @@ use App\Models\Video;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Role;
+use App\Models\RoleEn;
 
 
 class BlogController extends Controller
@@ -25,6 +26,7 @@ class BlogController extends Controller
         $blogs = Blog::orderByDate()->get();
         $roles = Role::where('id', '!=', '6')->get();
         if ($request->segment(1) == "en") {
+            $roles = RoleEn::where('id', '!=', '6')->get();
             return view('en.programs', compact('blogs', 'roles'));
         }
         return view('kegiatan.index', compact('blogs', 'roles'));
@@ -71,6 +73,10 @@ class BlogController extends Controller
             }
         }
         $roles = Role::where('id', '!=', '6')->get();
+        if ($request->segment(1) == "en") {
+            $roles = Role::where('id', '!=', '6')->get();
+            return view('en.template', compact('blogs', 'roles'));
+        }
         return view('kegiatan.template', compact('blog', 'roles'));
     }
 

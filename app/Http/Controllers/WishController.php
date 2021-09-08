@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Role;
+use App\Models\RoleEn;
 use App\Models\Wish;
 use App\Models\Image;
 use App\Models\Video;
@@ -34,6 +35,7 @@ class WishController extends Controller
         $wish_texts = Wish::whereNull('video_id')->whereNull('image_id')->orderByDesc('created_at')->limit(9)->get();
         $roles = Role::where('id', '!=', '6')->get();
         if ($request->segment(1) == "en") {
+            $roles = RoleEn::where('id', '!=', '6')->get();
             return view('en.wishes', compact('wish_images', 'wish_videos', 'wish_texts', 'roles'));
         }
         return view('ucapan.index', compact('wish_images', 'wish_videos', 'wish_texts', 'roles'));
@@ -60,6 +62,7 @@ class WishController extends Controller
         // dd($wish_videos);
         $roles = Role::where('id', '!=', '6')->get();
         if ($request->segment(1) == "en") {
+            $roles = RoleEn::where('id', '!=', '6')->get();
             return view('en.videos', compact('wish_videos', 'roles'));
         }
         return view('ucapan.video', compact('wish_videos', 'roles'));
@@ -75,6 +78,7 @@ class WishController extends Controller
         $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->where('is_vip', 0)->get();
         $roles = Role::where('id', '!=', '6')->get();
         if ($request->segment(1) == "en") {
+            $roles = RoleEn::where('id', '!=', '6')->get();
             return view('en.photos', compact('wish_images', 'roles'));
         }
         return view('ucapan.foto', compact('wish_images', 'roles'));
@@ -90,6 +94,7 @@ class WishController extends Controller
         $wish_texts = Wish::whereNull('video_id')->whereNull('image_id')->get();
         $roles = Role::where('id', '!=', '6')->get();
         if ($request->segment(1) == "en") {
+            $roles = RoleEn::where('id', '!=', '6')->get();
             return view('en.text', compact('wish_texts', 'roles'));
         }
         return view('ucapan.teks', compact('wish_texts', 'roles'));

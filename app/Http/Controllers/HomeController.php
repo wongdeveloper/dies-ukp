@@ -8,6 +8,7 @@ use App\Models\Countdown;
 use App\Models\EmbedVideo;
 use App\Models\Blog;
 use App\Models\Role;
+use App\Models\RoleEn;
 
 class HomeController extends Controller
 {
@@ -33,6 +34,7 @@ class HomeController extends Controller
         $wish_images = Wish::where('image_id', '!=', 'NULL')->whereNull('video_id')->where('is_vip', 0)->orderByDesc('created_at')->get();
         $wish_texts = Wish::whereNull('video_id')->whereNull('image_id')->orderByDesc('created_at')->limit(6)->get();
         if ($request->segment(1) == "en") {
+            $roles = RoleEn::where('id', '!=', '6')->get();
             return view('en.home', compact('embed_videos', 'blogs', 'wish_images', 'wish_texts', 'roles'));
         }
         return view('home.index', compact('embed_videos', 'blogs', 'wish_images', 'wish_texts', 'roles'));
