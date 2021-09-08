@@ -858,7 +858,7 @@
                             <div class="col-10">
                                 <div class="form-group" >
                                     <label for="inputJurusan">Prodi/Program</label>
-                                    <input type="text" class="form-control" name="jurusan" id="inputJurusan" placeholder="Jurusan">
+                                    <input type="text" class="form-control" name="jurusan" id="inputJurusan" placeholder="Prodi/Program">
                                 </div>
                             </div>
                             <div class="col-1"></div>

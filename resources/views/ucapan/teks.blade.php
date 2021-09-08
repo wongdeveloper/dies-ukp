@@ -397,7 +397,7 @@
                                 <div class="form-group">
                                     <label for="inputJurusan">Prodi/Program</label>
                                     <input type="text" class="form-control" name="jurusan" id="inputJurusan"
-                                        placeholder="Jurusan">
+                                        placeholder="Prodi/Program">
                                 </div>
                             </div>
                             <div class="col-1"></div>
