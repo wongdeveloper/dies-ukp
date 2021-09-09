@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Video Wishes | TRTD UKP 60th
+    Ucapan Video | TRTD UKP 60th
 @endsection
 <style>
 
@@ -147,7 +147,7 @@
             <div class="row pt-5 title d-none d-md-flex">
                 <div class="col-2"></div>        
                 <div class="col-10">
-                    <h1>Wishes in Videos</h1>
+                    <h1>Ucapan dalam Video</h1>
                 </div>
             </div>
             <div class="row line-blue d-none d-md-flex">
@@ -161,7 +161,7 @@
         {{-- BUAT HP --}}
             <div class="row pt-5 title d-flex d-md-none">     
                 <div class="col">
-                    <h1>Wishes in Videos</h1>
+                    <h1>Ucapan dalam Video</h1>
                 </div>
             </div>
             <div class="row line-blue d-flex d-md-none">
