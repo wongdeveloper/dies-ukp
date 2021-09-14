@@ -245,6 +245,11 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col">
+                                                    <h6>{{ $wish_image->name }}</h6>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
                                                     <p>" {{ $wish_image->wish }} "</p>
                                                 </div>
                                             </div>
@@ -289,6 +294,11 @@
                                     <div class="row">
                                         <div class="col">
                                             <h5>{{ $wish_image->image_title }}</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6>{{ $wish_image->name }}</h6>
                                         </div>
                                     </div>
                                     <div class="row">

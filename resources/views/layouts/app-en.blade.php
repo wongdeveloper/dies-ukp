@@ -464,6 +464,12 @@
         }
     
     /* =================== */
+
+    #mybutton1 {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    }
 </style>
 
 <body style="background-color: #F9F2EA;">
@@ -928,6 +934,11 @@
             </form>
           </div>
         </div>
+    </div>
+    <div id="mybutton1">
+        <a href="http://trtd.petra.ac.id">
+            <button class="btn btn-info ms-2">ID</button>
+        </a>
     </div>
 </body>
 
