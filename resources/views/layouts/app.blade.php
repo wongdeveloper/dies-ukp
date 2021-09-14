@@ -468,7 +468,10 @@
         position: fixed;
         bottom: 10px;
         right: 10px;
-        background-color:#FFFCF5 !important;
+        
+    }
+    .translate-btn{
+        background-color:#1B325E !important;
         color:white !important;
     }
 </style>
@@ -938,7 +941,7 @@
     </div>
     <div id="mybutton1">
         <a href="http://trtd.petra.ac.id/en">
-            <button class="btn btn-info ms-2">EN</button>
+            <button class="btn translate-btn ms-2">EN</button>
         </a>
     </div>
 </body>
