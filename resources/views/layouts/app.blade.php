@@ -474,6 +474,24 @@
         background-color:#1B325E !important;
         color:white !important;
     }
+    /* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1B325E; 
+  border-radius: 30px;
+}
+
+/* Handle on hover */
 </style>
 
 <body style="background-color: #F9F2EA;">
