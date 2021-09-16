@@ -888,9 +888,9 @@
                         <div class="row pt-1 text-tentang">
                             <p style="font-size:1.2rem;text-align: justify">
                                 On September 22, 2021. Petra Christian University (PCU) will celebrate
-                                it's 60th anniversary. This celebration is entitled The Rock Turns Diamond
-                                (TRTD). Petra, the Rock, comes to it's diamond anniversary. TRTD celebration takes 
-                                "Delightful Petra, Delighted World" as it's theme. This theme has two meanings. First,
+                                its 60th anniversary. This celebration is entitled The Rock Turns Diamond
+                                (TRTD). Petra, the Rock, comes to its diamond anniversary. TRTD celebration takes 
+                                "Delightful Petra, Delighted World" as its theme. This theme has two meanings. First,
                                 PCU is joyful and makes the world feel this joy. This theme also has hopes that 
                                 PCU that lives the LIGHT values can also sow the values into the society through teaching-learning, 
                                 research, and community outreach programs.
@@ -907,7 +907,7 @@
         <div class="row pt-5 pb-5 d-none d-md-flex">
             <div class="col">
                 <center>
-                    <h3><a href="/Tentang" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">Lihat Selengkapnya</a></h3>
+                    <h3><a href="/Tentang" style="color: #D02762 !important ;text-decoration:none;cursor: pointer;">Click for Details</a></h3>
                 </center>
             </div>
         </div>
@@ -924,9 +924,9 @@
                         <div class="row pt-1 text-tentang">
                             <p style="font-size:0.8rem;text-align: justify">
                                 On September 22, 2021. Petra Christian University (PCU) will celebrate
-                                it's 60th anniversary. This celebration is entitled The Rock Turns Diamond
-                                (TRTD). Petra, the Rock, comes to it's diamond anniversary. TRTD celebration takes 
-                                "Delightful Petra, Delighted World" as it's theme. This theme has two meanings. First,
+                                its 60th anniversary. This celebration is entitled The Rock Turns Diamond
+                                (TRTD). Petra, the Rock, comes to its diamond anniversary. TRTD celebration takes 
+                                "Delightful Petra, Delighted World" as its theme. This theme has two meanings. First,
                                 PCU is joyful and makes the world feel this joy. This theme also has hopes that 
                                 PCU that lives the LIGHT values can also sow the values into the society through teaching-learning, 
                                 research, and community outreach programs.

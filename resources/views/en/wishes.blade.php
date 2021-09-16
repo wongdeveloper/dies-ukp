@@ -505,7 +505,7 @@
         <div class="row pt-5 title d-none d-md-flex">
             <div class="col-2"></div>        
             <div class="col-4">
-                <h1>Wishes in Text</h1>
+                <h1>Wishes in Words</h1>
             </div>
             <div class="col-3"></div>
             <div class="col-3 haft-btn-yellow">
@@ -521,7 +521,7 @@
         {{-- BUAT HP --}}
         <div class="row pt-5 title d-flex d-md-none">    
             <div class="col-10">
-                <h1>Wishes in Text</h1>
+                <h1>Wishes in Words</h1>
             </div>
             
         </div>
