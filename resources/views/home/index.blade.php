@@ -19,7 +19,7 @@
         width: 100% !important;
         background-size: cover !important;
         background-repeat: no-repeat !important;
-        background-image: url({{asset('assets/images/bg-countdown.png')}});
+        /* background-image: url({{asset('assets/images/bg-countdown.png')}}); */
         
     }
     .count-down-pink{
@@ -995,6 +995,10 @@
             // If the count down is finished, write some text
             if (distance < 0) {
                 clearInterval(x);
+                $('.day').text("0");
+                $('.hour').text("0");
+                $('.minute').text("0");
+                $('.second').text("0");
                 // document.getElementById("demo").innerHTML = "EXPIRED";
             }
         }, 1000);

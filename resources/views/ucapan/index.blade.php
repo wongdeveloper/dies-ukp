@@ -210,7 +210,7 @@
     
 </style>
 @section('content')
-<div class="fixed-top" id="container-confetti" style="z-index: -100000"></div>
+<!-- <div class="fixed-top" id="container-confetti" style="z-index: -100000"></div> -->
 <div class="ucapan-content">
     @php
         $color_array = ["blue", "yellow", "pink"];

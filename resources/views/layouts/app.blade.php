@@ -492,6 +492,11 @@
 }
 
 /* Handle on hover */
+
+.isi-notifikasi{
+    background-color:#fdeace;
+    border-radius: 30px;
+}
 </style>
 
 <body style="background-color: #F9F2EA;">
@@ -659,6 +664,7 @@
         <div class="alert alert-info alert-dismissible fade show" role="alert"><button type="button" class="close"
             aria-label="Close" data-bs-dismiss="alert"><span aria-hidden="true">×</span></button>{{ Session::get( 'info' ) }}</div>
     @endif
+    <div class="fixed-top" id="container-confetti" style="z-index: -100000"></div>
     @yield('content')
 
     <footer class="haft-footer-nomobile pt-5 position-relative w-100 d-none d-md-block" style="bottom: 0" id="footer">
@@ -962,10 +968,84 @@
             <button class="btn translate-btn ms-2">EN</button>
         </a>
     </div>
+
+    <div class="modal fade haft-modal" id="modal-notif" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="row p-0 m-0 pt-3 ps-3 haft-header-modal">
+                <div class="col">
+                    <h3 style="">Hi Petranesian!</h3>
+                </div>
+            </div>
+            <div class="row ps-5 pe-5 pt-3 pb-4">
+                <div class="col">
+                    <div class="row pt-3">
+                        <div class="col">
+                            <img src="{{asset('assets/images/IG _DIES 60 UKP_Presiden RI.jpeg')}}" alt="" width="100%">
+                        </div>
+                    </div>
+                    
+                    <div class="row pt-5">
+                        <div class="col isi-notifikasi pt-4 pb-4">
+                            <p style="text-align:justify">Jangan lupa untuk menyaksikan perayaan Dies Natalies Universitas Kristen Petra yang ke-60 tahun dengan sambutan spesial dari Bpk. Ir. Joko Widodo.</p>
+                        <table>
+                            <tr>
+                                <td>Lokasi : Youtube UK Petra</td>
+                            </tr>
+                            <tr>
+                                <td> Pukul : 09.30 - 12.00 WIB</td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row pt-2 pb-5">
+                <a href="https://www.youtube.com/watch?v=oM1-lfXx4PY">
+                    <div class="col text-center">
+                        <button class="btn haft-modal-btn submit-ucapan-foto">
+                            <p style="margin: 0; font-size:15pt">Ikut!</p>
+                        </button>
+                    </div>
+                </a>
+                
+            </div>
+          </div>
+        </div>
+    </div>
+
 </body>
 
 
 @yield('js')
+<script>
+    TweenLite.set("#container-confetti", { perspective: 600 })
+    TweenLite.set("img", { xPercent: "-50%", yPercent: "-50%" })
+
+    var total = 100;
+    var warp = document.getElementById("container-confetti"), w = window.innerWidth, h = window.innerHeight;
+    console.log(warp);
+
+    for (i = 0; i < total; i++) {
+        var Div = document.createElement('div');
+        TweenLite.set(Div, { attr: { class: 'dot' + (i%6) }, x: R(0, w), y: R(-200, -150), z: R(-200, 200) });
+        warp.appendChild(Div);
+        animm(Div);
+    }
+
+    function animm(elm) {
+        TweenMax.to(elm, R(6, 15), { y: h + 100, ease: Linear.easeNone, repeat: -1, delay: -10 });
+        TweenMax.to(elm, R(4, 8), { x: '+=100', rotationZ: R(0, 180), repeat: -1, yoyo: true, ease: Sine.easeInOut });
+        TweenMax.to(elm, R(2, 8), { rotationX: R(0, 360), rotationY: R(0, 360), repeat: -1, yoyo: true, ease: Sine.easeInOut, delay: 5 });
+    };
+
+    function R(min, max) { return min + Math.random() * (max - min) };
+    $( document ).ready(function() {
+        var modal = new bootstrap.Modal(document.getElementById("modal-notif"));
+        modal.show();
+    });
+</script>
 
 <script>
     $('#modal-ucapan-foto-nav').on('hidden.bs.modal', function () {
